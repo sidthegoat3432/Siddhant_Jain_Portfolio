@@ -14,7 +14,7 @@ export function Footer() {
             {profile.name.split(" ")[1]?.charAt(0) ?? ""}
           </span>
           <p className="text-sm text-muted-foreground">
-            © {year} {profile.name}. Built with care.
+            © {year} {profile.name}. Engineered with care.
           </p>
         </div>
 

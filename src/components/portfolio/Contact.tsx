@@ -22,8 +22,8 @@ export function Contact() {
             <SectionHeading
               index="04"
               eyebrow="Contact"
-              title="Let's make something worth remembering."
-              description="I'm always open to interesting collaborations, ambitious ideas, and a good conversation about the craft."
+              title="Let's build something serious."
+              description="Whether it's a full-time role, a contract, or a project that needs shipping — I'm open to the conversation."
             />
 
             <Reveal delay={0.16}>

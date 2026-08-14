@@ -73,16 +73,16 @@ export function Projects() {
       <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
         <SectionHeading
           index="02"
-          eyebrow="Selected work"
-          title="Projects built with intent."
-          description="A few things I've designed and shipped — each one a study in craft, clarity, and care."
+          eyebrow="Work"
+          title="Projects built to ship."
+          description="A selection of shipped work — real projects, real constraints, and code that stays maintainable."
         />
         <Reveal delay={0.1} className="shrink-0">
           <a
             href="#contact"
             className="group inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-cream"
           >
-            Have a project in mind?
+            Looking for a developer?
             <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </Reveal>

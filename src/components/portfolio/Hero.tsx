@@ -136,8 +136,8 @@ export function Hero() {
             variants={rise}
             className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl"
           >
-            I craft digital products and cinematic web experiences that feel
-            effortless to use and impossible to ignore.
+            I design and build fast, dependable web software — interfaces
+            engineered with care, from first commit to production.
           </motion.p>
 
           {/* Role chip */}

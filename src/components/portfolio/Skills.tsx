@@ -32,8 +32,8 @@ export function Skills() {
       <SectionHeading
         index="03"
         eyebrow="Capabilities"
-        title="The toolkit behind the work."
-        description="A practical, cross-disciplinary set of skills — spanning design, engineering, and the motion that connects them."
+        title="The stack behind the work."
+        description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure."
       />
 
       <div className="mt-14 grid gap-6 md:grid-cols-3">

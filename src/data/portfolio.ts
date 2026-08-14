@@ -24,11 +24,14 @@ export const profile = {
   // 👈 REPLACE: your full name
   name: "Siddhant Jain",
 
+  // The name of this site, used in the header and document title.
+  siteName: "Siddhant Portfolio",
+
   // 👈 REPLACE: your first name (used for the monogram / sign-off)
   firstName: "Siddhant",
 
   // 👈 REPLACE: your role / title
-  role: "Designer & Developer",
+  role: "Full-Stack Developer",
 
   // 👈 REPLACE: your city / location
   city: "Your City",
@@ -39,12 +42,12 @@ export const profile = {
   // 👈 REPLACE: your resume / CV link
   resumeUrl: "#",
 
-  // 👈 REPLACE: 2–3 sentences about you — what you do, who you build for,
-  // and the kind of work you want to make next.
-  bio: "A short, two-to-three sentence bio goes here — what you do, who you build for, and the kind of work you want to make next.",
+  // 👈 REPLACE: 2–3 sentences about you — the stack you work in, the
+  // problems you solve, and the kind of software you want to build next.
+  bio: "A short bio goes here — the languages and tools you work with, the problems you solve, and the kind of software you want to build next.",
 
-  // 👈 REPLACE: availability — "open" shows the green "available" badge
-  availability: "Available for select projects" as string,
+  // 👈 REPLACE: availability — shows as a status badge in the hero
+  availability: "Open to freelance & full-time roles" as string,
 } as const;
 
 // ----------------------------------------------------------------------------

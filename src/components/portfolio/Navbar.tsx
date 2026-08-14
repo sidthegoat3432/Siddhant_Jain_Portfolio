@@ -43,7 +43,7 @@ export function Navbar() {
             {profile.name.split(" ")[1]?.charAt(0) ?? ""}
           </span>
           <span className="hidden font-display text-sm font-medium tracking-tight text-cream sm:block">
-            {profile.name}
+            {profile.siteName}
           </span>
         </a>
 

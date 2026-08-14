@@ -6,16 +6,16 @@ import { SectionHeading } from "./SectionHeading";
 
 const focusAreas = [
   {
-    title: "Interface & product design",
-    copy: "Shaping clear systems and flows that stay out of the way.",
+    title: "Full-stack development",
+    copy: "End-to-end builds — interfaces, APIs, data, and deployment.",
   },
   {
-    title: "Front-end engineering",
-    copy: "Building interfaces that are fast, accessible, and resilient.",
+    title: "Interface engineering",
+    copy: "Fast, accessible front-ends with clean, maintainable code.",
   },
   {
-    title: "Motion & interaction",
-    copy: "Adding the right amount of motion to guide, delight, and clarify.",
+    title: "Product thinking",
+    copy: "Turning loose requirements into software that ships and holds up.",
   },
 ];
 
@@ -28,7 +28,7 @@ export function About() {
           <SectionHeading
             index="01"
             eyebrow="About"
-            title="Precision in the details, momentum in the moments."
+            title="Built on strong fundamentals, finished with intent."
           />
 
           <Reveal delay={0.16}>
@@ -75,7 +75,12 @@ export function About() {
             ))}
           </div>
 
-          <div className="mt-8 space-y-3">
+          <Reveal delay={0.06}>
+            <p className="mt-8 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Services &amp; strengths
+            </p>
+          </Reveal>
+          <div className="mt-4 space-y-3">
             {focusAreas.map((item, i) => (
               <Reveal key={item.title} delay={0.1 + i * 0.06}>
                 <div className="group flex items-start gap-4 rounded-2xl border border-border bg-card/40 p-5 transition-colors hover:border-brand/30 hover:bg-card/70">

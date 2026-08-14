@@ -26,7 +26,7 @@ export function About() {
         {/* Left — heading + bio */}
         <div>
           <SectionHeading
-            index="01"
+            index="02"
             eyebrow="About"
             title="Built on strong fundamentals, finished with intent."
           />

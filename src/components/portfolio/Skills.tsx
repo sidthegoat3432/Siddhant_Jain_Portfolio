@@ -30,7 +30,7 @@ export function Skills() {
   return (
     <section id="skills" className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
       <SectionHeading
-        index="03"
+        index="04"
         eyebrow="Capabilities"
         title="The stack behind the work."
         description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure."

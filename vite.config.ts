@@ -77,11 +77,9 @@ export default defineConfig({
       '@convex-dev/auth/react',
     ],
   },
-  // Performance hints
+  // Freebuff requires HMR to remain disabled; keep it off so lazy-loaded
+  // route modules (e.g. /src/pages/Landing.tsx) are never invalidated mid-request.
   server: {
-    // Keep HMR on, but disable full-screen error overlay
-    hmr: {
-      overlay: false,
-    },
+    hmr: false,
   },
 });

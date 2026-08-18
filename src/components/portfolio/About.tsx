@@ -13,6 +13,44 @@ import { SectionHeading } from "./SectionHeading";
 const VIDEO_PLACEHOLDER = "BACKGROUND_VIDEO";
 const POSTER_PLACEHOLDER = "BACKGROUND_POSTER";
 
+function ProfileImage() {
+  const hasImage = Boolean(profile.profileImage);
+
+  return (
+    <div className="profile-image group relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[34rem]">
+      {hasImage ? (
+        <img
+          src={profile.profileImage}
+          alt={`${profile.name} portrait`}
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)]" />
+          <div className="absolute inset-5 rounded-[1.5rem] border border-dashed border-ink/20" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
+            <span className="flex size-14 items-center justify-center rounded-2xl border border-brand/25 bg-card/70 text-brand">
+              <ImageIcon className="size-6" strokeWidth={1.5} />
+            </span>
+            <span className="font-display text-xl font-semibold text-ink/75">
+              PROFILE_IMAGE
+            </span>
+            <span className="max-w-[14rem] text-xs uppercase leading-relaxed tracking-[0.18em] text-muted-foreground">
+              Add Siddhant&apos;s portrait in the content config
+            </span>
+          </div>
+        </>
+      )}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-white/35 pt-3 text-[10px] uppercase tracking-[0.2em] text-white/85">
+        <span>Portrait / 001</span>
+        <span className="text-brand">SJ</span>
+      </div>
+    </div>
+  );
+}
+
 function BackgroundMedia() {
   const hasVideo =
     ABOUT_BACKGROUND_VIDEO && ABOUT_BACKGROUND_VIDEO !== VIDEO_PLACEHOLDER;
@@ -79,27 +117,33 @@ export function About() {
         description="A closer look at the places, interests, and working energy behind the portfolio."
       />
 
-      <div className="mt-14 grid min-w-0 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {aboutCards.map((card, i) => (
-          <Reveal key={card.number} delay={i * 0.06}>
-            <motion.article
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="group relative h-full min-w-0 overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-brand/40 hover:bg-card/90 sm:p-6"
-            >
-              <span className="font-display text-sm text-gold">{card.number}</span>
-              <h3 className="mt-8 font-display text-xl font-semibold leading-tight text-ink transition-colors group-hover:text-brand">
-                {card.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {card.copy}
-              </p>
-              <span className="absolute -bottom-7 -right-2 font-display text-7xl font-semibold leading-none tracking-[-0.12em] text-ink/[0.04]">
-                {card.number}
-              </span>
-            </motion.article>
-          </Reveal>
-        ))}
+      <div className="mt-14 grid min-w-0 gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch lg:gap-12">
+        <div className="grid min-w-0 gap-3 sm:grid-cols-2">
+          {aboutCards.map((card, i) => (
+            <Reveal key={card.number} delay={i * 0.06}>
+              <motion.article
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="group relative h-full min-w-0 overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-brand/40 hover:bg-card/90 sm:p-6"
+              >
+                <span className="font-display text-sm text-gold">{card.number}</span>
+                <h3 className="mt-8 font-display text-xl font-semibold leading-tight text-ink transition-colors group-hover:text-brand">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {card.copy}
+                </p>
+                <span className="absolute -bottom-7 -right-2 font-display text-7xl font-semibold leading-none tracking-[-0.12em] text-ink/[0.04]">
+                  {card.number}
+                </span>
+              </motion.article>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.12} className="min-w-0">
+          <ProfileImage />
+        </Reveal>
       </div>
 
       <div className="mt-20 grid min-w-0 gap-14 border-t border-border pt-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">

@@ -41,7 +41,7 @@ export const profile = {
   city: "Your City",
 
   // 👈 REPLACE: your email address (drives the contact buttons)
-  email: "hello@example.com",
+  email: "siddhant0516@gmail.com",
 
   // 👈 REPLACE: your resume / CV link
   resumeUrl: "#",
@@ -80,8 +80,8 @@ export interface SocialLink {
 export const socialLinks: SocialLink[] = [
   {
     label: "GitHub",
-    handle: "@yourhandle",
-    url: "https://github.com/yourusername",
+    handle: "@sidthegoat3432",
+    url: "https://github.com/sidthegoat3432",
     icon: "github",
   },
   {
@@ -104,8 +104,8 @@ export const socialLinks: SocialLink[] = [
   },
   {
     label: "Instagram",
-    handle: "@yourhandle",
-    url: "https://instagram.com/yourusername",
+    handle: "@siddhant34323",
+    url: "https://www.instagram.com/siddhant34323/",
     icon: "instagram",
   },
 ];

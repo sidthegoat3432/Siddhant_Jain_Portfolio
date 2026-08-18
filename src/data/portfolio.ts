@@ -76,31 +76,13 @@ export interface SocialLink {
   icon: SocialIcon;
 }
 
-// 👈 REPLACE: each entry with your real profile URL + handle.
+// The live contact profiles currently used across the site.
 export const socialLinks: SocialLink[] = [
   {
     label: "GitHub",
     handle: "@sidthegoat3432",
     url: "https://github.com/sidthegoat3432",
     icon: "github",
-  },
-  {
-    label: "LinkedIn",
-    handle: "/in/yourhandle",
-    url: "https://linkedin.com/in/yourusername",
-    icon: "linkedin",
-  },
-  {
-    label: "X / Twitter",
-    handle: "@yourhandle",
-    url: "https://x.com/yourusername",
-    icon: "twitter",
-  },
-  {
-    label: "Dribbble",
-    handle: "@yourhandle",
-    url: "https://dribbble.com/yourusername",
-    icon: "dribbble",
   },
   {
     label: "Instagram",

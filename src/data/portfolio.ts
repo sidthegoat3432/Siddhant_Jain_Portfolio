@@ -12,10 +12,11 @@
 // The cinematic background for the hero. Paste a hosted mp4/webm URL (or a
 // local path under /public, e.g. "/video/hero.mp4"). While this placeholder is
 // in place, an animated gradient fallback renders instead.
-export const HERO_BACKGROUND_VIDEO = "BACKGROUND_VIDEO";
+export const HERO_BACKGROUND_VIDEO: string =
+  "https://assets.mixkit.co/videos/3130/3130-720.mp4";
 
 // Optional poster image shown before the video plays.
-export const HERO_BACKGROUND_POSTER = "BACKGROUND_POSTER";
+export const HERO_BACKGROUND_POSTER = "";
 
 // About-section motion panel. Paste a hosted mp4/webm URL when ready.
 export const ABOUT_BACKGROUND_VIDEO = "BACKGROUND_VIDEO";

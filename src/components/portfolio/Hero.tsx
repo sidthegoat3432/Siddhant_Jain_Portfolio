@@ -287,8 +287,8 @@ export function Hero() {
             <KineticMark />
             <div className="mt-4 flex items-start justify-between gap-4 text-xs text-muted-foreground">
               <span className="max-w-[15rem] leading-relaxed">
-                A living placeholder for Siddhant&apos;s background video — move
-                your cursor across it and the layers tilt with you.
+                A city skyline at dusk behind the mark — swap it for your own
+                Toronto footage in the content config.
               </span>
               <span className="flex shrink-0 items-center gap-2 text-ink/75">
                 <MapPin className="size-3.5 text-gold" />

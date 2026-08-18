@@ -7,11 +7,54 @@ import {
   profile,
   services,
 } from "@/data/portfolio";
-import { Reveal } from "./Reveal";
-import { SectionHeading } from "./SectionHeading";
+import { EASE, Reveal } from "./Reveal";
 
 const VIDEO_PLACEHOLDER = "BACKGROUND_VIDEO";
 const POSTER_PLACEHOLDER = "BACKGROUND_POSTER";
+
+function AboutMasthead() {
+  return (
+    <div className="grid gap-8 border-y border-border py-7 sm:grid-cols-[minmax(0,1fr)_15rem] sm:items-end sm:gap-12 sm:py-9 lg:grid-cols-[minmax(0,1fr)_19rem]">
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9, ease: EASE }}
+      >
+        <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.28em] text-brand">
+          <span className="font-display text-sm text-gold">02</span>
+          Personal index
+        </p>
+        <h2 className="mt-6 max-w-4xl font-display text-[clamp(3.4rem,8vw,7.5rem)] font-semibold leading-[0.82] tracking-[-0.09em] text-ink">
+          Hi, I&apos;m <span className="text-brand">Siddhant.</span>
+        </h2>
+        <p className="mt-7 max-w-xl font-display text-xl leading-tight tracking-tight text-ink/75 sm:text-2xl">
+          A builder, a learner, and a creative problem-solver.
+        </p>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, x: 24 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.9, delay: 0.16, ease: EASE }}
+        className="border-l border-gold/50 pl-5"
+      >
+        <p className="text-[10px] uppercase tracking-[0.24em] text-gold">
+          Field notes / 2026
+        </p>
+        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+          A closer look at the places, interests, and working energy behind the
+          portfolio.
+        </p>
+        <div className="mt-6 flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-ink/65">
+          <span className="size-1.5 rounded-full bg-green" />
+          Toronto / active signal
+        </div>
+      </motion.div>
+    </div>
+  );
+}
 
 function ProfileImage() {
   const hasImage = Boolean(profile.profileImage);
@@ -128,12 +171,7 @@ export function About() {
       id="about"
       className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32"
     >
-      <SectionHeading
-        index="02"
-        eyebrow="Hi, I&apos;m Siddhant"
-        title="A builder, learner, and creative problem-solver."
-        description="A closer look at the places, interests, and working energy behind the portfolio."
-      />
+      <AboutMasthead />
 
       <div className="mt-14 grid min-w-0 gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch lg:gap-12">
         <div className="grid min-w-0 gap-3 sm:grid-cols-2">

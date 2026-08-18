@@ -5,11 +5,13 @@ import type { ReactNode } from "react";
 export const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const revealVariants: Variants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 32, scale: 0.985, filter: "blur(8px)" },
   visible: (delay: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, delay, ease: EASE },
+    scale: 1,
+    filter: "blur(0px)",
+    transition: { duration: 0.85, delay, ease: EASE },
   }),
 };
 
@@ -30,6 +32,7 @@ export function Reveal({
       whileInView="visible"
       viewport={{ once: true, margin: "-80px" }}
       custom={delay}
+      style={{ willChange: "transform, opacity, filter" }}
     >
       {children}
     </motion.div>

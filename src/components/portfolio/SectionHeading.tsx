@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 
 export function SectionHeading({
@@ -21,6 +22,15 @@ export function SectionHeading({
     >
       <Reveal>
         <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-brand">
+          {align === "left" && (
+            <motion.span
+              initial={{ scaleX: 0, opacity: 0 }}
+              whileInView={{ scaleX: 1, opacity: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+              className="h-px w-8 origin-left bg-brand/60"
+            />
+          )}
           {align === "left" && (
             <span className="font-display text-sm text-gold">{index}</span>
           )}

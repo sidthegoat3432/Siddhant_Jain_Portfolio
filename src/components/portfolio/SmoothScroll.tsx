@@ -12,8 +12,9 @@ export function SmoothScroll() {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      // Lower lerp = longer, floatier glide. 0.085 keeps it clearly smooth
+      // without feeling like the page drags behind the wheel.
+      lerp: 0.085,
       smoothWheel: true,
       anchors: true,
     });

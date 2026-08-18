@@ -65,7 +65,7 @@ export function Contact() {
                 Elsewhere on the internet
               </p>
             </Reveal>
-            <div className="mt-5 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card/40 backdrop-blur">
+            <div className="mt-5 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card/40">
               {socialLinks.map((social, i) => (
                 <Reveal key={social.label} delay={i * 0.05}>
                   <a

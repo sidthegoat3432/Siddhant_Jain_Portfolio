@@ -168,7 +168,7 @@ export function About() {
               <motion.article
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group relative h-full min-w-0 overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-brand/40 hover:bg-card/90 sm:p-6"
+                className="group relative h-full min-w-0 overflow-hidden rounded-2xl border border-border bg-card/50 p-5 transition-colors hover:border-brand/40 hover:bg-card/90 sm:p-6"
               >
                 <span className="font-display text-sm text-gold">{card.number}</span>
                 <h3 className="mt-8 font-display text-xl font-semibold leading-tight text-ink transition-colors group-hover:text-brand">
@@ -250,7 +250,7 @@ export function About() {
                 <motion.article
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="group flex min-w-0 gap-4 rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-brand/35 hover:bg-card/90"
+                  className="group flex min-w-0 gap-4 rounded-2xl border border-border bg-card/50 p-5 transition-colors hover:border-brand/35 hover:bg-card/90"
                 >
                   <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full border border-brand/25 bg-brand/5 text-brand">
                     <Check className="size-3.5" />

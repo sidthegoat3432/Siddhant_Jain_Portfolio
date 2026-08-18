@@ -32,7 +32,7 @@ const introItem = {
 
 function KineticMark() {
   return (
-    <div className="relative flex aspect-square w-full max-w-[31rem] items-center justify-center overflow-hidden rounded-[2rem] border border-ink/15 bg-card/70 shadow-[0_24px_70px_rgba(11,18,32,0.1)] backdrop-blur-sm">
+    <div className="relative flex aspect-square w-full max-w-[31rem] items-center justify-center overflow-hidden rounded-[2rem] border border-ink/15 bg-card/70 shadow-[0_24px_70px_rgba(11,18,32,0.1)]">
       <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(15,118,110,0.16),transparent_30%,transparent_64%,rgba(11,18,32,0.05))]" />
 

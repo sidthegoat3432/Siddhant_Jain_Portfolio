@@ -17,17 +17,25 @@ function ProfileImage() {
   const hasImage = Boolean(profile.profileImage);
 
   return (
-    <div className="profile-image group relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[34rem]">
+    <motion.div
+      whileHover={{ y: -6, scale: 1.005 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="profile-image group relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[34rem]"
+    >
       {hasImage ? (
-        <img
+        <motion.img
           src={profile.profileImage}
           alt={`${profile.name} portrait`}
           className="absolute inset-0 h-full w-full object-cover"
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.04 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           loading="lazy"
         />
       ) : (
         <>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)]" />
+          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)]" />
           <div className="absolute inset-5 rounded-[1.5rem] border border-dashed border-ink/20" />
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
             <span className="flex size-14 items-center justify-center rounded-2xl border border-brand/25 bg-card/70 text-brand">
@@ -42,12 +50,13 @@ function ProfileImage() {
           </div>
         </>
       )}
+      <span className="media-scanline pointer-events-none" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
       <div className="pointer-events-none absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-white/35 pt-3 text-[10px] uppercase tracking-[0.2em] text-white/85">
         <span>Portrait / 001</span>
         <span className="text-brand">SJ</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -59,7 +68,11 @@ function BackgroundMedia() {
     ABOUT_BACKGROUND_POSTER && ABOUT_BACKGROUND_POSTER !== POSTER_PLACEHOLDER;
 
   return (
-    <div className="profile-image group relative min-h-[18rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[22rem]">
+    <motion.div
+      whileHover={{ y: -5, scale: 1.005 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="profile-image group relative min-h-[18rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[22rem]"
+    >
       {hasVideo ? (
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -72,15 +85,19 @@ function BackgroundMedia() {
           aria-label="Siddhant background video"
         />
       ) : hasImage ? (
-        <img
+        <motion.img
           src={profile.profileImage}
           alt={`${profile.name} portrait`}
           className="absolute inset-0 h-full w-full object-cover"
+          initial={{ opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          whileHover={{ scale: 1.04 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
           loading="lazy"
         />
       ) : (
         <>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)]" />
+          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)]" />
           <div className="absolute inset-5 rounded-[1.5rem] border border-dashed border-ink/20" />
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
             <span className="flex size-14 items-center justify-center rounded-2xl border border-brand/25 bg-card/70 text-brand">
@@ -95,12 +112,13 @@ function BackgroundMedia() {
           </div>
         </>
       )}
+      <span className="media-scanline pointer-events-none" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
       <div className="pointer-events-none absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-white/35 pt-3 text-[10px] uppercase tracking-[0.2em] text-white/85">
         <span>{hasVideo ? "Background motion / 001" : "Portrait / 001"}</span>
         <span className="text-brand">SJ</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

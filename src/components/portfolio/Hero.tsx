@@ -5,8 +5,15 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Circle, Crosshair, MapPin } from "lucide-react";
-import { useRef, useState, type MouseEvent } from "react";
+import {
+  ArrowDown,
+  ArrowRight,
+  ArrowUpRight,
+  Circle,
+  Crosshair,
+  MapPin,
+} from "lucide-react";
+import { useRef, type MouseEvent } from "react";
 import {
   HERO_BACKGROUND_POSTER,
   HERO_BACKGROUND_VIDEO,
@@ -37,32 +44,28 @@ const introItem = {
 };
 
 function KineticMark() {
-  const [reduced] = useState(
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
 
   // 3D tilt — the card leans toward the cursor, smoothed by springs.
-  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [9, -9]), {
+  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [12, -12]), {
     stiffness: 160,
     damping: 18,
   });
-  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-12, 12]), {
+  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-14, 14]), {
     stiffness: 160,
     damping: 18,
   });
 
   // Layer parallax — each plane drifts at its own depth as the pointer moves.
-  const gridX = useTransform(mx, [-0.5, 0.5], [7, -7]);
-  const gridY = useTransform(my, [-0.5, 0.5], [7, -7]);
-  const orbitX = useTransform(mx, [-0.5, 0.5], [-14, 14]);
-  const orbitY = useTransform(my, [-0.5, 0.5], [-14, 14]);
-  const monoX = useTransform(mx, [-0.5, 0.5], [5, -5]);
-  const monoY = useTransform(my, [-0.5, 0.5], [5, -5]);
+  const gridX = useTransform(mx, [-0.5, 0.5], [9, -9]);
+  const gridY = useTransform(my, [-0.5, 0.5], [9, -9]);
+  const orbitX = useTransform(mx, [-0.5, 0.5], [-18, 18]);
+  const orbitY = useTransform(my, [-0.5, 0.5], [-18, 18]);
+  const monoX = useTransform(mx, [-0.5, 0.5], [6, -6]);
+  const monoY = useTransform(my, [-0.5, 0.5], [6, -6]);
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (reduced) return;
     const rect = e.currentTarget.getBoundingClientRect();
     mx.set((e.clientX - rect.left) / rect.width - 0.5);
     my.set((e.clientY - rect.top) / rect.height - 0.5);
@@ -137,7 +140,7 @@ function KineticMark() {
       {/* Monogram — breathing + drifting with the pointer */}
       <motion.div
         style={{ x: monoX, y: monoY }}
-        animate={reduced ? { scale: 1 } : { scale: [1, 1.035, 1] }}
+        animate={{ scale: [1, 1.035, 1] }}
         transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute flex flex-col items-center gap-2"
       >
@@ -261,9 +264,10 @@ export function Hero() {
               </a>
               <a
                 href="#about"
-                className="inline-flex items-center gap-3 rounded-full border border-border bg-card/30 px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-brand/50 hover:text-brand"
+                className="group/cta inline-flex items-center gap-3 rounded-full border border-border bg-card/30 px-6 py-3.5 text-sm font-medium text-ink transition-all hover:border-brand/50 hover:text-brand"
               >
                 Read the approach
+                <ArrowRight className="size-4 transition-transform group-hover/cta:translate-x-1" />
               </a>
             </motion.div>
           </motion.div>

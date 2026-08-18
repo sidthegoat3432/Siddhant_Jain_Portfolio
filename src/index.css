@@ -742,14 +742,3 @@ footer[id] {
 .kinetic-grid-drift {
   animation: kinetic-grid-drift 12s linear infinite;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .kinetic-spin,
-  .kinetic-spin-reverse,
-  .kinetic-aurora,
-  .kinetic-rise,
-  .kinetic-sweep,
-  .kinetic-grid-drift {
-    animation: none;
-  }
-}

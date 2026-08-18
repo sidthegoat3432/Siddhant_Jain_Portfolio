@@ -12,8 +12,9 @@
 // The cinematic background for the hero. Paste a hosted mp4/webm URL (or a
 // local path under /public, e.g. "/video/hero.mp4"). While this placeholder is
 // in place, an animated gradient fallback renders instead.
+// Aerial footage of Toronto's skyline (Lucastphotography, CC BY 4.0).
 export const HERO_BACKGROUND_VIDEO: string =
-  "https://assets.mixkit.co/videos/3130/3130-720.mp4";
+  "https://upload.wikimedia.org/wikipedia/commons/9/94/Toronto_Skyline.webm";
 
 // Optional poster image shown before the video plays.
 export const HERO_BACKGROUND_POSTER = "";

@@ -62,7 +62,7 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <a
-            href="#contact"
+            href={`mailto:${profile.email}`}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_24px_rgba(15,118,110,0.25)]"
           >
             Let&apos;s talk
@@ -104,7 +104,7 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href={`mailto:${profile.email}`}
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
               >

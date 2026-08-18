@@ -86,7 +86,7 @@ export function Hero() {
       ref={ref}
       className="relative min-h-[100svh] overflow-hidden bg-background"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(15,118,110,0.12),transparent_42%),radial-gradient(ellipse_at_90%_60%,rgba(180,83,9,0.08),transparent_36%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(15,118,110,0.12),transparent_42%),radial-gradient(ellipse_at_90%_60%,rgba(180,83,9,0.08),transparent_36%),radial-gradient(ellipse_at_70%_12%,rgba(37,99,235,0.08),transparent_48%)]" />
       <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(11,18,32,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.1)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
       <div className="pointer-events-none absolute left-[7%] top-[18%] h-px w-[42%] bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
       <div className="pointer-events-none absolute right-[6%] top-[35%] h-[35%] w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
@@ -125,8 +125,11 @@ export function Hero() {
             className="max-w-4xl"
           >
             <motion.div variants={introItem} className="flex items-center gap-3">
-              <span className="h-px w-10 bg-brand" />
-              <span className="text-xs font-medium uppercase tracking-[0.3em] text-brand">
+              <span className="relative flex size-2.5 shrink-0">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-60" />
+                <span className="relative inline-flex size-2.5 rounded-full bg-green ring-2 ring-green/20" />
+              </span>
+              <span className="text-xs font-medium uppercase tracking-[0.3em] text-ink/80">
                 Available for meaningful work
               </span>
             </motion.div>

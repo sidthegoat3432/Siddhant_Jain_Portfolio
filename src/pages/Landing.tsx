@@ -1,6 +1,7 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { About } from "@/components/portfolio/About";
 import { Contact } from "@/components/portfolio/Contact";
+import { Cursor } from "@/components/portfolio/Cursor";
 import { Footer } from "@/components/portfolio/Footer";
 import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
@@ -28,6 +29,8 @@ export default function Landing() {
         className="grain pointer-events-none fixed inset-0 z-[70] opacity-[0.05] mix-blend-overlay"
         aria-hidden
       />
+
+      <Cursor />
 
       <Navbar />
 

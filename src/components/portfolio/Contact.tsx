@@ -48,8 +48,8 @@ export function Contact() {
             <Reveal delay={0.22}>
               <p className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
                 <span className="relative flex size-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-brand" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-75" />
+                  <span className="relative inline-flex size-2 rounded-full bg-green" />
                 </span>
                 Currently {profile.availability.toLowerCase()}
               </p>

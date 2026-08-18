@@ -45,7 +45,7 @@ export function Skills() {
         description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure. Click any capability to see how I use it."
       />
 
-      <div className="mt-14 grid min-w-0 grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+      <div className="mt-14 grid min-w-0 grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
         {tools.map((tool, i) => (
           <Reveal key={tool.name} delay={i * 0.04}>
             <motion.button

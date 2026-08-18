@@ -325,16 +325,11 @@ export interface Language {
   note: string;
 }
 
-// 👈 REPLACE: use only the languages you actually work with.
+// 👈 REPLACE: spoken languages and your comfort level with each one.
 export const languages: Language[] = [
-  { name: "JavaScript", note: "Web logic" },
-  { name: "TypeScript", note: "Typed systems" },
-  { name: "HTML", note: "Structure" },
-  { name: "CSS", note: "Visual layer" },
-  { name: "Python", note: "Scripting" },
-  { name: "SQL", note: "Data" },
-  { name: "Java", note: "Programming" },
-  { name: "C++", note: "Programming" },
+  { name: "English", note: "Fluent" },
+  { name: "French", note: "Conversational" },
+  { name: "Hindi", note: "Fluent" },
 ];
 
 export interface Service {

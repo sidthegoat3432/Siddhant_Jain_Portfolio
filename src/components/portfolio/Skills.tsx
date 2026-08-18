@@ -36,7 +36,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32"
+      className="relative mx-auto min-w-0 max-w-6xl overflow-x-clip px-5 py-24 sm:px-8 sm:py-32"
     >
       <SectionHeading
         index="04"
@@ -45,7 +45,7 @@ export function Skills() {
         description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure. Click any capability to see how I use it."
       />
 
-      <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+      <div className="mt-14 grid min-w-0 grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
         {tools.map((tool, i) => (
           <Reveal key={tool.name} delay={i * 0.04}>
             <motion.button
@@ -114,22 +114,23 @@ export function Skills() {
                 Languages
               </p>
               <h3 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
-                The languages I work with.
+                The languages I know.
               </h3>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              A quick view of the languages and layers I use to shape ideas into working web experiences.
+              A small part of who I am beyond the interface: the languages I use
+              to communicate, collaborate, and connect.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
           {languages.map((language, i) => (
             <Reveal key={language.name} delay={i * 0.04}>
               <motion.div
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-gold/45 hover:bg-card/90"
+                className="group min-w-0 rounded-2xl border border-border bg-card/50 p-4 backdrop-blur transition-colors hover:border-gold/45 hover:bg-card/90 sm:p-5"
               >
                 <span className="font-display text-xs text-gold">
                   {String(i + 1).padStart(2, "0")}
@@ -165,13 +166,13 @@ export function Skills() {
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {strengths.map((strength, i) => (
             <Reveal key={strength.title} delay={i * 0.05}>
               <motion.article
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group relative h-full overflow-hidden rounded-2xl border border-border bg-card/50 p-6 backdrop-blur transition-colors hover:border-brand/35 hover:bg-card/80"
+                className="group relative min-w-0 h-full overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-brand/35 hover:bg-card/80 sm:p-6"
               >
                 <span className="font-display text-sm text-gold">
                   {String(i + 1).padStart(2, "0")}

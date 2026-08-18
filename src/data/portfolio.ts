@@ -17,6 +17,10 @@ export const HERO_BACKGROUND_VIDEO = "BACKGROUND_VIDEO";
 // Optional poster image shown before the video plays.
 export const HERO_BACKGROUND_POSTER = "BACKGROUND_POSTER";
 
+// About-section motion panel. Paste a hosted mp4/webm URL when ready.
+export const ABOUT_BACKGROUND_VIDEO = "BACKGROUND_VIDEO";
+export const ABOUT_BACKGROUND_POSTER = "BACKGROUND_POSTER";
+
 // ----------------------------------------------------------------------------
 //  PROFILE
 // ----------------------------------------------------------------------------

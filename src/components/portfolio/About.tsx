@@ -1,17 +1,39 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check, Image as ImageIcon } from "lucide-react";
-import { aboutCards, profile, services } from "@/data/portfolio";
+import {
+  aboutCards,
+  ABOUT_BACKGROUND_POSTER,
+  ABOUT_BACKGROUND_VIDEO,
+  profile,
+  services,
+} from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
-const PROFILE_IMAGE_PLACEHOLDER = "PROFILE_IMAGE";
+const VIDEO_PLACEHOLDER = "BACKGROUND_VIDEO";
+const POSTER_PLACEHOLDER = "BACKGROUND_POSTER";
 
-function ProfileImage() {
+function BackgroundMedia() {
+  const hasVideo =
+    ABOUT_BACKGROUND_VIDEO && ABOUT_BACKGROUND_VIDEO !== VIDEO_PLACEHOLDER;
   const hasImage = Boolean(profile.profileImage);
+  const hasPoster =
+    ABOUT_BACKGROUND_POSTER && ABOUT_BACKGROUND_POSTER !== POSTER_PLACEHOLDER;
 
   return (
-    <div className="profile-image group relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[34rem]">
-      {hasImage ? (
+    <div className="profile-image group relative min-h-[18rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[22rem]">
+      {hasVideo ? (
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src={ABOUT_BACKGROUND_VIDEO}
+          poster={hasPoster ? ABOUT_BACKGROUND_POSTER : undefined}
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="Siddhant background video"
+        />
+      ) : hasImage ? (
         <img
           src={profile.profileImage}
           alt={`${profile.name} portrait`}
@@ -27,16 +49,17 @@ function ProfileImage() {
               <ImageIcon className="size-6" strokeWidth={1.5} />
             </span>
             <span className="font-display text-xl font-semibold text-ink/75">
-              {PROFILE_IMAGE_PLACEHOLDER}
+              BACKGROUND_VIDEO
             </span>
-            <span className="max-w-[14rem] text-xs uppercase leading-relaxed tracking-[0.18em] text-muted-foreground">
-              Add Siddhant&apos;s portrait in the content config
+            <span className="max-w-[18rem] text-xs uppercase leading-relaxed tracking-[0.18em] text-muted-foreground">
+              Add an about-section video or portrait in the content config
             </span>
           </div>
         </>
       )}
-      <div className="absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-ink/15 pt-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-        <span>Portrait / 001</span>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-white/35 pt-3 text-[10px] uppercase tracking-[0.2em] text-white/85">
+        <span>{hasVideo ? "Background motion / 001" : "Portrait / 001"}</span>
         <span className="text-brand">SJ</span>
       </div>
     </div>
@@ -56,37 +79,31 @@ export function About() {
         description="A closer look at the places, interests, and working energy behind the portfolio."
       />
 
-      <div className="mt-14 grid min-w-0 gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-stretch lg:gap-12">
-        <div className="grid min-w-0 gap-3 sm:grid-cols-2">
-          {aboutCards.map((card, i) => (
-            <Reveal key={card.number} delay={i * 0.06}>
-              <motion.article
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group relative h-full min-w-0 overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-brand/40 hover:bg-card/90 sm:p-6"
-              >
-                <span className="font-display text-sm text-gold">{card.number}</span>
-                <h3 className="mt-8 font-display text-xl font-semibold leading-tight text-ink transition-colors group-hover:text-brand">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {card.copy}
-                </p>
-                <span className="absolute -bottom-7 -right-2 font-display text-7xl font-semibold leading-none tracking-[-0.12em] text-ink/[0.04]">
-                  {card.number}
-                </span>
-              </motion.article>
-            </Reveal>
-          ))}
-        </div>
-
-        <Reveal delay={0.12} className="min-w-0">
-          <ProfileImage />
-        </Reveal>
+      <div className="mt-14 grid min-w-0 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {aboutCards.map((card, i) => (
+          <Reveal key={card.number} delay={i * 0.06}>
+            <motion.article
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="group relative h-full min-w-0 overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-brand/40 hover:bg-card/90 sm:p-6"
+            >
+              <span className="font-display text-sm text-gold">{card.number}</span>
+              <h3 className="mt-8 font-display text-xl font-semibold leading-tight text-ink transition-colors group-hover:text-brand">
+                {card.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {card.copy}
+              </p>
+              <span className="absolute -bottom-7 -right-2 font-display text-7xl font-semibold leading-none tracking-[-0.12em] text-ink/[0.04]">
+                {card.number}
+              </span>
+            </motion.article>
+          </Reveal>
+        ))}
       </div>
 
       <div className="mt-20 grid min-w-0 gap-14 border-t border-border pt-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-        <div>
+        <div className="min-w-0">
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-brand">
               Current focus
@@ -115,9 +132,13 @@ export function About() {
               </span>
             </a>
           </Reveal>
+
+          <Reveal delay={0.2} className="mt-10">
+            <BackgroundMedia />
+          </Reveal>
         </div>
 
-        <div>
+        <div className="min-w-0">
           <Reveal>
             <div className="flex items-end justify-between gap-5 border-b border-border pb-4">
               <div>

@@ -7,6 +7,7 @@ import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
+import { SmoothScroll } from "@/components/portfolio/SmoothScroll";
 import { TrackRecord } from "@/components/portfolio/TrackRecord";
 
 export default function Landing() {
@@ -30,6 +31,8 @@ export default function Landing() {
         className="grain pointer-events-none fixed inset-0 z-[70] opacity-[0.05] mix-blend-overlay"
         aria-hidden
       />
+
+      <SmoothScroll />
 
       <Cursor />
 

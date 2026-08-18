@@ -646,3 +646,10 @@
 .custom-cursor.is-pressed .custom-cursor-halo {
   transform: translate(-50%, -50%) scale(0.72);
 }
+
+/* Smooth-scroll helpers */
+/* Keep anchored sections clear of the fixed navbar when nav links glide to them. */
+section[id],
+footer[id] {
+  scroll-margin-top: 5rem;
+}

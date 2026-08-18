@@ -13,6 +13,37 @@ import { useTilt } from "@/hooks/use-tilt";
 const VIDEO_PLACEHOLDER = "BACKGROUND_VIDEO";
 const POSTER_PLACEHOLDER = "BACKGROUND_POSTER";
 
+const BRIDGE_PHRASES = [
+  "Toronto-based",
+  "Builder",
+  "Design + tech",
+  "Learning AI",
+  "Open to work",
+  "Let's build",
+];
+
+function SectionBridge() {
+  const row = [...BRIDGE_PHRASES, ...BRIDGE_PHRASES];
+  return (
+    <div
+      aria-hidden
+      className="relative mt-12 overflow-hidden border-y border-border py-5 [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]"
+    >
+      <div className="flex w-max animate-marquee gap-12">
+        {row.map((phrase, i) => (
+          <span
+            key={`${phrase}-${i}`}
+            className="flex items-center gap-12 whitespace-nowrap font-display text-base uppercase tracking-[0.22em] text-ink/50"
+          >
+            {phrase}
+            <span className="size-1.5 rounded-full bg-gold/70" />
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function AboutMasthead() {
   return (
     <div className="grid gap-8 border-y border-border py-7 sm:grid-cols-[minmax(0,1fr)_15rem] sm:items-end sm:gap-12 sm:py-9 lg:grid-cols-[minmax(0,1fr)_19rem]">
@@ -168,7 +199,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32"
+      className="relative mx-auto max-w-6xl px-5 pt-24 pb-10 sm:px-8 sm:pt-32 sm:pb-14"
     >
       <AboutMasthead />
 
@@ -280,6 +311,8 @@ export function About() {
           </div>
         </div>
       </div>
+
+      <SectionBridge />
     </section>
   );
 }

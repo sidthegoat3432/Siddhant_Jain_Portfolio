@@ -19,10 +19,10 @@ export const HERO_BACKGROUND_VIDEO: string =
 // Optional poster image shown before the video plays.
 export const HERO_BACKGROUND_POSTER = "";
 
-// About-section motion panel — "Architecture of Toronto's Skyline"
-// (LeoTor, CC BY 4.0). Swap for any hosted mp4/webm URL when ready.
+// About-section motion panel — same dusk aerial Toronto skyline as the hero
+// (Lucastphotography, CC BY 4.0). Swap for any hosted mp4/webm URL when ready.
 export const ABOUT_BACKGROUND_VIDEO: string =
-  "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/62/Toronto_Skyline2.webm/Toronto_Skyline2.webm.480p.vp9.webm";
+  "https://upload.wikimedia.org/wikipedia/commons/9/94/Toronto_Skyline.webm";
 export const ABOUT_BACKGROUND_POSTER = "BACKGROUND_POSTER";
 
 // ----------------------------------------------------------------------------

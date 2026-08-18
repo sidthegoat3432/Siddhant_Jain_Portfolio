@@ -113,7 +113,7 @@ function PosterTile({ poster, index }: { poster: Poster; index: number }) {
 
 export function Projects() {
   return (
-    <section id="projects" className="relative overflow-hidden py-28 sm:py-40">
+    <section id="projects" className="relative overflow-hidden pt-12 pb-28 sm:pt-16 sm:pb-40">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <SectionHeading

@@ -44,7 +44,8 @@ export const profile = {
   email: "siddhant0516@gmail.com",
 
   // 👈 REPLACE: your resume / CV link
-  resumeUrl: "#",
+  resumeUrl:
+    "https://drive.google.com/file/d/1fHsBjT29sho26HJW2Mrm2JC6ayTm6RWY/view?usp=sharing",
 
   // 👈 PROFILE IMAGE: your portrait URL.
   profileImage:

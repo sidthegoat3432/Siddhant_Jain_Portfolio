@@ -106,7 +106,6 @@ function ProfileImage() {
 function BackgroundMedia() {
   const hasVideo =
     ABOUT_BACKGROUND_VIDEO && ABOUT_BACKGROUND_VIDEO !== VIDEO_PLACEHOLDER;
-  const hasImage = Boolean(profile.profileImage);
   const hasPoster =
     ABOUT_BACKGROUND_POSTER && ABOUT_BACKGROUND_POSTER !== POSTER_PLACEHOLDER;
 
@@ -126,17 +125,6 @@ function BackgroundMedia() {
           loop
           playsInline
           aria-label="Siddhant background video"
-        />
-      ) : hasImage ? (
-        <motion.img
-          src={profile.profileImage}
-          alt={`${profile.name} portrait`}
-          className="absolute inset-0 h-full w-full object-cover"
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          whileHover={{ scale: 1.04 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          loading="lazy"
         />
       ) : (
         <>

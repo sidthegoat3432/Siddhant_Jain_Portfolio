@@ -42,6 +42,9 @@ export const profile = {
   // 👈 REPLACE: your resume / CV link
   resumeUrl: "#",
 
+  // 👈 PROFILE IMAGE PLACEHOLDER: paste your portrait URL here when ready.
+  profileImage: "",
+
   // 👈 REPLACE: a short, honest introduction — your interests, current focus,
   // and the kind of work you want to grow into.
   bio: "I’m Siddhant Jain, a developer building my foundation across the web stack. I’m interested in thoughtful interfaces, practical software, and learning by turning ideas into working experiences.",
@@ -243,16 +246,6 @@ export const tools: Tool[] = [
     description: "Convex gives me a reactive backend foundation for products that need live data and simple server logic. I use it to connect frontend experiences to reliable queries, mutations, and authentication flows.",
   },
   {
-    name: "PostgreSQL",
-    category: "Backend",
-    description: "I use PostgreSQL when a product needs dependable relational data and room to grow. Thoughtful schemas and queries keep the foundation trustworthy as features become more ambitious.",
-  },
-  {
-    name: "Prisma",
-    category: "Backend",
-    description: "Prisma makes database access more legible and type-safe within a TypeScript application. I use it to keep data models close to the product logic they support.",
-  },
-  {
     name: "Figma",
     category: "Design",
     description: "I use Figma to explore structure, communicate direction, and refine interfaces before they become code. It helps turn abstract ideas into shared, testable decisions.",
@@ -263,11 +256,6 @@ export const tools: Tool[] = [
     description: "GSAP is useful when a project needs precise, choreographed animation. I use it to build expressive sequences that feel intentional across scroll, interaction, and transition states.",
   },
   {
-    name: "Three.js",
-    category: "Design",
-    description: "I use Three.js to bring depth, spatial composition, and generative visual ideas into the browser. It is especially useful for experiences that need a more cinematic or exploratory layer.",
-  },
-  {
     name: "Git",
     category: "Tooling",
     description: "Git keeps the work traceable, collaborative, and safe to iterate on. I use clear commits and branches to make progress easier to review and recover.",
@@ -276,6 +264,36 @@ export const tools: Tool[] = [
     name: "Docker",
     category: "Tooling",
     description: "Docker helps me create repeatable environments across development and deployment. It reduces setup friction and makes the path from local work to production more dependable.",
+  },
+];
+
+export interface AboutCard {
+  number: string;
+  title: string;
+  copy: string;
+}
+
+// 👈 REPLACE: the four personal details you want visitors to understand first.
+export const aboutCards: AboutCard[] = [
+  {
+    number: "01",
+    title: "Toronto-based",
+    copy: "I use Toronto as the visual anchor for this site: tall structures, clean grids, transit energy, skyline motion, and big-city ambition.",
+  },
+  {
+    number: "02",
+    title: "Project builder",
+    copy: "I like turning class ideas into finished digital experiences: websites, animations, decks, and interactive explainers.",
+  },
+  {
+    number: "03",
+    title: "Tech + design",
+    copy: "I’m drawn to where AI, technology, business, and design meet — lately I’m all-in on learning AI.",
+  },
+  {
+    number: "04",
+    title: "Hands-on learner",
+    copy: "I learn by building, testing, fixing, and presenting. Off the screen, that energy goes into volleyball, badminton, and producing the odd track.",
   },
 ];
 

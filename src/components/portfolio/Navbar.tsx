@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { profile } from "@/data/portfolio";
+import { gmailComposeUrl, profile } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -78,7 +78,9 @@ export function Navbar() {
             Available
           </a>
           <a
-            href={`mailto:${profile.email}`}
+            href={gmailComposeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_24px_rgba(15,118,110,0.25)]"
           >
             Email me
@@ -127,7 +129,9 @@ export function Navbar() {
                 Contact &amp; links
               </a>
               <a
-                href={`mailto:${profile.email}`}
+                href={gmailComposeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
               >

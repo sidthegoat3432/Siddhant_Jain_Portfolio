@@ -1,5 +1,5 @@
 import { ArrowUpRight, Mail } from "lucide-react";
-import { profile, socialLinks } from "@/data/portfolio";
+import { gmailComposeUrl, profile, socialLinks } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 import { SocialIcon } from "./SocialIcon";
@@ -28,7 +28,9 @@ export function Contact() {
 
             <Reveal delay={0.16}>
               <a
-                href={`mailto:${profile.email}`}
+                href={gmailComposeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group mt-10 inline-flex items-center gap-4"
               >
                 <span className="flex size-14 items-center justify-center rounded-2xl bg-primary text-primary-foreground transition-transform group-hover:scale-105">

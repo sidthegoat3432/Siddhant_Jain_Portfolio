@@ -57,6 +57,11 @@ export const profile = {
   availability: "Open to freelance & full-time roles" as string,
 } as const;
 
+// Opens Gmail's compose window in the browser with this email pre-filled.
+export const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+  profile.email,
+)}`;
+
 // ----------------------------------------------------------------------------
 //  SOCIAL LINKS
 // ----------------------------------------------------------------------------
@@ -385,20 +390,20 @@ export interface Service {
 // 👈 REPLACE: the services you want visitors to ask you about.
 export const services: Service[] = [
   {
-    title: "Personal websites",
-    copy: "Thoughtful portfolios, landing pages, and personal sites that give your work a clear presence online.",
+    title: "Building websites",
+    copy: "Clean, responsive websites and landing pages that present your work clearly and feel finished on every screen.",
   },
   {
-    title: "Frontend development",
-    copy: "Responsive interfaces built with attention to structure, usability, motion, and maintainable code.",
+    title: "Making posters for your product",
+    copy: "Posters and promotional visuals designed to catch attention and communicate your product's message at a glance.",
   },
   {
-    title: "UI implementation",
-    copy: "Designs translated into polished, accessible web experiences that feel consistent across screen sizes.",
+    title: "Tutoring",
+    copy: "Patient, clear help with school subjects, tech basics, and personal projects so concepts click and stick.",
   },
   {
-    title: "Website improvements",
-    copy: "Focused help with visual refinements, interactions, responsiveness, and the details that make a site feel finished.",
+    title: "Making presentations",
+    copy: "Decks and pitch presentations structured to tell one clear story and keep an audience engaged from start to finish.",
   },
 ];
 

@@ -46,8 +46,9 @@ export const profile = {
   // 👈 REPLACE: your resume / CV link
   resumeUrl: "#",
 
-  // 👈 PROFILE IMAGE PLACEHOLDER: paste your portrait URL here when ready.
-  profileImage: "",
+  // 👈 PROFILE IMAGE: your portrait URL.
+  profileImage:
+    "https://lh3.googleusercontent.com/d/1PoHLLd7rhHohDGcX85Rnx3BAuqE7lrTk",
 
   // 👈 REPLACE: a short, honest introduction — your interests, current focus,
   // and the kind of work you want to grow into.

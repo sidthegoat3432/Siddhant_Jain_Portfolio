@@ -124,7 +124,7 @@ export const projects: Project[] = [
     description:
       "A curated directory of AI tools, creative resources, productivity apps, and learning platforms — my first website, built and shipped to the web.",
     image:
-      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fsidthegoat3432.github.io%2Fdiscoverly%2F?w=1280&h=960",
+      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fsidthegoat3432.github.io%2Fdiscoverly%2F?w=1280&h=720",
     video: "",
     link: "https://sidthegoat3432.github.io/discoverly/#/",
     tags: ["Web Design", "Curated Directory"],

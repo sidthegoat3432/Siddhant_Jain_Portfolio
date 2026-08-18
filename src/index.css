@@ -329,6 +329,20 @@
   background: radial-gradient(circle at 50% 50%, transparent 22%, rgba(11, 18, 32, 0.09) 100%);
 }
 
+/* Real media (screenshots / videos): drop the art-directed sheen and vignette,
+   keep only a soft bottom scrim so the frame labels stay legible. */
+.project-scene--media::before {
+  display: none;
+}
+
+.project-scene--media::after {
+  background: linear-gradient(to top, rgba(11, 18, 32, 0.42), transparent 38%);
+}
+
+.project-scene--media .scene-scanline {
+  opacity: 0;
+}
+
 .scene-grid {
   position: absolute;
   inset: -20%;

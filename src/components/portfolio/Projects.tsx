@@ -10,7 +10,11 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
   const hasMedia = Boolean(project.video || project.image);
 
   return (
-    <div className={`project-scene ${sceneClasses[index % sceneClasses.length]}`}>
+    <div
+      className={`project-scene ${sceneClasses[index % sceneClasses.length]}${
+        hasMedia ? " project-scene--media" : ""
+      }`}
+    >
       {project.video ? (
         <video
           className="absolute inset-0 h-full w-full object-cover"
@@ -24,7 +28,7 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
         <img
           src={project.image}
           alt={project.title}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-top"
           loading="lazy"
         />
       ) : (

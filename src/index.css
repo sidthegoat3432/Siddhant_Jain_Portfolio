@@ -653,3 +653,73 @@ section[id],
 footer[id] {
   scroll-margin-top: 5rem;
 }
+
+/* ---------------------------------------------------------------------------
+   Kinetic SJ mark — living ambient motion
+   The mark keeps moving on its own; the cursor tilt/parallax is driven by
+   Framer Motion in Hero.tsx and layers on top of these CSS animations.
+--------------------------------------------------------------------------- */
+@keyframes kinetic-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes kinetic-spin-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes kinetic-aurora {
+  0%,
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1) translate(3%, -2%);
+    opacity: 1;
+  }
+}
+
+@keyframes kinetic-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-52px) scale(0.35);
+    opacity: 0;
+  }
+}
+
+.kinetic-spin {
+  animation: kinetic-spin 16s linear infinite;
+  will-change: transform;
+}
+
+.kinetic-spin-reverse {
+  animation: kinetic-spin-reverse 26s linear infinite;
+  will-change: transform;
+}
+
+.kinetic-aurora {
+  animation: kinetic-aurora 9s ease-in-out infinite;
+}
+
+.kinetic-rise {
+  animation: kinetic-rise 7s ease-in infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kinetic-spin,
+  .kinetic-spin-reverse,
+  .kinetic-aurora,
+  .kinetic-rise {
+    animation: none;
+  }
+}

@@ -83,38 +83,59 @@ function KineticMark() {
       }}
       whileTap={{ scale: 0.985 }}
       style={{ rotateX, rotateY, transformPerspective: 900 }}
-      className="relative flex aspect-square w-full max-w-[31rem] items-center justify-center overflow-hidden rounded-[2rem] border border-ink/15 bg-card/70 shadow-[0_24px_70px_rgba(11,18,32,0.1)] will-change-transform"
+      className="group relative flex aspect-square w-full max-w-[31rem] items-center justify-center overflow-hidden rounded-[2rem] border border-ink/15 bg-card/70 shadow-[0_24px_70px_rgba(11,18,32,0.1)] will-change-transform"
     >
+      {/* Breathing aurora — always drifting behind the layers */}
+      <motion.div style={{ x: orbitX, y: orbitY }} className="absolute inset-0">
+        <div className="kinetic-aurora absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(15,118,110,0.2),transparent_34%,transparent_60%,rgba(180,83,9,0.1))]" />
+      </motion.div>
+
+      {/* Grid — mouse parallax only */}
       <motion.div
         style={{ x: gridX, y: gridY }}
         className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px]"
       />
-      <motion.div
-        style={{ x: orbitX, y: orbitY }}
-        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(15,118,110,0.16),transparent_30%,transparent_64%,rgba(11,18,32,0.05))]"
-      />
 
-      {/* The orbital mark is intentionally CSS-made so the placeholder still feels designed. */}
+      {/* Orbital system — rings spin on their own, dots travel, and the whole
+          system leans toward your cursor on hover */}
       <motion.div
         style={{ x: orbitX, y: orbitY }}
         className="absolute inset-0 flex items-center justify-center"
       >
-        <motion.div
-          animate={reduced ? { rotate: 0 } : { rotate: 360 }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          className="relative size-[68%] rounded-full border border-brand/30"
-        >
-          <div className="absolute inset-[16%] rounded-full border border-gold/40 border-dashed" />
-          <div className="absolute inset-[31%] rounded-full border border-ink/20" />
-          <span className="absolute -right-1 top-1/2 flex size-3 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_14px_rgba(180,83,9,0.45)]">
+        <div className="kinetic-spin relative size-[68%] rounded-full border border-brand/30 transition-colors duration-500 group-hover:border-brand/70">
+          <span className="absolute -right-1 top-1/2 flex size-3 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_14px_rgba(180,83,9,0.5)]">
             <span className="size-1 rounded-full bg-ink" />
           </span>
-          <span className="absolute -bottom-1 left-[18%] flex size-2.5 rounded-full bg-brand shadow-[0_0_14px_rgba(15,118,110,0.45)]" />
-        </motion.div>
+          <span className="absolute -bottom-1 left-[18%] flex size-2.5 rounded-full bg-brand shadow-[0_0_14px_rgba(15,118,110,0.5)]" />
+
+          {/* Counter-rotating dashed ring with its own traveling dot */}
+          <div className="kinetic-spin-reverse absolute inset-[16%] rounded-full border border-dashed border-gold/40">
+            <span className="absolute -top-1 left-1/2 size-2 -translate-x-1/2 rounded-full bg-gold shadow-[0_0_12px_rgba(180,83,9,0.5)]" />
+          </div>
+          <div className="absolute inset-[31%] rounded-full border border-ink/20" />
+        </div>
       </motion.div>
 
+      {/* Rising particles */}
+      <span className="kinetic-rise absolute bottom-[22%] left-[20%] size-1.5 rounded-full bg-brand/70" />
+      <span
+        className="kinetic-rise absolute bottom-[20%] left-[58%] size-1 rounded-full bg-gold/80"
+        style={{ animationDelay: "1.6s" }}
+      />
+      <span
+        className="kinetic-rise absolute bottom-[24%] left-[42%] size-1 rounded-full bg-brand/50"
+        style={{ animationDelay: "3.2s" }}
+      />
+      <span
+        className="kinetic-rise absolute bottom-[16%] left-[72%] size-1.5 rounded-full bg-brand/60"
+        style={{ animationDelay: "4.4s" }}
+      />
+
+      {/* Monogram — breathing + drifting with the pointer */}
       <motion.div
         style={{ x: monoX, y: monoY }}
+        animate={reduced ? { scale: 1 } : { scale: [1, 1.02, 1] }}
+        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute flex flex-col items-center gap-2"
       >
         <Crosshair className="size-5 text-brand" strokeWidth={1.5} />

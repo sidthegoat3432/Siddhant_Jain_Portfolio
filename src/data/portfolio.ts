@@ -35,7 +35,7 @@ export const profile = {
   firstName: "Siddhant",
 
   // 👈 REPLACE: your role / title
-  role: "Full-Stack Developer",
+  role: "Builder & creative problem-solver",
 
   // 👈 REPLACE: your city / location
   city: "Your City",
@@ -51,7 +51,7 @@ export const profile = {
 
   // 👈 REPLACE: a short, honest introduction — your interests, current focus,
   // and the kind of work you want to grow into.
-  bio: "I’m Siddhant Jain, a developer building my foundation across the web stack. I’m interested in thoughtful interfaces, practical software, and learning by turning ideas into working experiences.",
+  bio: "I’m Siddhant Jain, a student and creative builder learning across design, storytelling, and technology. I’m interested in thoughtful interfaces, clear communication, and turning ideas into finished experiences.",
 
   // 👈 REPLACE: availability — shows as a status badge in the hero
   availability: "Open to freelance & full-time roles" as string,
@@ -173,30 +173,30 @@ export interface TrackRecordItem {
 // 👈 REPLACE: honest milestones, programs, projects, or writing you want to document.
 export const trackRecord: TrackRecordItem[] = [
   {
-    year: "NOW",
-    title: "Building across the web stack",
+    year: "FALL 2026",
+    title: "Starting the IB Diploma Programme",
     description:
-      "Developing a stronger foundation through hands-on frontend, backend, and product experiments.",
+      "Heading into high school on the International Baccalaureate track.",
   },
   {
     year: "2026",
-    title: "Turning class ideas into digital work",
+    title: "Writing on Medium",
     description:
-      "Websites, animations, presentations, and interactive explainers built to make an idea clearer.",
-    link: "#projects",
-    linkLabel: "See the work",
+      "Sharing thinking and progress in public as part of building a clearer point of view.",
+    link: "https://medium.com/@siddhant0516",
+    linkLabel: "Read on Medium",
   },
   {
-    year: "2026",
-    title: "Learning AI by making things",
+    year: "2025",
+    title: "Completed the IBT (International Business & Technology)",
     description:
-      "Exploring how AI, technology, business, and design can come together in useful experiences.",
+      "Finished the International Business & Technology programme before moving into the IB Diploma track.",
   },
   {
-    year: "ONGOING",
-    title: "Practice outside the screen",
+    year: "2024",
+    title: "Peel Skills — 2nd Place, Video",
     description:
-      "Volleyball, badminton, music production, and the habits that keep curiosity and discipline in motion.",
+      "Placed second for a video entry, recognizing storytelling and execution in front of an audience.",
   },
 ];
 
@@ -233,64 +233,64 @@ export interface Tool {
 // 👈 REPLACE: the 12 tools you actually use in your current toolkit.
 export const tools: Tool[] = [
   {
-    name: "TypeScript",
-    category: "Language",
-    description: "I use TypeScript to make interfaces and application logic easier to reason about as products grow. Strong types catch mistakes early and make collaboration across a codebase more predictable.",
-  },
-  {
-    name: "JavaScript",
-    category: "Language",
-    description: "JavaScript is the foundation I use to create responsive, interactive experiences on the web. I focus on clear, modern patterns that keep behavior fast and maintainable.",
-  },
-  {
-    name: "React",
-    category: "Frontend",
-    description: "I build React interfaces as reusable systems instead of isolated screens. This keeps complex products consistent, flexible, and easier to evolve.",
-  },
-  {
-    name: "Next.js",
-    category: "Frontend",
-    description: "I use Next.js when a project benefits from structured routing, performance-focused rendering, and a strong full-stack foundation. It helps connect polished frontend work to production-ready application flows.",
-  },
-  {
-    name: "Tailwind CSS",
-    category: "Frontend",
-    description: "Tailwind lets me move quickly while keeping spacing, typography, and color decisions consistent. I use it to create responsive interfaces without losing control of the visual system.",
-  },
-  {
-    name: "Framer Motion",
-    category: "Frontend",
-    description: "I use Framer Motion to give interfaces a sense of rhythm and intention. Motion supports hierarchy and feedback rather than distracting from the product.",
-  },
-  {
-    name: "Node.js",
-    category: "Backend",
-    description: "Node.js helps me build the server-side logic behind useful, connected products. I use it for APIs, integrations, background work, and the application behavior that interfaces depend on.",
-  },
-  {
-    name: "Convex",
-    category: "Backend",
-    description: "Convex gives me a reactive backend foundation for products that need live data and simple server logic. I use it to connect frontend experiences to reliable queries, mutations, and authentication flows.",
-  },
-  {
-    name: "Figma",
+    name: "Photoshop",
     category: "Design",
-    description: "I use Figma to explore structure, communicate direction, and refine interfaces before they become code. It helps turn abstract ideas into shared, testable decisions.",
+    description: "Photoshop is where I refine images, clean up layouts, and give visual ideas a polished finish. I use it to make assets and graphics that feel intentional rather than default.",
   },
   {
-    name: "GSAP",
+    name: "Video editing",
     category: "Design",
-    description: "GSAP is useful when a project needs precise, choreographed animation. I use it to build expressive sequences that feel intentional across scroll, interaction, and transition states.",
+    description: "I edit video with a focus on rhythm, pacing, and clear storytelling. Cuts, sound, and structure come together so a video holds attention from the first frame.",
   },
   {
-    name: "Git",
-    category: "Tooling",
-    description: "Git keeps the work traceable, collaborative, and safe to iterate on. I use clear commits and branches to make progress easier to review and recover.",
+    name: "Graphic design",
+    category: "Design",
+    description: "I create layouts, posters, and visual systems with clear hierarchy and consistent type and color. Graphic design helps me communicate an idea before a single word is read.",
   },
   {
-    name: "Docker",
-    category: "Tooling",
-    description: "Docker helps me create repeatable environments across development and deployment. It reduces setup friction and makes the path from local work to production more dependable.",
+    name: "Creative writing",
+    category: "Content",
+    description: "I write with the goal of making complicated ideas feel simple and human. Whether it’s project copy or an essay, I focus on clarity, voice, and momentum.",
+  },
+  {
+    name: "Presentations",
+    category: "Present",
+    description: "I design decks that explain one idea clearly per slide instead of cramming everything in at once. Strong structure and clean visuals keep the audience with the story.",
+  },
+  {
+    name: "Research",
+    category: "Lead",
+    description: "I dig into facts, audience, and context before making decisions. Research keeps the work grounded so the final result answers the right question.",
+  },
+  {
+    name: "Storytelling",
+    category: "Content",
+    description: "I shape projects around a clear beginning, middle, and point. Storytelling turns a collection of ideas into something people can follow and remember.",
+  },
+  {
+    name: "Public speaking",
+    category: "Present",
+    description: "I present the work rather than just submitting it. Preparation and delivery help the idea land with a room the same way it lands on the screen.",
+  },
+  {
+    name: "AI & Technology",
+    category: "Lead",
+    description: "I’m drawn to where AI, technology, business, and design intersect. I stay curious about new tools and learn by building small experiments with them.",
+  },
+  {
+    name: "Branding",
+    category: "Design",
+    description: "I think about names, voice, color, and consistency as one connected system. Branding gives a project a point of view that shows up everywhere.",
+  },
+  {
+    name: "Pitching",
+    category: "Lead",
+    description: "I turn an idea into a clear, confident case for why it matters and how it works. Pitching is about connecting the concept to the people in the room.",
+  },
+  {
+    name: "Photography",
+    category: "Design",
+    description: "I use photography to frame, light, and capture moments with intention. Composition and mood make an image feel considered rather than accidental.",
   },
 ];
 

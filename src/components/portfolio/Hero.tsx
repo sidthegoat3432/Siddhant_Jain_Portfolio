@@ -114,7 +114,7 @@ export function Hero() {
         className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-5 pb-24 pt-28 sm:px-8 lg:px-12"
       >
         <div className="mb-10 flex items-center justify-between border-b border-border/70 pb-4 text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:mb-14">
-          <span>Independent developer / portfolio 001</span>
+          <span>Independent builder / portfolio 001</span>
           <span className="hidden sm:inline">Scroll to inspect the work</span>
         </div>
 
@@ -154,8 +154,8 @@ export function Hero() {
             >
               <span className="font-display text-sm text-gold">01 —</span>
               <p className="max-w-xl text-lg leading-relaxed text-ink/70 sm:text-xl">
-                {profile.role} making ambitious digital products legible,
-                durable, and ready for the real world.
+                {profile.role} turning ideas into websites, visuals, and
+                stories that are clear, considered, and ready to share.
               </p>
             </motion.div>
 

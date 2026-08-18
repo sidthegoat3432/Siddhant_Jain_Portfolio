@@ -3,6 +3,7 @@ import { ArrowUpRight, CornerDownRight, ExternalLink } from "lucide-react";
 import { posters, projects, type Poster, type Project } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
+import { Tilt } from "./Tilt";
 
 const sceneClasses = ["scene-teal", "scene-gold", "scene-blue", "scene-rose"];
 
@@ -10,7 +11,7 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
   const hasMedia = Boolean(project.video || project.image);
 
   return (
-    <div
+    <Tilt
       className={`project-scene ${sceneClasses[index % sceneClasses.length]}${
         hasMedia ? " project-scene--media" : ""
       }`}
@@ -57,14 +58,14 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
         <span>Frame / {String(index + 1).padStart(2, "0")}</span>
         <span>{project.year}</span>
       </div>
-    </div>
+    </Tilt>
   );
 }
 
 function PosterTile({ poster, index }: { poster: Poster; index: number }) {
   return (
     <figure className="group">
-      <div className="poster-frame">
+      <Tilt className="poster-frame">
         {poster.image ? (
           <img
             src={poster.image}
@@ -97,7 +98,7 @@ function PosterTile({ poster, index }: { poster: Poster; index: number }) {
         )}
         <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
         <div className="scene-scanline" />
-      </div>
+      </Tilt>
       <figcaption className="mt-4 flex items-center justify-between gap-3">
         <span className="font-display text-sm font-medium text-ink">
           {poster.title}

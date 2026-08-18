@@ -8,6 +8,7 @@ import {
   services,
 } from "@/data/portfolio";
 import { EASE, Reveal } from "./Reveal";
+import { useTilt } from "@/hooks/use-tilt";
 
 const VIDEO_PLACEHOLDER = "BACKGROUND_VIDEO";
 const POSTER_PLACEHOLDER = "BACKGROUND_POSTER";
@@ -58,9 +59,13 @@ function AboutMasthead() {
 
 function ProfileImage() {
   const hasImage = Boolean(profile.profileImage);
+  const { rotateX, rotateY, handleMouseMove, handleMouseLeave } = useTilt(8, 10);
 
   return (
     <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformPerspective: 900 }}
       whileHover={{ y: -6, scale: 1.005 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="profile-image group relative min-h-[28rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[34rem]"
@@ -109,9 +114,13 @@ function BackgroundMedia() {
     ABOUT_BACKGROUND_VIDEO && ABOUT_BACKGROUND_VIDEO !== VIDEO_PLACEHOLDER;
   const hasPoster =
     ABOUT_BACKGROUND_POSTER && ABOUT_BACKGROUND_POSTER !== POSTER_PLACEHOLDER;
+  const { rotateX, rotateY, handleMouseMove, handleMouseLeave } = useTilt(8, 10);
 
   return (
     <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformPerspective: 900 }}
       whileHover={{ y: -5, scale: 1.005 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="profile-image group relative min-h-[18rem] overflow-hidden rounded-[2rem] border border-border bg-card/60 shadow-[0_24px_70px_rgba(11,18,32,0.1)] sm:min-h-[22rem]"

@@ -196,25 +196,87 @@ export interface Tool {
   name: string;
   // 👈 REPLACE: a short category label shown on the tile
   category: string;
+  // 👈 REPLACE: the two-sentence capability description shown in the popup
+  description: string;
 }
 
 // 👈 REPLACE: the tools you actually use (aim for ~15 for a balanced grid).
 export const tools: Tool[] = [
-  { name: "TypeScript", category: "Language" },
-  { name: "JavaScript", category: "Language" },
-  { name: "React", category: "Frontend" },
-  { name: "Next.js", category: "Frontend" },
-  { name: "Tailwind CSS", category: "Frontend" },
-  { name: "Framer Motion", category: "Frontend" },
-  { name: "Node.js", category: "Backend" },
-  { name: "Convex", category: "Backend" },
-  { name: "PostgreSQL", category: "Backend" },
-  { name: "Prisma", category: "Backend" },
-  { name: "Figma", category: "Design" },
-  { name: "GSAP", category: "Design" },
-  { name: "Three.js", category: "Design" },
-  { name: "Git", category: "Tooling" },
-  { name: "Docker", category: "Tooling" },
+  {
+    name: "TypeScript",
+    category: "Language",
+    description: "I use TypeScript to make interfaces and application logic easier to reason about as products grow. Strong types catch mistakes early and make collaboration across a codebase more predictable.",
+  },
+  {
+    name: "JavaScript",
+    category: "Language",
+    description: "JavaScript is the foundation I use to create responsive, interactive experiences on the web. I focus on clear, modern patterns that keep behavior fast and maintainable.",
+  },
+  {
+    name: "React",
+    category: "Frontend",
+    description: "I build React interfaces as reusable systems instead of isolated screens. This keeps complex products consistent, flexible, and easier to evolve.",
+  },
+  {
+    name: "Next.js",
+    category: "Frontend",
+    description: "I use Next.js when a project benefits from structured routing, performance-focused rendering, and a strong full-stack foundation. It helps connect polished frontend work to production-ready application flows.",
+  },
+  {
+    name: "Tailwind CSS",
+    category: "Frontend",
+    description: "Tailwind lets me move quickly while keeping spacing, typography, and color decisions consistent. I use it to create responsive interfaces without losing control of the visual system.",
+  },
+  {
+    name: "Framer Motion",
+    category: "Frontend",
+    description: "I use Framer Motion to give interfaces a sense of rhythm and intention. Motion supports hierarchy and feedback rather than distracting from the product.",
+  },
+  {
+    name: "Node.js",
+    category: "Backend",
+    description: "Node.js helps me build the server-side logic behind useful, connected products. I use it for APIs, integrations, background work, and the application behavior that interfaces depend on.",
+  },
+  {
+    name: "Convex",
+    category: "Backend",
+    description: "Convex gives me a reactive backend foundation for products that need live data and simple server logic. I use it to connect frontend experiences to reliable queries, mutations, and authentication flows.",
+  },
+  {
+    name: "PostgreSQL",
+    category: "Backend",
+    description: "I use PostgreSQL when a product needs dependable relational data and room to grow. Thoughtful schemas and queries keep the foundation trustworthy as features become more ambitious.",
+  },
+  {
+    name: "Prisma",
+    category: "Backend",
+    description: "Prisma makes database access more legible and type-safe within a TypeScript application. I use it to keep data models close to the product logic they support.",
+  },
+  {
+    name: "Figma",
+    category: "Design",
+    description: "I use Figma to explore structure, communicate direction, and refine interfaces before they become code. It helps turn abstract ideas into shared, testable decisions.",
+  },
+  {
+    name: "GSAP",
+    category: "Design",
+    description: "GSAP is useful when a project needs precise, choreographed animation. I use it to build expressive sequences that feel intentional across scroll, interaction, and transition states.",
+  },
+  {
+    name: "Three.js",
+    category: "Design",
+    description: "I use Three.js to bring depth, spatial composition, and generative visual ideas into the browser. It is especially useful for experiences that need a more cinematic or exploratory layer.",
+  },
+  {
+    name: "Git",
+    category: "Tooling",
+    description: "Git keeps the work traceable, collaborative, and safe to iterate on. I use clear commits and branches to make progress easier to review and recover.",
+  },
+  {
+    name: "Docker",
+    category: "Tooling",
+    description: "Docker helps me create repeatable environments across development and deployment. It reduces setup friction and makes the path from local work to production more dependable.",
+  },
 ];
 
 export interface Strength {

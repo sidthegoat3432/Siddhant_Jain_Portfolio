@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { strengths, tools } from "@/data/portfolio";
+import { useState } from "react";
+import { tools, strengths, type Tool } from "@/data/portfolio";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -23,6 +31,8 @@ function Ticker() {
 }
 
 export function Skills() {
+  const [selectedTool, setSelectedTool] = useState<Tool | null>(null);
+
   return (
     <section
       id="skills"
@@ -32,16 +42,20 @@ export function Skills() {
         index="04"
         eyebrow="Capabilities"
         title="The stack behind the work."
-        description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure."
+        description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure. Click any capability to see how I use it."
       />
 
       <div className="mt-14 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
         {tools.map((tool, i) => (
           <Reveal key={tool.name} delay={i * 0.04}>
-            <motion.div
+            <motion.button
+              type="button"
               whileHover={{ y: -4 }}
+              whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="group flex h-full flex-col justify-between rounded-2xl border border-border bg-card/50 p-4 backdrop-blur transition-colors hover:border-brand/40 hover:bg-card/80 sm:p-5"
+              onClick={() => setSelectedTool(tool)}
+              className="group flex h-full w-full flex-col justify-between rounded-2xl border border-border bg-card/50 p-4 text-left backdrop-blur transition-colors hover:border-brand/50 hover:bg-card/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 sm:p-5"
+              aria-label={`Learn more about ${tool.name}`}
             >
               <div className="flex items-start justify-between gap-3">
                 <span className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
@@ -49,13 +63,47 @@ export function Skills() {
                 </span>
                 <span className="mt-0.5 size-1.5 shrink-0 rounded-full bg-brand/70 transition-colors group-hover:bg-gold" />
               </div>
-              <h3 className="mt-7 font-display text-base font-medium leading-tight text-ink sm:text-lg">
-                {tool.name}
-              </h3>
-            </motion.div>
+              <div>
+                <h3 className="mt-7 font-display text-base font-medium leading-tight text-ink sm:text-lg">
+                  {tool.name}
+                </h3>
+                <span className="mt-3 block text-[10px] uppercase tracking-[0.16em] text-brand/70 opacity-0 transition-opacity group-hover:opacity-100">
+                  View capability
+                </span>
+              </div>
+            </motion.button>
           </Reveal>
         ))}
       </div>
+
+      <Dialog
+        open={selectedTool !== null}
+        onOpenChange={(open) => {
+          if (!open) setSelectedTool(null);
+        }}
+      >
+        <DialogContent className="max-w-xl border-brand/20 bg-card p-7 shadow-[0_24px_80px_rgba(11,18,32,0.2)] sm:p-9">
+          {selectedTool && (
+            <>
+              <DialogHeader className="pr-8 text-left">
+                <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-brand">
+                  Capability / {selectedTool.category}
+                </p>
+                <DialogTitle className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                  {selectedTool.name}
+                </DialogTitle>
+                <DialogDescription className="pt-3 text-base leading-relaxed text-muted-foreground">
+                  {selectedTool.description}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-2 flex items-center gap-3 border-t border-border pt-5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                <span className="size-2 rounded-full bg-brand" />
+                Part of Siddhant&apos;s working toolkit
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <div className="mt-28 border-t border-border pt-12 sm:mt-36">
         <Reveal>

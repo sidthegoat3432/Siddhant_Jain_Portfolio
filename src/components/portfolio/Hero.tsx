@@ -1,6 +1,12 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { ArrowDown, ArrowUpRight, Circle, Crosshair, MapPin } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState, type MouseEvent } from "react";
 import {
   HERO_BACKGROUND_POSTER,
   HERO_BACKGROUND_VIDEO,
@@ -31,25 +37,86 @@ const introItem = {
 };
 
 function KineticMark() {
+  const [reduced] = useState(
+    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+
+  // 3D tilt — the card leans toward the cursor, smoothed by springs.
+  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [9, -9]), {
+    stiffness: 160,
+    damping: 18,
+  });
+  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-12, 12]), {
+    stiffness: 160,
+    damping: 18,
+  });
+
+  // Layer parallax — each plane drifts at its own depth as the pointer moves.
+  const gridX = useTransform(mx, [-0.5, 0.5], [7, -7]);
+  const gridY = useTransform(my, [-0.5, 0.5], [7, -7]);
+  const orbitX = useTransform(mx, [-0.5, 0.5], [-14, 14]);
+  const orbitY = useTransform(my, [-0.5, 0.5], [-14, 14]);
+  const monoX = useTransform(mx, [-0.5, 0.5], [5, -5]);
+  const monoY = useTransform(my, [-0.5, 0.5], [5, -5]);
+
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (reduced) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    mx.set((e.clientX - rect.left) / rect.width - 0.5);
+    my.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
+
+  const handleMouseLeave = () => {
+    mx.set(0);
+    my.set(0);
+  };
+
   return (
-    <div className="relative flex aspect-square w-full max-w-[31rem] items-center justify-center overflow-hidden rounded-[2rem] border border-ink/15 bg-card/70 shadow-[0_24px_70px_rgba(11,18,32,0.1)]">
-      <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(15,118,110,0.16),transparent_30%,transparent_64%,rgba(11,18,32,0.05))]" />
+    <motion.div
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      whileHover={{
+        boxShadow:
+          "0 30px 80px rgba(11,18,32,0.16), 0 0 44px rgba(15,118,110,0.14)",
+      }}
+      whileTap={{ scale: 0.985 }}
+      style={{ rotateX, rotateY, transformPerspective: 900 }}
+      className="relative flex aspect-square w-full max-w-[31rem] items-center justify-center overflow-hidden rounded-[2rem] border border-ink/15 bg-card/70 shadow-[0_24px_70px_rgba(11,18,32,0.1)] will-change-transform"
+    >
+      <motion.div
+        style={{ x: gridX, y: gridY }}
+        className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px]"
+      />
+      <motion.div
+        style={{ x: orbitX, y: orbitY }}
+        className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(15,118,110,0.16),transparent_30%,transparent_64%,rgba(11,18,32,0.05))]"
+      />
 
       {/* The orbital mark is intentionally CSS-made so the placeholder still feels designed. */}
       <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className="relative size-[68%] rounded-full border border-brand/30"
+        style={{ x: orbitX, y: orbitY }}
+        className="absolute inset-0 flex items-center justify-center"
       >
-        <div className="absolute inset-[16%] rounded-full border border-gold/40 border-dashed" />
-        <div className="absolute inset-[31%] rounded-full border border-ink/20" />
-        <span className="absolute -right-1 top-1/2 flex size-3 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_14px_rgba(180,83,9,0.45)]">
-          <span className="size-1 rounded-full bg-ink" />
-        </span>
-        <span className="absolute -bottom-1 left-[18%] flex size-2.5 rounded-full bg-brand shadow-[0_0_14px_rgba(15,118,110,0.45)]" />
+        <motion.div
+          animate={reduced ? { rotate: 0 } : { rotate: 360 }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="relative size-[68%] rounded-full border border-brand/30"
+        >
+          <div className="absolute inset-[16%] rounded-full border border-gold/40 border-dashed" />
+          <div className="absolute inset-[31%] rounded-full border border-ink/20" />
+          <span className="absolute -right-1 top-1/2 flex size-3 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_14px_rgba(180,83,9,0.45)]">
+            <span className="size-1 rounded-full bg-ink" />
+          </span>
+          <span className="absolute -bottom-1 left-[18%] flex size-2.5 rounded-full bg-brand shadow-[0_0_14px_rgba(15,118,110,0.45)]" />
+        </motion.div>
       </motion.div>
-      <div className="absolute flex flex-col items-center gap-2">
+
+      <motion.div
+        style={{ x: monoX, y: monoY }}
+        className="absolute flex flex-col items-center gap-2"
+      >
         <Crosshair className="size-5 text-brand" strokeWidth={1.5} />
         <span className="font-display text-[clamp(4rem,10vw,7rem)] font-semibold leading-none tracking-[-0.1em] text-ink/90">
           SJ
@@ -57,7 +124,8 @@ function KineticMark() {
         <span className="text-[9px] uppercase tracking-[0.35em] text-muted-foreground">
           Digital systems / 2026
         </span>
-      </div>
+      </motion.div>
+
       <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between border-t border-ink/10 pt-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
         <span className="flex items-center gap-2">
           <Circle className="size-2 fill-brand text-brand" />
@@ -65,7 +133,7 @@ function KineticMark() {
         </span>
         <span>28° 36′ N / 77° 13′ E</span>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -191,8 +259,8 @@ export function Hero() {
             <KineticMark />
             <div className="mt-4 flex items-start justify-between gap-4 text-xs text-muted-foreground">
               <span className="max-w-[15rem] leading-relaxed">
-                A placeholder for Siddhant&apos;s background video. Replace the
-                source in the content config when ready.
+                A living placeholder for Siddhant&apos;s background video — move
+                your cursor across it and the layers tilt with you.
               </span>
               <span className="flex shrink-0 items-center gap-2 text-ink/75">
                 <MapPin className="size-3.5 text-gold" />

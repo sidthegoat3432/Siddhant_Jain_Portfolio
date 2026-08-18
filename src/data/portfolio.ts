@@ -120,13 +120,14 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "project-01",
-    title: "Signal — Brand & Web",
+    title: "Discoverly",
     description:
-      "Replace with a 1–2 sentence description of this project and the role you played in it.",
-    image: "",
+      "A curated directory of AI tools, creative resources, productivity apps, and learning platforms — my first website, built and shipped to the web.",
+    image:
+      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fsidthegoat3432.github.io%2Fdiscoverly%2F?w=1280&h=960",
     video: "",
-    link: "#",
-    tags: ["Art Direction", "Web Design"],
+    link: "https://sidthegoat3432.github.io/discoverly/#/",
+    tags: ["Web Design", "Curated Directory"],
     year: "2026",
   },
   {

@@ -15,7 +15,7 @@ function Ticker() {
         {row.map((skill, i) => (
           <span
             key={`${skill}-${i}`}
-            className="flex items-center gap-10 whitespace-nowrap font-display text-sm uppercase tracking-[0.2em] text-cream/50"
+            className="flex items-center gap-10 whitespace-nowrap font-display text-sm uppercase tracking-[0.2em] text-ink/55"
           >
             {skill}
             <span className="size-1.5 rounded-full bg-brand/60" />
@@ -40,14 +40,14 @@ export function Skills() {
         {skillGroups.map((group, gi) => (
           <Reveal key={group.category} delay={gi * 0.08}>
             <div className="h-full rounded-2xl border border-border bg-card/50 p-6 backdrop-blur">
-              <h3 className="font-display text-lg font-semibold text-cream">
+              <h3 className="font-display text-lg font-semibold text-ink">
                 {group.category}
               </h3>
               <div className="mt-6 space-y-5">
                 {group.items.map((item, si) => (
                   <div key={item.name}>
                     <div className="flex items-center justify-between text-sm">
-                      <span className="text-cream/85">{item.name}</span>
+                      <span className="text-ink/80">{item.name}</span>
                       <span className="font-display text-xs text-muted-foreground">
                         {item.level}%
                       </span>

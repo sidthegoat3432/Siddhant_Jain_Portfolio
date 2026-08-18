@@ -9,7 +9,7 @@ export function Footer() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-10 sm:px-8 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-3">
-          <span className="flex size-9 items-center justify-center rounded-lg border border-border bg-card font-display text-sm font-semibold text-cream">
+          <span className="flex size-9 items-center justify-center rounded-lg border border-border bg-card font-display text-sm font-semibold text-ink">
             {profile.firstName.charAt(0)}
             {profile.name.split(" ")[1]?.charAt(0) ?? ""}
           </span>

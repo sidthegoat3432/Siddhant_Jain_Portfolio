@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { profile, stats } from "@/data/portfolio";
-import { Reveal, EASE } from "./Reveal";
+import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
 const focusAreas = [
@@ -32,7 +32,7 @@ export function About() {
           />
 
           <Reveal delay={0.16}>
-            <p className="mt-8 text-lg leading-relaxed text-cream/85">
+            <p className="mt-8 text-lg leading-relaxed text-ink/80">
               {profile.bio}
             </p>
           </Reveal>
@@ -42,9 +42,9 @@ export function About() {
               href={profile.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-brand transition-colors hover:text-cream"
+              className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-brand transition-colors hover:text-ink"
             >
-              <span className="border-b border-brand/40 pb-0.5 transition-colors group-hover:border-cream/40">
+              <span className="border-b border-brand/40 pb-0.5 transition-colors group-hover:border-ink/40">
                 View résumé
               </span>
               <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -63,7 +63,7 @@ export function About() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 0.2 + i * 0.06 }}
-                    className="font-display text-4xl font-semibold text-cream sm:text-5xl"
+                    className="font-display text-4xl font-semibold text-ink sm:text-5xl"
                   >
                     {stat.value}
                   </motion.p>
@@ -88,7 +88,7 @@ export function About() {
                     0{i + 1}
                   </span>
                   <div>
-                    <h3 className="font-display text-base font-medium text-cream">
+                    <h3 className="font-display text-base font-medium text-ink">
                       {item.title}
                     </h3>
                     <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

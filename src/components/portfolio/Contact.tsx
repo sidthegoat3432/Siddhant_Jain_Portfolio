@@ -12,7 +12,7 @@ export function Contact() {
     >
       {/* soft glow */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(45,212,191,0.16),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(15,118,110,0.14),transparent_70%)] blur-3xl"
         aria-hidden
       />
 
@@ -38,7 +38,7 @@ export function Contact() {
                   <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                     Write to me
                   </span>
-                  <span className="font-display text-xl font-semibold text-cream transition-colors group-hover:text-brand sm:text-2xl">
+                  <span className="font-display text-xl font-semibold text-ink transition-colors group-hover:text-brand sm:text-2xl">
                     {profile.email}
                   </span>
                 </span>
@@ -73,11 +73,11 @@ export function Contact() {
                     className="group flex items-center justify-between gap-4 px-5 py-4 transition-colors hover:bg-accent/50"
                   >
                     <span className="flex items-center gap-4">
-                      <span className="flex size-10 items-center justify-center rounded-xl border border-border bg-card text-cream/80 transition-colors group-hover:border-brand/40 group-hover:text-brand">
+                      <span className="flex size-10 items-center justify-center rounded-xl border border-border bg-card text-ink/70 transition-colors group-hover:border-brand/40 group-hover:text-brand">
                         <SocialIcon icon={social.icon} className="size-4" />
                       </span>
                       <span className="flex flex-col">
-                        <span className="font-display text-sm font-medium text-cream">
+                        <span className="font-display text-sm font-medium text-ink">
                           {social.label}
                         </span>
                         <span className="text-xs text-muted-foreground">

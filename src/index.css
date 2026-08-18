@@ -50,12 +50,16 @@
   --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui,
     sans-serif;
 
-  /* Brand palette */
+  /* Brand palette — light scheme
+     ink    = deep navy (text on light)
+     cream  = warm paper (page background)
+     brand  = deep teal (contrast-safe on paper)
+     gold   = deep amber (contrast-safe on paper) */
   --color-ink: #0b1220;
-  --color-ink-2: #0f1929;
-  --color-cream: #f5f1e8;
-  --color-brand: #2dd4bf;
-  --color-gold: #f5b64c;
+  --color-ink-2: #ece8dc;
+  --color-cream: #f6f3ec;
+  --color-brand: #0f766e;
+  --color-gold: #b45309;
 
   /* Motion tokens */
   --animate-marquee: marquee 36s linear infinite;
@@ -63,50 +67,51 @@
   --animate-aurora-slow: aurora 30s ease-in-out infinite alternate-reverse;
 }
 
-/* CHANGE VALUES FOR THEME */
+/* CHANGE VALUES FOR THEME — LIGHT */
 :root {
   --radius: 0.75rem;
 
-  /* Surfaces — deep navy-charcoal */
-  --background: #0b1220;
-  --foreground: #f5f1e8;
-  --card: #0f1929;
-  --card-foreground: #f5f1e8;
-  --popover: #111d2f;
-  --popover-foreground: #f5f1e8;
+  /* Surfaces — warm paper */
+  --background: #f6f3ec;
+  --foreground: #0b1220;
+  --card: #fdfcf7;
+  --card-foreground: #0b1220;
+  --popover: #ffffff;
+  --popover-foreground: #0b1220;
 
-  /* Accents — electric teal + amber gold */
-  --primary: #2dd4bf;
-  --primary-foreground: #04211c;
-  --secondary: #f5b64c;
-  --secondary-foreground: #241503;
-  --accent: rgba(45, 212, 191, 0.1);
-  --accent-foreground: #2dd4bf;
+  /* Accents — deep teal + amber gold */
+  --primary: #0f766e;
+  --primary-foreground: #f5f1e8;
+  --secondary: #ece5d3;
+  --secondary-foreground: #3c3322;
+  --accent: rgba(15, 118, 110, 0.08);
+  --accent-foreground: #0f766e;
 
-  --muted: #121e30;
-  --muted-foreground: #8f9db1;
-  --destructive: #f87171;
+  --muted: #e9e4d8;
+  --muted-foreground: #5b6472;
+  --destructive: #dc2626;
 
-  --border: rgba(245, 241, 232, 0.08);
-  --input: rgba(245, 241, 232, 0.12);
-  --ring: #2dd4bf;
+  --border: rgba(11, 18, 32, 0.12);
+  --input: rgba(11, 18, 32, 0.16);
+  --ring: #0f766e;
 
-  --chart-1: #2dd4bf;
-  --chart-2: #f5b64c;
-  --chart-3: #7dd3fc;
-  --chart-4: #f5f1e8;
-  --chart-5: #94a3b8;
+  --chart-1: #0f766e;
+  --chart-2: #b45309;
+  --chart-3: #0369a1;
+  --chart-4: #0b1220;
+  --chart-5: #64748b;
 
-  --sidebar: #0f1929;
-  --sidebar-foreground: #f5f1e8;
-  --sidebar-primary: #2dd4bf;
-  --sidebar-primary-foreground: #04211c;
-  --sidebar-accent: rgba(45, 212, 191, 0.1);
-  --sidebar-accent-foreground: #2dd4bf;
-  --sidebar-border: rgba(245, 241, 232, 0.08);
-  --sidebar-ring: #2dd4bf;
+  --sidebar: #fdfcf7;
+  --sidebar-foreground: #0b1220;
+  --sidebar-primary: #0f766e;
+  --sidebar-primary-foreground: #f5f1e8;
+  --sidebar-accent: rgba(15, 118, 110, 0.08);
+  --sidebar-accent-foreground: #0f766e;
+  --sidebar-border: rgba(11, 18, 32, 0.12);
+  --sidebar-ring: #0f766e;
 }
 
+/* Dark mode is still available on request via the `.dark` class */
 .dark {
   --background: #0b1220;
   --foreground: #f5f1e8;
@@ -158,8 +163,8 @@
   }
 
   ::selection {
-    background: rgba(45, 212, 191, 0.28);
-    color: #f5f1e8;
+    background: rgba(15, 118, 110, 0.85);
+    color: #f6f3ec;
   }
 
   button:not([disabled]),
@@ -176,23 +181,23 @@
   }
 }
 
-/* Art-directed project placeholders */
+/* Art-directed project placeholders — light panels */
 .project-scene {
   position: relative;
   aspect-ratio: 16 / 9;
   min-height: 18rem;
   overflow: hidden;
   isolation: isolate;
-  border: 1px solid rgba(245, 241, 232, 0.12);
+  border: 1px solid rgba(11, 18, 32, 0.14);
   border-radius: 1.25rem;
-  background: #101c2d;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.26);
+  background: #eae6da;
+  box-shadow: 0 24px 60px rgba(11, 18, 32, 0.08);
   transition: border-color 500ms ease, box-shadow 500ms ease;
 }
 
 .group:hover .project-scene {
-  border-color: rgba(45, 212, 191, 0.42);
-  box-shadow: 0 34px 90px rgba(3, 15, 28, 0.55), 0 0 40px rgba(45, 212, 191, 0.08);
+  border-color: rgba(15, 118, 110, 0.45);
+  box-shadow: 0 30px 70px rgba(11, 18, 32, 0.14), 0 0 32px rgba(15, 118, 110, 0.1);
 }
 
 .project-scene::before,
@@ -205,45 +210,44 @@
 }
 
 .project-scene::before {
-  background: linear-gradient(125deg, rgba(245, 241, 232, 0.12), transparent 26%, transparent 72%, rgba(11, 18, 32, 0.55));
-  mix-blend-mode: screen;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.65), transparent 26%, transparent 72%, rgba(11, 18, 32, 0.1));
 }
 
 .project-scene::after {
-  background: radial-gradient(circle at 50% 50%, transparent 20%, rgba(11, 18, 32, 0.4) 100%);
+  background: radial-gradient(circle at 50% 50%, transparent 22%, rgba(11, 18, 32, 0.09) 100%);
 }
 
 .scene-grid {
   position: absolute;
   inset: -20%;
-  opacity: 0.36;
+  opacity: 0.4;
   transform: perspective(500px) rotateX(58deg) translateY(18%);
   transform-origin: center bottom;
-  background-image: linear-gradient(rgba(245, 241, 232, 0.22) 1px, transparent 1px), linear-gradient(90deg, rgba(245, 241, 232, 0.22) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(11, 18, 32, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(11, 18, 32, 0.15) 1px, transparent 1px);
   background-size: 42px 42px;
 }
 
 .scene-teal {
-  background: radial-gradient(circle at 50% 50%, rgba(45, 212, 191, 0.3), transparent 31%), linear-gradient(135deg, #173d45, #0b1220 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(15, 118, 110, 0.22), transparent 34%), linear-gradient(135deg, #dceee9, #eae6da 65%);
 }
 
 .scene-gold {
-  background: radial-gradient(circle at 55% 47%, rgba(245, 182, 76, 0.34), transparent 29%), linear-gradient(135deg, #47351d, #0b1220 68%);
+  background: radial-gradient(circle at 55% 47%, rgba(180, 83, 9, 0.2), transparent 32%), linear-gradient(135deg, #f1e2c8, #eae6da 68%);
 }
 
 .scene-blue {
-  background: radial-gradient(circle at 48% 45%, rgba(125, 211, 252, 0.3), transparent 28%), linear-gradient(135deg, #1b3550, #0b1220 68%);
+  background: radial-gradient(circle at 48% 45%, rgba(3, 105, 161, 0.18), transparent 31%), linear-gradient(135deg, #dce8f0, #eae6da 68%);
 }
 
 .scene-rose {
-  background: radial-gradient(circle at 53% 48%, rgba(244, 114, 182, 0.23), transparent 29%), linear-gradient(135deg, #3d263b, #0b1220 68%);
+  background: radial-gradient(circle at 53% 48%, rgba(190, 24, 93, 0.13), transparent 32%), linear-gradient(135deg, #f0dfe6, #eae6da 68%);
 }
 
 .scene-orbit {
   position: absolute;
   top: 50%;
   left: 50%;
-  border: 1px solid rgba(245, 241, 232, 0.3);
+  border: 1px solid rgba(11, 18, 32, 0.3);
   border-radius: 50%;
   transform: translate(-50%, -50%) rotate(-22deg);
   transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1), border-color 500ms ease;
@@ -256,8 +260,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #2dd4bf;
-  box-shadow: 0 0 18px rgba(45, 212, 191, 0.8);
+  background: #0f766e;
+  box-shadow: 0 0 16px rgba(15, 118, 110, 0.5);
   content: "";
 }
 
@@ -269,26 +273,26 @@
 .scene-orbit-two {
   width: 52%;
   aspect-ratio: 1;
-  border-color: rgba(245, 182, 76, 0.35);
+  border-color: rgba(180, 83, 9, 0.4);
   transform: translate(-50%, -50%) rotate(52deg) scaleY(0.42);
 }
 
 .scene-orbit-two::after {
-  background: #f5b64c;
-  box-shadow: 0 0 18px rgba(245, 182, 76, 0.8);
+  background: #b45309;
+  box-shadow: 0 0 16px rgba(180, 83, 9, 0.5);
 }
 
 .scene-orbit-three {
   width: 70%;
   aspect-ratio: 1;
   border-style: dashed;
-  opacity: 0.48;
+  opacity: 0.5;
   transform: translate(-50%, -50%) rotate(-40deg) scaleY(0.28);
 }
 
 .scene-orbit-three::after {
-  background: #f5f1e8;
-  box-shadow: 0 0 14px rgba(245, 241, 232, 0.7);
+  background: #0b1220;
+  box-shadow: 0 0 12px rgba(11, 18, 32, 0.35);
 }
 
 .group:hover .scene-orbit-one {
@@ -313,14 +317,14 @@
   height: 4.5rem;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(245, 241, 232, 0.45);
+  border: 1px solid rgba(11, 18, 32, 0.32);
   border-radius: 50%;
-  background: rgba(11, 18, 32, 0.5);
-  color: rgba(245, 241, 232, 0.9);
+  background: rgba(253, 252, 247, 0.85);
+  color: rgba(11, 18, 32, 0.85);
   font-family: var(--font-display);
   font-size: 1.25rem;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 9px rgba(11, 18, 32, 0.12), 0 0 34px rgba(45, 212, 191, 0.18);
+  box-shadow: 0 0 0 9px rgba(11, 18, 32, 0.05), 0 0 30px rgba(15, 118, 110, 0.16);
 }
 
 .scene-label {
@@ -328,7 +332,7 @@
   top: 1.25rem;
   left: 1.5rem;
   z-index: 3;
-  color: rgba(245, 241, 232, 0.56);
+  color: rgba(11, 18, 32, 0.55);
   font-size: 9px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -341,7 +345,7 @@
   z-index: 4;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.75), transparent);
+  background: linear-gradient(90deg, transparent, rgba(15, 118, 110, 0.8), transparent);
   opacity: 0.55;
   animation: scanline 6s ease-in-out infinite;
 }

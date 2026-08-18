@@ -31,9 +31,9 @@ const introItem = {
 
 function KineticMark() {
   return (
-    <div className="relative flex aspect-square w-full max-w-[31rem] items-center justify-center overflow-hidden rounded-[2rem] border border-cream/15 bg-[#101c2d]/55 shadow-[0_30px_90px_rgba(0,0,0,0.35)] backdrop-blur-sm">
-      <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(245,241,232,0.35)_1px,transparent_1px),linear-gradient(90deg,rgba(245,241,232,0.35)_1px,transparent_1px)] [background-size:38px_38px]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(45,212,191,0.25),transparent_28%,transparent_62%,rgba(11,18,32,0.8))]" />
+    <div className="relative flex aspect-square w-full max-w-[31rem] items-center justify-center overflow-hidden rounded-[2rem] border border-ink/15 bg-card/70 shadow-[0_24px_70px_rgba(11,18,32,0.1)] backdrop-blur-sm">
+      <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(15,118,110,0.16),transparent_30%,transparent_64%,rgba(11,18,32,0.05))]" />
 
       {/* The orbital mark is intentionally CSS-made so the placeholder still feels designed. */}
       <motion.div
@@ -42,22 +42,22 @@ function KineticMark() {
         className="relative size-[68%] rounded-full border border-brand/30"
       >
         <div className="absolute inset-[16%] rounded-full border border-gold/40 border-dashed" />
-        <div className="absolute inset-[31%] rounded-full border border-cream/20" />
-        <span className="absolute -right-1 top-1/2 flex size-3 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_18px_rgba(245,182,76,0.8)]">
+        <div className="absolute inset-[31%] rounded-full border border-ink/20" />
+        <span className="absolute -right-1 top-1/2 flex size-3 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_14px_rgba(180,83,9,0.45)]">
           <span className="size-1 rounded-full bg-ink" />
         </span>
-        <span className="absolute -bottom-1 left-[18%] flex size-2.5 rounded-full bg-brand shadow-[0_0_18px_rgba(45,212,191,0.8)]" />
+        <span className="absolute -bottom-1 left-[18%] flex size-2.5 rounded-full bg-brand shadow-[0_0_14px_rgba(15,118,110,0.45)]" />
       </motion.div>
       <div className="absolute flex flex-col items-center gap-2">
         <Crosshair className="size-5 text-brand" strokeWidth={1.5} />
-        <span className="font-display text-[clamp(4rem,10vw,7rem)] font-semibold leading-none tracking-[-0.1em] text-cream/90">
+        <span className="font-display text-[clamp(4rem,10vw,7rem)] font-semibold leading-none tracking-[-0.1em] text-ink/90">
           SJ
         </span>
         <span className="text-[9px] uppercase tracking-[0.35em] text-muted-foreground">
           Digital systems / 2026
         </span>
       </div>
-      <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between border-t border-cream/10 pt-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+      <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between border-t border-ink/10 pt-3 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
         <span className="flex items-center gap-2">
           <Circle className="size-2 fill-brand text-brand" />
           Signal online
@@ -84,10 +84,10 @@ export function Hero() {
     <section
       id="top"
       ref={ref}
-      className="relative min-h-[100svh] overflow-hidden bg-ink"
+      className="relative min-h-[100svh] overflow-hidden bg-background"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(45,212,191,0.16),transparent_42%),radial-gradient(ellipse_at_90%_60%,rgba(245,182,76,0.1),transparent_36%)]" />
-      <div className="absolute inset-0 opacity-[0.09] [background-image:linear-gradient(rgba(245,241,232,0.4)_1px,transparent_1px),linear-gradient(90deg,rgba(245,241,232,0.4)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(15,118,110,0.12),transparent_42%),radial-gradient(ellipse_at_90%_60%,rgba(180,83,9,0.08),transparent_36%)]" />
+      <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(11,18,32,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.1)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
       <div className="pointer-events-none absolute left-[7%] top-[18%] h-px w-[42%] bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
       <div className="pointer-events-none absolute right-[6%] top-[35%] h-[35%] w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
 
@@ -131,7 +131,7 @@ export function Hero() {
               </span>
             </motion.div>
 
-            <h1 className="mt-7 font-display text-[clamp(4rem,11.5vw,10.5rem)] font-semibold leading-[0.78] tracking-[-0.08em] text-cream">
+            <h1 className="mt-7 font-display text-[clamp(4rem,11.5vw,10.5rem)] font-semibold leading-[0.78] tracking-[-0.08em] text-ink">
               <span className="block overflow-hidden">
                 <motion.span variants={introItem} className="block">
                   {profile.name.split(" ")[0]}
@@ -149,7 +149,7 @@ export function Hero() {
               className="mt-9 grid max-w-2xl gap-5 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-8"
             >
               <span className="font-display text-sm text-gold">01 —</span>
-              <p className="max-w-xl text-lg leading-relaxed text-cream/75 sm:text-xl">
+              <p className="max-w-xl text-lg leading-relaxed text-ink/70 sm:text-xl">
                 {profile.role} making ambitious digital products legible,
                 durable, and ready for the real world.
               </p>
@@ -158,14 +158,14 @@ export function Hero() {
             <motion.div variants={introItem} className="mt-10 flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_38px_rgba(45,212,191,0.32)]"
+                className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_38px_rgba(15,118,110,0.25)]"
               >
                 Enter the work
                 <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <a
                 href="#about"
-                className="inline-flex items-center gap-3 rounded-full border border-border bg-card/30 px-6 py-3.5 text-sm font-medium text-cream transition-colors hover:border-brand/50 hover:text-brand"
+                className="inline-flex items-center gap-3 rounded-full border border-border bg-card/30 px-6 py-3.5 text-sm font-medium text-ink transition-colors hover:border-brand/50 hover:text-brand"
               >
                 Read the approach
               </a>
@@ -190,7 +190,7 @@ export function Hero() {
                 A placeholder for Siddhant&apos;s background video. Replace the
                 source in the content config when ready.
               </span>
-              <span className="flex shrink-0 items-center gap-2 text-cream/75">
+              <span className="flex shrink-0 items-center gap-2 text-ink/75">
                 <MapPin className="size-3.5 text-gold" />
                 {profile.city}
               </span>
@@ -204,7 +204,7 @@ export function Hero() {
               <a
                 key={scene.number}
                 href={scene.href}
-                className="group flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-cream"
+                className="group flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-ink"
               >
                 <span
                   className={index === 0 ? "text-brand" : "text-muted-foreground"}
@@ -219,7 +219,7 @@ export function Hero() {
           </div>
           <a
             href="#about"
-            className="flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-cream"
+            className="flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-ink"
           >
             Continue downward
             <ArrowDown className="size-4 animate-bounce text-brand" />

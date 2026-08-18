@@ -42,7 +42,7 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
         </>
       )}
       <div className="scene-scanline" />
-      <div className="absolute inset-x-6 bottom-5 flex items-center justify-between text-[9px] uppercase tracking-[0.24em] text-cream/50">
+      <div className="absolute inset-x-6 bottom-5 flex items-center justify-between text-[9px] uppercase tracking-[0.24em] text-ink/60">
         <span>Frame / {String(index + 1).padStart(2, "0")}</span>
         <span>{project.year}</span>
       </div>
@@ -81,7 +81,7 @@ export function Projects() {
               <div className="relative">
                 <div className="absolute -left-4 top-0 hidden h-full w-px bg-gradient-to-b from-brand via-brand/30 to-transparent lg:block" />
                 <ProjectVisual project={project} index={i} />
-                <span className="pointer-events-none absolute -bottom-9 -left-1 font-display text-[clamp(5rem,14vw,12rem)] font-semibold leading-none tracking-[-0.12em] text-cream/[0.035]">
+                <span className="pointer-events-none absolute -bottom-9 -left-1 font-display text-[clamp(5rem,14vw,12rem)] font-semibold leading-none tracking-[-0.12em] text-ink/[0.05]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
@@ -91,7 +91,7 @@ export function Projects() {
                   <span className="text-gold">Case study / 0{i + 1}</span>
                   <span>{project.year}</span>
                 </div>
-                <h3 className="mt-6 max-w-md font-display text-3xl font-semibold leading-[0.95] tracking-tight text-cream transition-colors group-hover:text-brand sm:text-4xl">
+                <h3 className="mt-6 max-w-md font-display text-3xl font-semibold leading-[0.95] tracking-tight text-ink transition-colors group-hover:text-brand sm:text-4xl">
                   {project.title}
                 </h3>
                 <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
@@ -101,7 +101,7 @@ export function Projects() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-border bg-card/50 px-3 py-1.5 text-[11px] text-cream/70"
+                      className="rounded-full border border-border bg-card/50 px-3 py-1.5 text-[11px] text-ink/70"
                     >
                       {tag}
                     </span>
@@ -111,9 +111,9 @@ export function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/link mt-9 inline-flex items-center gap-3 text-sm font-medium text-cream"
+                  className="group/link mt-9 inline-flex items-center gap-3 text-sm font-medium text-ink"
                 >
-                  <span className="border-b border-cream/30 pb-1 transition-colors group-hover/link:border-brand group-hover/link:text-brand">
+                  <span className="border-b border-ink/30 pb-1 transition-colors group-hover/link:border-brand group-hover/link:text-brand">
                     Explore project
                   </span>
                   <span className="flex size-8 items-center justify-center rounded-full border border-border transition-all group-hover/link:border-brand group-hover/link:bg-brand group-hover/link:text-ink">
@@ -135,7 +135,7 @@ export function Projects() {
         <Reveal>
           <a
             href="#contact"
-            className="group flex items-center justify-between border-y border-border py-6 text-sm text-muted-foreground transition-colors hover:text-cream"
+            className="group flex items-center justify-between border-y border-border py-6 text-sm text-muted-foreground transition-colors hover:text-ink"
           >
             <span className="flex items-center gap-3">
               <CornerDownRight className="size-4 text-gold" />

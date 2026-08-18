@@ -219,7 +219,7 @@ export interface Poster {
 
 // 👈 REPLACE: your 3 best posters. Drop an image URL into each `image` field.
 export const posters: Poster[] = [
-  { id: "poster-01", title: "Porsche 911 GT3 RS", image: "" },
+  { id: "poster-01", title: "Porsche 911 GT3 RS", image: "https://lh3.googleusercontent.com/d/1OvVhC79nUF06RrBY0vLnVLKN20v5HrwH" },
   { id: "poster-02", title: "Poster 02", image: "" },
   { id: "poster-03", title: "Poster 03", image: "" },
 ];

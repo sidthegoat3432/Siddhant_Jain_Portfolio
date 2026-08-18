@@ -9,8 +9,9 @@ const sceneClasses = ["scene-teal", "scene-gold", "scene-blue", "scene-rose"];
 
 function ProjectVisual({ project, index }: { project: Project; index: number }) {
   const hasMedia = Boolean(project.video || project.image);
+  const hasLink = Boolean(project.link && project.link !== "#");
 
-  return (
+  const scene = (
     <Tilt
       className={`project-scene ${sceneClasses[index % sceneClasses.length]}${
         hasMedia ? " project-scene--media" : ""
@@ -54,11 +55,31 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
       )}
       <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
       <div className="scene-scanline" />
+      {hasLink && (
+        <span className="pointer-events-none absolute right-3 top-3 z-[4] flex items-center gap-1.5 rounded-full bg-ink/75 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-white/90 opacity-0 transition-opacity duration-300 group-hover/scene:opacity-100">
+          Open site
+          <ExternalLink className="size-3" />
+        </span>
+      )}
       <div className="absolute inset-x-6 bottom-5 flex items-center justify-between text-[9px] uppercase tracking-[0.24em] text-ink/60">
         <span>Frame / {String(index + 1).padStart(2, "0")}</span>
         <span>{project.year}</span>
       </div>
     </Tilt>
+  );
+
+  if (!hasLink) return scene;
+
+  return (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open ${project.title} in a new tab`}
+      className="group/scene block"
+    >
+      {scene}
+    </a>
   );
 }
 

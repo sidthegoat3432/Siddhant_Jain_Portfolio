@@ -90,10 +90,10 @@ function KineticMark() {
         <div className="kinetic-aurora absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(15,118,110,0.2),transparent_34%,transparent_60%,rgba(180,83,9,0.1))]" />
       </motion.div>
 
-      {/* Grid — mouse parallax only */}
+      {/* Grid — slowly drifts + mouse parallax */}
       <motion.div
         style={{ x: gridX, y: gridY }}
-        className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px]"
+        className="kinetic-grid-drift absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px]"
       />
 
       {/* Orbital system — rings spin on their own, dots travel, and the whole
@@ -103,39 +103,42 @@ function KineticMark() {
         className="absolute inset-0 flex items-center justify-center"
       >
         <div className="kinetic-spin relative size-[68%] rounded-full border border-brand/30 transition-colors duration-500 group-hover:border-brand/70">
-          <span className="absolute -right-1 top-1/2 flex size-3 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_14px_rgba(180,83,9,0.5)]">
-            <span className="size-1 rounded-full bg-ink" />
+          <span className="absolute -right-1 top-1/2 flex size-3.5 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_18px_rgba(180,83,9,0.75)]">
+            <span className="size-1.5 rounded-full bg-ink" />
           </span>
-          <span className="absolute -bottom-1 left-[18%] flex size-2.5 rounded-full bg-brand shadow-[0_0_14px_rgba(15,118,110,0.5)]" />
+          <span className="absolute -bottom-1 left-[18%] flex size-3 rounded-full bg-brand shadow-[0_0_18px_rgba(15,118,110,0.75)]" />
 
           {/* Counter-rotating dashed ring with its own traveling dot */}
-          <div className="kinetic-spin-reverse absolute inset-[16%] rounded-full border border-dashed border-gold/40">
-            <span className="absolute -top-1 left-1/2 size-2 -translate-x-1/2 rounded-full bg-gold shadow-[0_0_12px_rgba(180,83,9,0.5)]" />
+          <div className="kinetic-spin-reverse absolute inset-[16%] rounded-full border border-dashed border-gold/50">
+            <span className="absolute -top-1.5 left-1/2 size-2.5 -translate-x-1/2 rounded-full bg-gold shadow-[0_0_14px_rgba(180,83,9,0.7)]" />
           </div>
           <div className="absolute inset-[31%] rounded-full border border-ink/20" />
         </div>
       </motion.div>
 
+      {/* Light sweep — a band of light periodically crosses the mark */}
+      <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[5] w-1/3 bg-gradient-to-r from-transparent via-white/35 to-transparent" />
+
       {/* Rising particles */}
-      <span className="kinetic-rise absolute bottom-[22%] left-[20%] size-1.5 rounded-full bg-brand/70" />
+      <span className="kinetic-rise absolute bottom-[22%] left-[20%] size-2 rounded-full bg-brand/80" />
       <span
-        className="kinetic-rise absolute bottom-[20%] left-[58%] size-1 rounded-full bg-gold/80"
-        style={{ animationDelay: "1.6s" }}
+        className="kinetic-rise absolute bottom-[20%] left-[58%] size-1.5 rounded-full bg-gold/90"
+        style={{ animationDelay: "1.3s" }}
       />
       <span
-        className="kinetic-rise absolute bottom-[24%] left-[42%] size-1 rounded-full bg-brand/50"
-        style={{ animationDelay: "3.2s" }}
+        className="kinetic-rise absolute bottom-[24%] left-[42%] size-1.5 rounded-full bg-brand/70"
+        style={{ animationDelay: "2.6s" }}
       />
       <span
-        className="kinetic-rise absolute bottom-[16%] left-[72%] size-1.5 rounded-full bg-brand/60"
-        style={{ animationDelay: "4.4s" }}
+        className="kinetic-rise absolute bottom-[16%] left-[72%] size-2 rounded-full bg-brand/80"
+        style={{ animationDelay: "3.9s" }}
       />
 
       {/* Monogram — breathing + drifting with the pointer */}
       <motion.div
         style={{ x: monoX, y: monoY }}
-        animate={reduced ? { scale: 1 } : { scale: [1, 1.02, 1] }}
-        transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+        animate={reduced ? { scale: 1 } : { scale: [1, 1.035, 1] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
         className="absolute flex flex-col items-center gap-2"
       >
         <Crosshair className="size-5 text-brand" strokeWidth={1.5} />

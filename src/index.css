@@ -675,10 +675,10 @@ footer[id] {
   0%,
   100% {
     transform: scale(1) translate(0, 0);
-    opacity: 0.7;
+    opacity: 0.5;
   }
   50% {
-    transform: scale(1.1) translate(3%, -2%);
+    transform: scale(1.12) translate(3%, -2%);
     opacity: 1;
   }
 }
@@ -688,38 +688,68 @@ footer[id] {
     transform: translateY(0) scale(1);
     opacity: 0;
   }
-  12% {
-    opacity: 0.85;
+  15% {
+    opacity: 1;
   }
   100% {
-    transform: translateY(-52px) scale(0.35);
+    transform: translateY(-60px) scale(0.3);
     opacity: 0;
   }
 }
 
+@keyframes kinetic-sweep {
+  0% {
+    transform: translateX(-140%) skewX(-18deg);
+  }
+  55%,
+  100% {
+    transform: translateX(240%) skewX(-18deg);
+  }
+}
+
+@keyframes kinetic-grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 38px 38px;
+  }
+}
+
 .kinetic-spin {
-  animation: kinetic-spin 16s linear infinite;
+  animation: kinetic-spin 8s linear infinite;
   will-change: transform;
 }
 
 .kinetic-spin-reverse {
-  animation: kinetic-spin-reverse 26s linear infinite;
+  animation: kinetic-spin-reverse 14s linear infinite;
   will-change: transform;
 }
 
 .kinetic-aurora {
-  animation: kinetic-aurora 9s ease-in-out infinite;
+  animation: kinetic-aurora 6s ease-in-out infinite;
 }
 
 .kinetic-rise {
-  animation: kinetic-rise 7s ease-in infinite;
+  animation: kinetic-rise 5.5s ease-in infinite;
+}
+
+.kinetic-sweep {
+  animation: kinetic-sweep 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.kinetic-grid-drift {
+  animation: kinetic-grid-drift 12s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .kinetic-spin,
   .kinetic-spin-reverse,
   .kinetic-aurora,
-  .kinetic-rise {
+  .kinetic-rise,
+  .kinetic-sweep,
+  .kinetic-grid-drift {
     animation: none;
   }
 }

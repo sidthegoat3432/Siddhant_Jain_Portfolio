@@ -408,8 +408,25 @@
   }
 }
 
-/* Hide the native cursor while the custom blue cursor is active */
-.cursor-none,
-.cursor-none * {
+/* Desktop cursor treatment: the dot is intentionally more visible than the native pointer. */
+.custom-cursor-active,
+.custom-cursor-active * {
   cursor: none !important;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 0.8rem;
+  height: 0.8rem;
+  pointer-events: none;
+  border: 2px solid #ffffff;
+  border-radius: 9999px;
+  background: #2563eb;
+  opacity: 0;
+  will-change: transform, opacity;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.22), 0 0 22px rgba(37, 99, 235, 0.65);
+  transition: opacity 180ms ease;
 }

@@ -217,6 +217,39 @@ export const tools: Tool[] = [
   { name: "Docker", category: "Tooling" },
 ];
 
+export interface Strength {
+  title: string;
+  copy: string;
+}
+
+// 👈 REPLACE: the qualities and working habits you want clients to remember.
+export const strengths: Strength[] = [
+  {
+    title: "Clear communication",
+    copy: "I keep decisions, trade-offs, and progress visible from kickoff to handoff.",
+  },
+  {
+    title: "Initiative",
+    copy: "I look for the next useful step instead of waiting for a perfect brief.",
+  },
+  {
+    title: "Ownership",
+    copy: "I stay accountable for the outcome, not just the part of the task I was assigned.",
+  },
+  {
+    title: "Reliability",
+    copy: "I value thoughtful estimates, consistent follow-through, and work that holds up.",
+  },
+  {
+    title: "Problem-solving",
+    copy: "I break complicated problems into focused decisions and practical solutions.",
+  },
+  {
+    title: "Collaboration",
+    copy: "I work openly with designers, founders, and engineers to make the strongest version.",
+  },
+];
+
 // ----------------------------------------------------------------------------
 //  ABOUT — STATS
 // ----------------------------------------------------------------------------

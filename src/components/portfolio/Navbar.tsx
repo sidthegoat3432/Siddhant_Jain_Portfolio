@@ -53,19 +53,34 @@ export function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-ink"
+              className={cn(
+                "rounded-md px-3 py-2 text-sm transition-colors",
+                link.label === "Contact"
+                  ? "border border-brand/25 bg-brand/5 font-medium text-brand hover:border-brand/60 hover:bg-brand/10"
+                  : "text-muted-foreground hover:text-ink",
+              )}
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-4 md:flex">
+          <a
+            href="#contact"
+            className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70 transition-colors hover:text-ink"
+          >
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green opacity-60" />
+              <span className="relative inline-flex size-2 rounded-full bg-green" />
+            </span>
+            Available
+          </a>
           <a
             href={`mailto:${profile.email}`}
             className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_24px_rgba(15,118,110,0.25)]"
           >
-            Let&apos;s talk
+            Email me
             <ArrowUpRight className="size-4" />
           </a>
         </div>
@@ -104,11 +119,18 @@ export function Navbar() {
                 </a>
               ))}
               <a
+                href="#contact"
+                onClick={() => setOpen(false)}
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-4 py-3 text-sm font-medium text-brand"
+              >
+                Contact &amp; links
+              </a>
+              <a
                 href={`mailto:${profile.email}`}
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground"
               >
-                Let&apos;s talk
+                Email me
                 <ArrowUpRight className="size-4" />
               </a>
             </div>

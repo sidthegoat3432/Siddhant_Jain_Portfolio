@@ -4,86 +4,76 @@ const INTERACTIVE_SELECTOR =
   "a, button, [role='button'], input, textarea, select, label, [data-cursor='hover']";
 
 export function Cursor() {
-  const dotRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const dot = dotRef.current;
-    if (!dot) return;
+    const cursor = cursorRef.current;
+    if (!cursor) return;
 
-    const finePointer = window.matchMedia("(pointer: fine)").matches;
-    const reducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    // Keep the native cursor on touch devices and for reduced-motion users.
-    if (!finePointer || reducedMotion) return;
-
-    document.body.classList.add("cursor-none");
-
-    let x = window.innerWidth / 2;
-    let y = window.innerHeight / 2;
+    let x = -100;
+    let y = -100;
     let targetX = x;
     let targetY = y;
     let scale = 1;
-    let opacity = 1;
-    let hovered = false;
-    let pressed = false;
-    let raf = 0;
+    let targetScale = 1;
+    let visible = false;
+    let frame = 0;
 
-    const onMove = (event: MouseEvent) => {
+    const onPointerMove = (event: PointerEvent) => {
+      // Touch pointers should never trigger a desktop cursor treatment.
+      if (event.pointerType === "touch") return;
+      document.documentElement.classList.add("custom-cursor-active");
       targetX = event.clientX;
       targetY = event.clientY;
-    };
+      visible = true;
 
-    const onOver = (event: MouseEvent) => {
       const target = event.target as HTMLElement | null;
-      hovered = Boolean(target?.closest?.(INTERACTIVE_SELECTOR));
+      targetScale = target?.closest(INTERACTIVE_SELECTOR) ? 2.8 : 1;
     };
 
-    const onDown = () => {
-      pressed = true;
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.pointerType !== "touch") targetScale = 0.62;
     };
 
-    const onUp = () => {
-      pressed = false;
+    const onPointerUp = (event: PointerEvent) => {
+      if (event.pointerType !== "touch") targetScale = 2.8;
     };
 
-    const loop = () => {
-      x += (targetX - x) * 0.22;
-      y += (targetY - y) * 0.22;
-
-      const targetScale = pressed ? 0.55 : hovered ? 2.5 : 1;
-      const targetOpacity = hovered ? 0.5 : 1;
-      scale += (targetScale - scale) * 0.2;
-      opacity += (targetOpacity - opacity) * 0.2;
-
-      dot.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${scale})`;
-      dot.style.opacity = String(opacity);
-      raf = requestAnimationFrame(loop);
+    const onPointerLeave = () => {
+      visible = false;
     };
 
-    window.addEventListener("mousemove", onMove, { passive: true });
-    window.addEventListener("mouseover", onOver, { passive: true });
-    window.addEventListener("mousedown", onDown);
-    window.addEventListener("mouseup", onUp);
-    raf = requestAnimationFrame(loop);
+    const animate = () => {
+      x += (targetX - x) * 0.24;
+      y += (targetY - y) * 0.24;
+      scale += (targetScale - scale) * 0.22;
+
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${scale})`;
+      cursor.style.opacity = visible ? "1" : "0";
+      frame = requestAnimationFrame(animate);
+    };
+
+    window.addEventListener("pointermove", onPointerMove, { passive: true });
+    window.addEventListener("pointerdown", onPointerDown, { passive: true });
+    window.addEventListener("pointerup", onPointerUp, { passive: true });
+    document.addEventListener("mouseleave", onPointerLeave);
+    frame = requestAnimationFrame(animate);
 
     return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("mousemove", onMove);
-      window.removeEventListener("mouseover", onOver);
-      window.removeEventListener("mousedown", onDown);
-      window.removeEventListener("mouseup", onUp);
-      document.body.classList.remove("cursor-none");
+      cancelAnimationFrame(frame);
+      document.documentElement.classList.remove("custom-cursor-active");
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerdown", onPointerDown);
+      window.removeEventListener("pointerup", onPointerUp);
+      document.removeEventListener("mouseleave", onPointerLeave);
     };
   }, []);
 
   return (
     <div
-      ref={dotRef}
-      aria-hidden
-      style={{ transform: "translate3d(-9999px, -9999px, 0)" }}
-      className="pointer-events-none fixed left-0 top-0 z-[9999] size-3 rounded-full bg-blue shadow-[0_0_0_4px_rgba(37,99,235,0.16),0_0_18px_rgba(37,99,235,0.45)]"
+      ref={cursorRef}
+      aria-hidden="true"
+      className="custom-cursor-dot"
     />
   );
 }

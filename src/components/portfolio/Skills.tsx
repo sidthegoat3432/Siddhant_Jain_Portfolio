@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { tools, strengths, type Tool } from "@/data/portfolio";
+import { languages, tools, strengths, type Tool } from "@/data/portfolio";
 import {
   Dialog,
   DialogContent,
@@ -104,6 +104,47 @@ export function Skills() {
           )}
         </DialogContent>
       </Dialog>
+
+      <div className="mt-24 border-t border-border pt-12 sm:mt-32">
+        <Reveal>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-brand">
+                <span className="font-display text-sm text-gold">04A</span>
+                Languages
+              </p>
+              <h3 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+                The languages I work with.
+              </h3>
+            </div>
+            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+              A quick view of the languages and layers I use to shape ideas into working web experiences.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {languages.map((language, i) => (
+            <Reveal key={language.name} delay={i * 0.04}>
+              <motion.div
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="group rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-gold/45 hover:bg-card/90"
+              >
+                <span className="font-display text-xs text-gold">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h4 className="mt-8 font-display text-lg font-semibold text-ink transition-colors group-hover:text-brand">
+                  {language.name}
+                </h4>
+                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                  {language.note}
+                </p>
+              </motion.div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
 
       <div className="mt-28 border-t border-border pt-12 sm:mt-36">
         <Reveal>

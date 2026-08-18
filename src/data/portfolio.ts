@@ -42,9 +42,9 @@ export const profile = {
   // 👈 REPLACE: your resume / CV link
   resumeUrl: "#",
 
-  // 👈 REPLACE: 2–3 sentences about you — the stack you work in, the
-  // problems you solve, and the kind of software you want to build next.
-  bio: "A short bio goes here — the languages and tools you work with, the problems you solve, and the kind of software you want to build next.",
+  // 👈 REPLACE: a short, honest introduction — your interests, current focus,
+  // and the kind of work you want to grow into.
+  bio: "I’m Siddhant Jain, a developer building my foundation across the web stack. I’m interested in thoughtful interfaces, practical software, and learning by turning ideas into working experiences.",
 
   // 👈 REPLACE: availability — shows as a status badge in the hero
   availability: "Open to freelance & full-time roles" as string,
@@ -309,6 +309,56 @@ export const strengths: Strength[] = [
   {
     title: "Collaboration",
     copy: "I work openly with designers, founders, and engineers to make the strongest version.",
+  },
+  {
+    title: "Adaptability",
+    copy: "I stay curious, take feedback seriously, and adjust quickly when the work changes.",
+  },
+  {
+    title: "Attention to detail",
+    copy: "I care about the small interactions, spacing decisions, and edge cases that make work feel complete.",
+  },
+];
+
+export interface Language {
+  name: string;
+  note: string;
+}
+
+// 👈 REPLACE: use only the languages you actually work with.
+export const languages: Language[] = [
+  { name: "JavaScript", note: "Web logic" },
+  { name: "TypeScript", note: "Typed systems" },
+  { name: "HTML", note: "Structure" },
+  { name: "CSS", note: "Visual layer" },
+  { name: "Python", note: "Scripting" },
+  { name: "SQL", note: "Data" },
+  { name: "Java", note: "Programming" },
+  { name: "C++", note: "Programming" },
+];
+
+export interface Service {
+  title: string;
+  copy: string;
+}
+
+// 👈 REPLACE: the services you want visitors to ask you about.
+export const services: Service[] = [
+  {
+    title: "Personal websites",
+    copy: "Thoughtful portfolios, landing pages, and personal sites that give your work a clear presence online.",
+  },
+  {
+    title: "Frontend development",
+    copy: "Responsive interfaces built with attention to structure, usability, motion, and maintainable code.",
+  },
+  {
+    title: "UI implementation",
+    copy: "Designs translated into polished, accessible web experiences that feel consistent across screen sizes.",
+  },
+  {
+    title: "Website improvements",
+    copy: "Focused help with visual refinements, interactions, responsiveness, and the details that make a site feel finished.",
   },
 ];
 

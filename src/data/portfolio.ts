@@ -312,23 +312,23 @@ export interface AboutCard {
 export const aboutCards: AboutCard[] = [
   {
     number: "01",
-    title: "Toronto-based",
-    copy: "I use Toronto as the visual anchor for this site: tall structures, clean grids, transit energy, skyline motion, and big-city ambition.",
+    title: "City energy",
+    copy: "Toronto is the backdrop this site is built around — clean grids, skyline lines, transit rhythm, and the ambition that comes with a big city.",
   },
   {
     number: "02",
-    title: "Project builder",
-    copy: "I like turning class ideas into finished digital experiences: websites, animations, decks, and interactive explainers.",
+    title: "From idea to finished",
+    copy: "I push class concepts into real, usable work: websites, animations, decks, and interactive demos you can actually open and click through.",
   },
   {
     number: "03",
-    title: "Tech + design",
-    copy: "I’m drawn to where AI, technology, business, and design meet — lately I’m all-in on learning AI.",
+    title: "The intersection",
+    copy: "I’m most curious where AI, technology, business, and design overlap. Lately, I’ve been all-in on learning AI.",
   },
   {
     number: "04",
-    title: "Hands-on learner",
-    copy: "I learn by building, testing, fixing, and presenting. Off the screen, that energy goes into volleyball, badminton, and producing the odd track.",
+    title: "Learn by doing",
+    copy: "I pick things up fastest by building, testing, fixing, and presenting. Off the screen, that energy goes into volleyball, badminton, and the occasional track.",
   },
 ];
 

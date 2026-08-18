@@ -10,12 +10,14 @@ export function Cursor() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
     let x = -100;
     let y = -100;
     let targetX = x;
     let targetY = y;
-    let scale = 1;
-    let targetScale = 1;
     let visible = false;
     let frame = 0;
 
@@ -28,15 +30,22 @@ export function Cursor() {
       visible = true;
 
       const target = event.target as HTMLElement | null;
-      targetScale = target?.closest(INTERACTIVE_SELECTOR) ? 2.8 : 1;
+      cursor.classList.toggle(
+        "is-interactive",
+        Boolean(target?.closest(INTERACTIVE_SELECTOR)),
+      );
     };
 
     const onPointerDown = (event: PointerEvent) => {
-      if (event.pointerType !== "touch") targetScale = 0.62;
+      if (event.pointerType !== "touch") {
+        cursor.classList.add("is-pressed");
+      }
     };
 
     const onPointerUp = (event: PointerEvent) => {
-      if (event.pointerType !== "touch") targetScale = 2.8;
+      if (event.pointerType !== "touch") {
+        cursor.classList.remove("is-pressed");
+      }
     };
 
     const onPointerLeave = () => {
@@ -44,11 +53,15 @@ export function Cursor() {
     };
 
     const animate = () => {
-      x += (targetX - x) * 0.24;
-      y += (targetY - y) * 0.24;
-      scale += (targetScale - scale) * 0.22;
+      if (reducedMotion) {
+        x = targetX;
+        y = targetY;
+      } else {
+        x += (targetX - x) * 0.22;
+        y += (targetY - y) * 0.22;
+      }
 
-      cursor.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${scale})`;
+      cursor.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       cursor.style.opacity = visible ? "1" : "0";
       frame = requestAnimationFrame(animate);
     };
@@ -70,10 +83,9 @@ export function Cursor() {
   }, []);
 
   return (
-    <div
-      ref={cursorRef}
-      aria-hidden="true"
-      className="custom-cursor-dot"
-    />
+    <div ref={cursorRef} aria-hidden="true" className="custom-cursor">
+      <span className="custom-cursor-dot" />
+      <span className="custom-cursor-halo" />
+    </div>
   );
 }

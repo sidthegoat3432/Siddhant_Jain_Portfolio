@@ -11,6 +11,11 @@ import {
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
+function toolPreview(description: string) {
+  const firstSentence = description.split(". ")[0] ?? description;
+  return firstSentence.endsWith(".") ? firstSentence : `${firstSentence}.`;
+}
+
 function Ticker() {
   const row = [...tools.map((tool) => tool.name), ...tools.map((tool) => tool.name)];
   return (
@@ -45,30 +50,36 @@ export function Skills() {
         description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure. Click any capability to see how I use it."
       />
 
-      <div className="mt-14 grid min-w-0 grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
+      <div className="toolkit-surface mt-14 grid min-w-0 grid-cols-2 gap-3 rounded-[2rem] border border-brand/10 p-3 sm:grid-cols-3 sm:gap-4 sm:p-5 lg:grid-cols-4">
         {tools.map((tool, i) => (
           <Reveal key={tool.name} delay={i * 0.04}>
             <motion.button
               type="button"
-              whileHover={{ y: -4 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              whileHover={{ y: -6, rotate: i % 2 === 0 ? -0.4 : 0.4 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
               onClick={() => setSelectedTool(tool)}
-              className="group flex h-full w-full flex-col justify-between rounded-2xl border border-border bg-card/50 p-4 text-left backdrop-blur transition-colors hover:border-brand/50 hover:bg-card/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 sm:p-5"
+              className="toolkit-card group flex min-h-[15rem] w-full flex-col justify-between rounded-[1.15rem] p-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 sm:min-h-[16rem] sm:p-5"
               aria-label={`Learn more about ${tool.name}`}
             >
               <div className="flex items-start justify-between gap-3">
+                <span className="toolkit-number">{String(i + 1).padStart(2, "0")}</span>
+                <span className="toolkit-dot" />
+              </div>
+              <div className="mt-8">
+                <h3 className="font-display text-lg font-semibold leading-tight text-ink transition-colors group-hover:text-brand sm:text-xl">
+                  {tool.name}
+                </h3>
+                <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                  {toolPreview(tool.description)}
+                </p>
+              </div>
+              <div className="mt-8 flex items-center justify-between gap-3 border-t border-border/80 pt-3">
                 <span className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   {tool.category}
                 </span>
-                <span className="mt-0.5 size-1.5 shrink-0 rounded-full bg-brand/70 transition-colors group-hover:bg-gold" />
-              </div>
-              <div>
-                <h3 className="mt-7 font-display text-base font-medium leading-tight text-ink sm:text-lg">
-                  {tool.name}
-                </h3>
-                <span className="mt-3 block text-[10px] uppercase tracking-[0.16em] text-brand/70 opacity-0 transition-opacity group-hover:opacity-100">
-                  View capability
+                <span className="toolkit-detail">
+                  Details <span aria-hidden>+</span>
                 </span>
               </div>
             </motion.button>

@@ -480,6 +480,36 @@
   box-shadow: 0 26px 60px rgba(11, 18, 32, 0.14), 0 0 32px rgba(37, 99, 235, 0.1);
 }
 
+/* Editorial track record section */
+.track-record-section {
+  background: linear-gradient(135deg, rgba(226, 234, 244, 0.84), rgba(247, 250, 255, 0.72));
+}
+
+.track-record-script {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.08em;
+}
+
+.track-record-row {
+  transition: padding 400ms cubic-bezier(0.22, 1, 0.36, 1), background 400ms ease, border-color 400ms ease;
+}
+
+.track-record-row:hover {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-color: rgba(37, 99, 235, 0.35);
+  background: rgba(255, 255, 255, 0.52);
+}
+
+@media (max-width: 639px) {
+  .track-record-row:hover {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
 /* Keyframes for custom motion tokens */
 @keyframes media-scanline {
   0%, 100% {

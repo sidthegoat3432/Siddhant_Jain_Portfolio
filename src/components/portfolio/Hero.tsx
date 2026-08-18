@@ -14,7 +14,8 @@ const sceneLinks = [
   { number: "01", label: "Intro", href: "#top" },
   { number: "02", label: "About", href: "#about" },
   { number: "03", label: "Work", href: "#projects" },
-  { number: "04", label: "Contact", href: "#contact" },
+  { number: "04", label: "Record", href: "#track-record" },
+  { number: "05", label: "Contact", href: "#contact" },
 ];
 
 const introSequence = {

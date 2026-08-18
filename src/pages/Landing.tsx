@@ -7,6 +7,7 @@ import { Hero } from "@/components/portfolio/Hero";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
+import { TrackRecord } from "@/components/portfolio/TrackRecord";
 
 export default function Landing() {
   const { scrollYProgress } = useScroll();
@@ -38,6 +39,7 @@ export default function Landing() {
         <Hero />
         <About />
         <Projects />
+        <TrackRecord />
         <Skills />
         <Contact />
       </main>

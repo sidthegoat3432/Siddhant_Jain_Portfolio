@@ -160,6 +160,47 @@ export const projects: Project[] = [
 ];
 
 // ----------------------------------------------------------------------------
+//  TRACK RECORD
+// ----------------------------------------------------------------------------
+export interface TrackRecordItem {
+  year: string;
+  title: string;
+  description: string;
+  link?: string;
+  linkLabel?: string;
+}
+
+// 👈 REPLACE: honest milestones, programs, projects, or writing you want to document.
+export const trackRecord: TrackRecordItem[] = [
+  {
+    year: "NOW",
+    title: "Building across the web stack",
+    description:
+      "Developing a stronger foundation through hands-on frontend, backend, and product experiments.",
+  },
+  {
+    year: "2026",
+    title: "Turning class ideas into digital work",
+    description:
+      "Websites, animations, presentations, and interactive explainers built to make an idea clearer.",
+    link: "#projects",
+    linkLabel: "See the work",
+  },
+  {
+    year: "2026",
+    title: "Learning AI by making things",
+    description:
+      "Exploring how AI, technology, business, and design can come together in useful experiences.",
+  },
+  {
+    year: "ONGOING",
+    title: "Practice outside the screen",
+    description:
+      "Volleyball, badminton, music production, and the habits that keep curiosity and discipline in motion.",
+  },
+];
+
+// ----------------------------------------------------------------------------
 //  POSTERS
 // ----------------------------------------------------------------------------
 export interface Poster {
@@ -189,7 +230,7 @@ export interface Tool {
   description: string;
 }
 
-// 👈 REPLACE: the tools you actually use (aim for ~15 for a balanced grid).
+// 👈 REPLACE: the 12 tools you actually use in your current toolkit.
 export const tools: Tool[] = [
   {
     name: "TypeScript",

@@ -44,7 +44,7 @@ export function Skills() {
       className="relative mx-auto min-w-0 max-w-6xl overflow-x-clip px-5 py-24 sm:px-8 sm:py-32"
     >
       <SectionHeading
-        index="04"
+        index="05"
         eyebrow="Capabilities"
         title="The stack behind the work."
         description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure. Click any capability to see how I use it."
@@ -121,49 +121,7 @@ export function Skills() {
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-brand">
-                <span className="font-display text-sm text-gold">04A</span>
-                Languages
-              </p>
-              <h3 className="mt-4 font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
-                The languages I know.
-              </h3>
-            </div>
-            <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              A small part of who I am beyond the interface: the languages I use
-              to communicate, collaborate, and connect.
-            </p>
-          </div>
-        </Reveal>
-
-        <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-3">
-          {languages.map((language, i) => (
-            <Reveal key={language.name} delay={i * 0.04}>
-              <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group min-w-0 rounded-2xl border border-border bg-card/50 p-4 backdrop-blur transition-colors hover:border-gold/45 hover:bg-card/90 sm:p-5"
-              >
-                <span className="font-display text-xs text-gold">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h4 className="mt-8 font-display text-lg font-semibold text-ink transition-colors group-hover:text-brand">
-                  {language.name}
-                </h4>
-                <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-                  {language.note}
-                </p>
-              </motion.div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-
-      <div className="mt-28 border-t border-border pt-12 sm:mt-36">
-        <Reveal>
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-brand">
-                <span className="font-display text-sm text-gold">04B</span>
+                <span className="font-display text-sm text-gold">05A</span>
                 How I work
               </p>
               <h3 className="mt-4 max-w-xl font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
@@ -171,35 +129,77 @@ export function Skills() {
               </h3>
             </div>
             <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-              The working qualities behind the tools: thoughtful collaboration,
-              clear ownership, and momentum when the path is still taking shape.
+              Communication, initiative, and the everyday habits that turn a good idea into dependable work.
             </p>
           </div>
         </Reveal>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {strengths.map((strength, i) => (
-            <Reveal key={strength.title} delay={i * 0.05}>
-              <motion.article
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="group relative min-w-0 h-full overflow-hidden rounded-2xl border border-border bg-card/50 p-5 backdrop-blur transition-colors hover:border-brand/35 hover:bg-card/80 sm:p-6"
-              >
-                <span className="font-display text-sm text-gold">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h4 className="mt-8 font-display text-xl font-semibold text-ink transition-colors group-hover:text-brand">
-                  {strength.title}
-                </h4>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {strength.copy}
+        <div className="communication-surface mt-10 rounded-[2rem] border border-brand/10 p-3 sm:p-5">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {strengths.map((strength, i) => (
+              <Reveal key={strength.title} delay={i * 0.05}>
+                <motion.article
+                  whileHover={{ y: -5, rotate: i % 2 === 0 ? -0.25 : 0.25 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="toolkit-card group relative min-w-0 h-full overflow-hidden rounded-[1.15rem] p-5 sm:p-6"
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="toolkit-number">{String(i + 1).padStart(2, "0")}</span>
+                    <span className="toolkit-dot" />
+                  </div>
+                  <h4 className="mt-10 font-display text-xl font-semibold leading-tight text-ink transition-colors group-hover:text-brand">
+                    {strength.title}
+                  </h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {strength.copy}
+                  </p>
+                </motion.article>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-5 border-t border-border/80 pt-8">
+            <Reveal>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-gold">
+                    Communication / 05B
+                  </p>
+                  <h4 className="mt-3 font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl">
+                    The languages I bring into the room.
+                  </h4>
+                </div>
+                <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+                  Different ways of listening, explaining, collaborating, and connecting with people.
                 </p>
-                <span className="absolute -bottom-8 -right-3 font-display text-7xl font-semibold leading-none tracking-[-0.1em] text-ink/[0.04]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </motion.article>
+              </div>
             </Reveal>
-          ))}
+
+            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+              {languages.map((language, i) => (
+                <Reveal key={language.name} delay={i * 0.06}>
+                  <motion.article
+                    whileHover={{ y: -4 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="toolkit-card group relative min-w-0 rounded-[1.15rem] p-5 sm:p-6"
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="font-display text-sm text-gold">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="toolkit-dot" />
+                    </div>
+                    <h5 className="mt-8 font-display text-2xl font-semibold text-ink transition-colors group-hover:text-brand">
+                      {language.name}
+                    </h5>
+                    <p className="mt-2 text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                      {language.note}
+                    </p>
+                  </motion.article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 

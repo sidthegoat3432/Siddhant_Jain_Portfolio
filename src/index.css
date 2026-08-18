@@ -350,6 +350,24 @@
   animation: scanline 6s ease-in-out infinite;
 }
 
+/* Art-directed poster placeholders — portrait panels */
+.poster-frame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(11, 18, 32, 0.14);
+  border-radius: 1.25rem;
+  background: #eae6da;
+  box-shadow: 0 20px 50px rgba(11, 18, 32, 0.08);
+  transition: border-color 500ms ease, box-shadow 500ms ease;
+}
+
+.group:hover .poster-frame {
+  border-color: rgba(15, 118, 110, 0.45);
+  box-shadow: 0 26px 60px rgba(11, 18, 32, 0.14), 0 0 32px rgba(15, 118, 110, 0.1);
+}
+
 /* Keyframes for custom motion tokens */
 @keyframes marquee {
   from {

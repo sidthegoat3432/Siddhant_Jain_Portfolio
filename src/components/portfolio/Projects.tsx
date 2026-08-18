@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, CornerDownRight, ExternalLink } from "lucide-react";
-import { projects, type Project } from "@/data/portfolio";
+import { posters, projects, type Poster, type Project } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 
@@ -47,6 +47,48 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
         <span>{project.year}</span>
       </div>
     </div>
+  );
+}
+
+function PosterTile({ poster, index }: { poster: Poster; index: number }) {
+  return (
+    <figure className="group">
+      <div className="poster-frame">
+        {poster.image ? (
+          <img
+            src={poster.image}
+            alt={poster.title}
+            className="absolute inset-0 h-full w-full object-cover"
+            loading="lazy"
+          />
+        ) : (
+          <>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(15,118,110,0.16),transparent_42%),linear-gradient(165deg,#eaf0ee,#eae6da_74%)]" />
+            <div className="absolute inset-5 rounded-xl border border-dashed border-ink/20" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
+              <span className="font-display text-[10px] uppercase tracking-[0.3em] text-brand">
+                Poster / 0{index + 1}
+              </span>
+              <span className="font-display text-2xl font-semibold tracking-tight text-ink/70">
+                {poster.title}
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                Add your artwork
+              </span>
+            </div>
+          </>
+        )}
+        <div className="scene-scanline" />
+      </div>
+      <figcaption className="mt-4 flex items-center justify-between gap-3">
+        <span className="font-display text-sm font-medium text-ink">
+          {poster.title}
+        </span>
+        <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          Portrait · 3:4
+        </span>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -129,6 +171,35 @@ export function Projects() {
             </motion.article>
           </Reveal>
         ))}
+      </div>
+
+      {/* Poster work */}
+      <div className="mx-auto mt-28 max-w-7xl px-5 sm:px-8 lg:px-12">
+        <Reveal>
+          <div className="flex flex-col gap-6 border-t border-border pt-12 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.25em] text-brand">
+                <span className="font-display text-sm text-gold">03B</span>
+                Poster work
+              </p>
+              <h3 className="mt-4 max-w-xl font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+                Three posters, one point of view.
+              </h3>
+            </div>
+            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              A rotating selection of my strongest poster pieces — placeholders
+              for now, artwork drops in here.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {posters.map((poster, i) => (
+            <Reveal key={poster.id} delay={i * 0.08}>
+              <PosterTile poster={poster} index={i} />
+            </Reveal>
+          ))}
+        </div>
       </div>
 
       <div className="mx-auto mt-24 max-w-7xl px-5 sm:px-8 lg:px-12">

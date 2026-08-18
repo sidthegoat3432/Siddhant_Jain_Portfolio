@@ -171,47 +171,50 @@ export const projects: Project[] = [
 ];
 
 // ----------------------------------------------------------------------------
-//  SKILLS
+//  POSTERS
 // ----------------------------------------------------------------------------
-export interface Skill {
+export interface Poster {
+  id: string;
+  // 👈 REPLACE: poster title
+  title: string;
+  // 👈 POSTER IMAGE PLACEHOLDER: paste an image URL (https://... or /posters/x.png)
+  image?: string;
+}
+
+// 👈 REPLACE: your 3 best posters. Drop an image URL into each `image` field.
+export const posters: Poster[] = [
+  { id: "poster-01", title: "Poster 01", image: "" },
+  { id: "poster-02", title: "Poster 02", image: "" },
+  { id: "poster-03", title: "Poster 03", image: "" },
+];
+
+// ----------------------------------------------------------------------------
+//  TOOLS
+// ----------------------------------------------------------------------------
+export interface Tool {
+  // 👈 REPLACE: tool / technology name
   name: string;
-  level: number; // 0–100, drives the animated bar
-}
-
-export interface SkillGroup {
+  // 👈 REPLACE: a short category label shown on the tile
   category: string;
-  items: Skill[];
 }
 
-// 👈 REPLACE: your real skills and proficiency levels.
-export const skillGroups: SkillGroup[] = [
-  {
-    category: "Design",
-    items: [
-      { name: "Product Design", level: 92 },
-      { name: "UI / UX", level: 90 },
-      { name: "Design Systems", level: 84 },
-      { name: "Prototyping", level: 88 },
-    ],
-  },
-  {
-    category: "Engineering",
-    items: [
-      { name: "React", level: 90 },
-      { name: "TypeScript", level: 86 },
-      { name: "Node.js", level: 78 },
-      { name: "Three.js", level: 72 },
-    ],
-  },
-  {
-    category: "Motion & Craft",
-    items: [
-      { name: "Framer Motion", level: 88 },
-      { name: "GSAP", level: 80 },
-      { name: "Figma", level: 92 },
-      { name: "Blender", level: 68 },
-    ],
-  },
+// 👈 REPLACE: the tools you actually use (aim for ~15 for a balanced grid).
+export const tools: Tool[] = [
+  { name: "TypeScript", category: "Language" },
+  { name: "JavaScript", category: "Language" },
+  { name: "React", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
+  { name: "Tailwind CSS", category: "Frontend" },
+  { name: "Framer Motion", category: "Frontend" },
+  { name: "Node.js", category: "Backend" },
+  { name: "Convex", category: "Backend" },
+  { name: "PostgreSQL", category: "Backend" },
+  { name: "Prisma", category: "Backend" },
+  { name: "Figma", category: "Design" },
+  { name: "GSAP", category: "Design" },
+  { name: "Three.js", category: "Design" },
+  { name: "Git", category: "Tooling" },
+  { name: "Docker", category: "Tooling" },
 ];
 
 // ----------------------------------------------------------------------------

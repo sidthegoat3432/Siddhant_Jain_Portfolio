@@ -56,7 +56,7 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
       <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
       <div className="scene-scanline" />
       {hasLink && (
-        <span className="pointer-events-none absolute right-3 top-3 z-[4] flex items-center gap-1.5 rounded-full bg-ink/75 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-white/90 opacity-0 transition-opacity duration-300 group-hover/scene:opacity-100">
+        <span className="pointer-events-none absolute right-3 top-3 z-[4] flex items-center gap-1.5 rounded-full bg-ink/75 px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] text-white/90 opacity-0 transition-opacity duration-300 group-hover/scene:opacity-100 dark:bg-black/70">
           Open site
           <ExternalLink className="size-3" />
         </span>
@@ -96,7 +96,7 @@ function PosterTile({ poster, index }: { poster: Poster; index: number }) {
           />
         ) : (
           <>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(15,118,110,0.16),transparent_42%),linear-gradient(165deg,#eaf0ee,#eae6da_74%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(15,118,110,0.16),transparent_42%),linear-gradient(165deg,#eaf0ee,#eae6da_74%)] dark:bg-[radial-gradient(circle_at_50%_38%,rgba(45,212,191,0.14),transparent_42%),linear-gradient(165deg,#10202b,#0d1626_74%)]" />
             <div className="kinetic-aurora pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(15,118,110,0.22),transparent_55%)]" />
             <span className="kinetic-rise absolute bottom-[18%] left-[16%] size-1.5 rounded-full bg-brand/70" />
             <span

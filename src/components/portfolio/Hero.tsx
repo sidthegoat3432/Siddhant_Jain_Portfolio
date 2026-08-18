@@ -96,7 +96,7 @@ function KineticMark() {
       {/* Grid — slowly drifts + mouse parallax */}
       <motion.div
         style={{ x: gridX, y: gridY }}
-        className="kinetic-grid-drift absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px]"
+        className="kinetic-grid-drift absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(11,18,32,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.12)_1px,transparent_1px)] [background-size:38px_38px] dark:[background-image:linear-gradient(rgba(238,242,249,0.14)_1px,transparent_1px),linear-gradient(90deg,rgba(238,242,249,0.14)_1px,transparent_1px)]"
       />
 
       {/* Orbital system — rings spin on their own, dots travel, and the whole
@@ -183,7 +183,7 @@ export function Hero() {
       className="relative min-h-[100svh] overflow-hidden bg-background"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(15,118,110,0.12),transparent_42%),radial-gradient(ellipse_at_90%_60%,rgba(180,83,9,0.08),transparent_36%),radial-gradient(ellipse_at_70%_12%,rgba(37,99,235,0.08),transparent_48%)]" />
-      <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(11,18,32,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.1)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)]" />
+      <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(11,18,32,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.1)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)] dark:[background-image:linear-gradient(rgba(238,242,249,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(238,242,249,0.08)_1px,transparent_1px)]" />
       <div className="pointer-events-none absolute left-[7%] top-[18%] h-px w-[42%] bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
       <div className="pointer-events-none absolute right-[6%] top-[35%] h-[35%] w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
 

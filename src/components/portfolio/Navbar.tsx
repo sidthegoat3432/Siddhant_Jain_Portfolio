@@ -3,6 +3,7 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { gmailComposeUrl, profile } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
   { label: "About", href: "#about" },
@@ -67,6 +68,7 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-4 md:flex">
+          <ThemeToggle />
           <a
             href="#contact"
             className="flex items-center gap-2 text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70 transition-colors hover:text-ink"
@@ -88,16 +90,19 @@ export function Navbar() {
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="flex size-10 items-center justify-center rounded-lg border border-border text-ink md:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          {open ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
+        {/* Mobile controls */}
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="flex size-10 items-center justify-center rounded-full border border-border text-ink"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}

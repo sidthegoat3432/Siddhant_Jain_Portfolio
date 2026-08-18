@@ -146,6 +146,133 @@
   --sidebar-accent-foreground: #2dd4bf;
   --sidebar-border: rgba(245, 241, 232, 0.08);
   --sidebar-ring: #2dd4bf;
+
+  /* Custom brand palette — flipped for dark (text becomes light, accents brighten) */
+  --color-ink: #eef2f9;
+  --color-ink-2: #131d2e;
+  --color-cream: #0f1929;
+  --color-brand: #2dd4bf;
+  --color-gold: #f5b64c;
+  --color-blue: #7dd3fc;
+  --color-green: #34d399;
+}
+
+/* ---------------------------------------------------------------------------
+   Dark-mode surfaces — the art-directed panels, cards, and scenes re-tuned
+   for the deep navy background so nothing stays light-paper in dark mode.
+--------------------------------------------------------------------------- */
+.dark .toolkit-surface {
+  border-color: rgba(45, 212, 191, 0.16);
+  background: linear-gradient(
+    135deg,
+    rgba(19, 30, 48, 0.85),
+    rgba(15, 25, 41, 0.95)
+  );
+}
+
+.dark .toolkit-card {
+  border-color: rgba(245, 241, 232, 0.1);
+  background: rgba(15, 25, 41, 0.92);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+.dark .toolkit-card:hover {
+  border-color: rgba(45, 212, 191, 0.45);
+  background: rgba(18, 30, 48, 0.98);
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.4), 0 0 28px rgba(45, 212, 191, 0.1);
+}
+
+.dark .toolkit-number {
+  background: #2dd4bf;
+  color: #04211c;
+}
+
+.dark .toolkit-card:hover .toolkit-number {
+  background: #f5b64c;
+}
+
+.dark .toolkit-detail {
+  border-color: rgba(45, 212, 191, 0.5);
+  color: #2dd4bf;
+}
+
+.dark .toolkit-card:hover .toolkit-detail {
+  border-color: #2dd4bf;
+  background: #2dd4bf;
+  color: #04211c;
+}
+
+.dark .project-scene,
+.dark .poster-frame {
+  border-color: rgba(245, 241, 232, 0.12);
+  background: #0e1728;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+}
+
+.dark .scene-teal {
+  background: radial-gradient(circle at 50% 50%, rgba(45, 212, 191, 0.22), transparent 34%),
+    linear-gradient(135deg, #0e2b33, #0d1626 65%);
+}
+
+.dark .scene-gold {
+  background: radial-gradient(circle at 55% 47%, rgba(245, 182, 76, 0.18), transparent 32%),
+    linear-gradient(135deg, #2a2113, #0d1626 68%);
+}
+
+.dark .scene-blue {
+  background: radial-gradient(circle at 48% 45%, rgba(125, 211, 252, 0.16), transparent 31%),
+    linear-gradient(135deg, #12202e, #0d1626 68%);
+}
+
+.dark .scene-rose {
+  background: radial-gradient(circle at 53% 48%, rgba(244, 114, 182, 0.14), transparent 32%),
+    linear-gradient(135deg, #241520, #0d1626 68%);
+}
+
+.dark .scene-grid {
+  background-image: linear-gradient(rgba(245, 241, 232, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 241, 232, 0.1) 1px, transparent 1px);
+}
+
+.dark .scene-orbit {
+  border-color: rgba(245, 241, 232, 0.26);
+}
+
+.dark .scene-orbit-three {
+  border-color: rgba(245, 241, 232, 0.3);
+}
+
+.dark .scene-orbit-three::after {
+  background: #e5ebf3;
+  box-shadow: 0 0 12px rgba(229, 235, 243, 0.35);
+}
+
+.dark .scene-core {
+  border-color: rgba(245, 241, 232, 0.3);
+  background: rgba(14, 23, 40, 0.9);
+  color: rgba(238, 242, 249, 0.9);
+  box-shadow: 0 0 0 9px rgba(245, 241, 232, 0.04), 0 0 30px rgba(45, 212, 191, 0.16);
+}
+
+.dark .scene-label {
+  color: rgba(238, 242, 249, 0.5);
+}
+
+.dark .project-scene::after {
+  background: radial-gradient(circle at 50% 50%, transparent 22%, rgba(0, 0, 0, 0.34) 100%);
+}
+
+.dark .track-record-section {
+  background: linear-gradient(
+    135deg,
+    rgba(14, 22, 40, 0.85),
+    rgba(11, 18, 32, 0.65)
+  );
+}
+
+.dark .track-record-row:hover {
+  border-color: rgba(45, 212, 191, 0.3);
+  background: rgba(255, 255, 255, 0.045);
 }
 
 @layer base {

@@ -114,7 +114,7 @@ function ProfileImage() {
         />
       ) : (
         <>
-          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)]" />
+          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)] dark:bg-[radial-gradient(circle_at_55%_35%,rgba(45,212,191,0.16),transparent_32%),linear-gradient(145deg,#10202b,#0d1626_72%)]" />
           <div className="absolute inset-5 rounded-[1.5rem] border border-dashed border-ink/20" />
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
             <span className="flex size-14 items-center justify-center rounded-2xl border border-brand/25 bg-card/70 text-brand">
@@ -131,7 +131,7 @@ function ProfileImage() {
       )}
       <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <span className="media-scanline pointer-events-none" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent dark:from-black/55" />
       <div className="pointer-events-none absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-white/35 pt-3 text-[10px] uppercase tracking-[0.2em] text-white/85">
         <span>Portrait / 001</span>
         <span className="text-brand">SJ</span>
@@ -169,7 +169,7 @@ function BackgroundMedia() {
         />
       ) : (
         <>
-          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)]" />
+          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)] dark:bg-[radial-gradient(circle_at_55%_35%,rgba(45,212,191,0.16),transparent_32%),linear-gradient(145deg,#10202b,#0d1626_72%)]" />
           <div className="absolute inset-5 rounded-[1.5rem] border border-dashed border-ink/20" />
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
             <span className="flex size-14 items-center justify-center rounded-2xl border border-brand/25 bg-card/70 text-brand">
@@ -186,7 +186,7 @@ function BackgroundMedia() {
       )}
       <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <span className="media-scanline pointer-events-none" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent dark:from-black/55" />
       <div className="pointer-events-none absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-white/35 pt-3 text-[10px] uppercase tracking-[0.2em] text-white/85">
         <span>{hasVideo ? "Background motion / 001" : "Portrait / 001"}</span>
         <span className="text-brand">SJ</span>

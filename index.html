@@ -18,6 +18,15 @@
   />
   <meta property="og:type" content="website" />
   <title>Siddhant Portfolio</title>
+  <script>
+    // Apply the saved theme before first paint so there's no flash.
+    (function () {
+      try {
+        var t = localStorage.getItem("siddhant-theme");
+        if (t === "dark") document.documentElement.classList.add("dark");
+      } catch (e) {}
+    })();
+  </script>
 </head>
 
 

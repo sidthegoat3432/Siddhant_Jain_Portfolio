@@ -37,6 +37,12 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
           <div className="scene-orbit scene-orbit-one" />
           <div className="scene-orbit scene-orbit-two" />
           <div className="scene-orbit scene-orbit-three" />
+          <div className="kinetic-aurora pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_48%_40%,rgba(37,99,235,0.16),transparent_46%),radial-gradient(circle_at_62%_62%,rgba(194,65,12,0.1),transparent_40%)]" />
+          <span className="kinetic-rise absolute bottom-[16%] left-[12%] size-1.5 rounded-full bg-brand/70" />
+          <span
+            className="kinetic-rise absolute bottom-[12%] left-[66%] size-1 rounded-full bg-gold/80"
+            style={{ animationDelay: "1.7s" }}
+          />
           <div className="scene-core">
             <span>{String(index + 1).padStart(2, "0")}</span>
           </div>
@@ -45,6 +51,7 @@ function ProjectVisual({ project, index }: { project: Project; index: number }) 
           </div>
         </>
       )}
+      <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
       <div className="scene-scanline" />
       <div className="absolute inset-x-6 bottom-5 flex items-center justify-between text-[9px] uppercase tracking-[0.24em] text-ink/60">
         <span>Frame / {String(index + 1).padStart(2, "0")}</span>
@@ -68,6 +75,12 @@ function PosterTile({ poster, index }: { poster: Poster; index: number }) {
         ) : (
           <>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(15,118,110,0.16),transparent_42%),linear-gradient(165deg,#eaf0ee,#eae6da_74%)]" />
+            <div className="kinetic-aurora pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(15,118,110,0.22),transparent_55%)]" />
+            <span className="kinetic-rise absolute bottom-[18%] left-[16%] size-1.5 rounded-full bg-brand/70" />
+            <span
+              className="kinetic-rise absolute bottom-[14%] left-[70%] size-1 rounded-full bg-gold/80"
+              style={{ animationDelay: "2s" }}
+            />
             <div className="absolute inset-5 rounded-xl border border-dashed border-ink/20" />
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
               <span className="font-display text-[10px] uppercase tracking-[0.3em] text-brand">
@@ -82,6 +95,7 @@ function PosterTile({ poster, index }: { poster: Poster; index: number }) {
             </div>
           </>
         )}
+        <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent" />
         <div className="scene-scanline" />
       </div>
       <figcaption className="mt-4 flex items-center justify-between gap-3">

@@ -742,3 +742,44 @@ footer[id] {
 .kinetic-grid-drift {
   animation: kinetic-grid-drift 12s linear infinite;
 }
+
+/* Orbit spin for project-scene placeholders — each keyframe keeps the ring's
+   centering translate while rotating, so the traveling dots orbit forever. */
+@keyframes scene-orbit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(-22deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(338deg);
+  }
+}
+
+@keyframes scene-orbit-spin-two {
+  from {
+    transform: translate(-50%, -50%) rotate(52deg) scaleY(0.42);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(412deg) scaleY(0.42);
+  }
+}
+
+@keyframes scene-orbit-spin-three {
+  from {
+    transform: translate(-50%, -50%) rotate(-40deg) scaleY(0.28);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(320deg) scaleY(0.28);
+  }
+}
+
+.scene-orbit-one {
+  animation: scene-orbit-spin 14s linear infinite;
+}
+
+.scene-orbit-two {
+  animation: scene-orbit-spin-two 21s linear infinite;
+}
+
+.scene-orbit-three {
+  animation: scene-orbit-spin-three 27s linear infinite;
+}

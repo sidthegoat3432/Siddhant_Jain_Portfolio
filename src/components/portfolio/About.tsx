@@ -93,6 +93,7 @@ function ProfileImage() {
           </div>
         </>
       )}
+      <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <span className="media-scanline pointer-events-none" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
       <div className="pointer-events-none absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-white/35 pt-3 text-[10px] uppercase tracking-[0.2em] text-white/85">
@@ -143,6 +144,7 @@ function BackgroundMedia() {
           </div>
         </>
       )}
+      <div className="kinetic-sweep pointer-events-none absolute inset-y-0 left-0 z-[3] w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       <span className="media-scanline pointer-events-none" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-transparent to-transparent" />
       <div className="pointer-events-none absolute inset-x-6 bottom-5 flex items-center justify-between border-t border-white/35 pt-3 text-[10px] uppercase tracking-[0.2em] text-white/85">

@@ -22,7 +22,7 @@ export function Contact() {
             <SectionHeading
               index="06"
               eyebrow="Contact"
-              title="Let's build something good."
+              title="Let's build something serious."
               description="Whether it's a full-time role, a contract, or a project that needs shipping — I'm open to the conversation. Mostly serious, occasionally goofy."
             />
 
@@ -62,7 +62,7 @@ export function Contact() {
           <div className="flex flex-col justify-center">
             <Reveal>
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Find me online
+                Elsewhere on the internet
               </p>
             </Reveal>
             <div className="mt-5 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card/40">

@@ -31,6 +31,11 @@ function RouteLoading() {
 const convexUrl = import.meta.env.VITE_CONVEX_URL as string | undefined;
 const convex = convexUrl ? new ConvexReactClient(convexUrl) : null;
 
+// GitHub Pages serves project sites from a subpath (e.g. /Siddhant-Jain-Portfolio/).
+// Derive that prefix from the current URL so the app's "/" route matches
+// wherever it's hosted — the subpath, a custom domain, or the dev preview.
+const routerBasename = window.location.pathname.replace(/\/+$/, "") || "/";
+
 function AppProviders({ children }: { children: ReactNode }) {
   if (!convex) return <>{children}</>;
   return <ConvexAuthProvider client={convex}>{children}</ConvexAuthProvider>;
@@ -67,7 +72,7 @@ createRoot(document.getElementById("root")!).render(
     <VlyToolbar />
     <InstrumentationProvider>
       <AppProviders>
-        <BrowserRouter>
+        <BrowserRouter basename={routerBasename}>
           <RouteSyncer />
           <Suspense fallback={<RouteLoading />}>
             <Routes>

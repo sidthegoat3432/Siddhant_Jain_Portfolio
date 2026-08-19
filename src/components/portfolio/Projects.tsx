@@ -140,8 +140,8 @@ export function Projects() {
           <SectionHeading
             index="03"
             eyebrow="Selected work"
-            title="Proof, not promises."
-            description="A sequence of shipped work — products, systems, and interfaces built for people who expect the details to hold."
+            title="Things I've actually made."
+            description="A small collection of real, finished work — projects and posters I'm proud enough to show you."
           />
           <Reveal delay={0.1} className="shrink-0 sm:pb-1">
             <p className="max-w-[13rem] border-l border-gold/50 pl-4 text-xs leading-relaxed text-muted-foreground">
@@ -170,7 +170,7 @@ export function Projects() {
 
               <div className="relative z-10 lg:py-8">
                 <div className="flex items-center justify-between gap-4 border-b border-border pb-4 text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-                  <span className="text-gold">Case study / 0{i + 1}</span>
+                  <span className="text-gold">Project / 0{i + 1}</span>
                   <span>{project.year}</span>
                 </div>
                 <h3 className="mt-6 max-w-md font-display text-3xl font-semibold leading-[0.95] tracking-tight text-ink transition-colors group-hover:text-brand sm:text-4xl">
@@ -206,7 +206,7 @@ export function Projects() {
 
               <div className="absolute -right-3 top-2 hidden items-center gap-2 text-[9px] uppercase tracking-[0.2em] text-muted-foreground xl:flex [writing-mode:vertical-rl]">
                 <ExternalLink className="size-3 text-brand" />
-                Open field notes
+                The story behind it
               </div>
             </motion.article>
           </Reveal>
@@ -250,7 +250,7 @@ export function Projects() {
           >
             <span className="flex items-center gap-3">
               <CornerDownRight className="size-4 text-gold" />
-              More work available on request
+              Got a project in mind? Let's talk.
             </span>
             <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>

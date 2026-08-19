@@ -13,7 +13,7 @@ import {
   Crosshair,
   MapPin,
 } from "lucide-react";
-import { useRef, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import {
   HERO_BACKGROUND_POSTER,
   HERO_BACKGROUND_VIDEO,
@@ -42,6 +42,25 @@ const introItem = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.85, ease: EASE } },
 };
+
+// Live Toronto clock — a small detail that keeps the hero feeling current.
+function TorontoClock() {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const fmt = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Toronto",
+      hour: "numeric",
+      minute: "2-digit",
+    });
+    const tick = () => setTime(fmt.format(new Date()));
+    tick();
+    const id = setInterval(tick, 30_000);
+    return () => clearInterval(id);
+  }, []);
+
+  return <span className="tabular-nums">{time}</span>;
+}
 
 function KineticMark() {
   const mx = useMotionValue(0);
@@ -209,8 +228,11 @@ export function Hero() {
         className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-center px-5 pb-24 pt-28 sm:px-8 lg:px-12"
       >
         <div className="mb-10 flex items-center justify-between border-b border-border/70 pb-4 text-[10px] uppercase tracking-[0.25em] text-muted-foreground sm:mb-14">
-          <span>Independent builder / portfolio 001</span>
-          <span className="hidden sm:inline">Scroll to inspect the work</span>
+          <span>Made by Siddhant, in Toronto</span>
+          <span className="hidden items-center gap-2 sm:inline-flex">
+            <span className="size-1.5 animate-pulse rounded-full bg-brand" />
+            Toronto · <TorontoClock />
+          </span>
         </div>
 
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
@@ -228,6 +250,14 @@ export function Hero() {
               <span className="text-xs font-medium uppercase tracking-[0.3em] text-ink/80">
                 Available for meaningful work
               </span>
+            </motion.div>
+
+            <motion.div
+              variants={introItem}
+              className="mt-4 flex items-center gap-2 text-sm text-muted-foreground"
+            >
+              <span className="size-1.5 rounded-full bg-gold" />
+              <span>{profile.currently}</span>
             </motion.div>
 
             <h1 className="mt-7 font-display text-[clamp(4rem,11.5vw,10.5rem)] font-semibold leading-[0.78] tracking-[-0.08em] text-ink">

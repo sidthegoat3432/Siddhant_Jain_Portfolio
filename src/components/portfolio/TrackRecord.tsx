@@ -23,8 +23,7 @@ export function TrackRecord() {
           </Reveal>
           <Reveal delay={0.12}>
             <p className="max-w-sm border-l border-gold/50 pl-5 text-sm leading-relaxed text-muted-foreground lg:mb-2">
-              A record of the work, learning, and practice happening outside the
-              polished surface of this site.
+              Real stuff I've done — no fluff.
             </p>
           </Reveal>
         </div>
@@ -54,7 +53,7 @@ export function TrackRecord() {
                   </a>
                 ) : (
                   <span className="hidden text-[10px] uppercase tracking-[0.18em] text-muted-foreground/60 sm:block">
-                    Field note / {String(index + 1).padStart(2, "0")}
+                    Record / {String(index + 1).padStart(2, "0")}
                   </span>
                 )}
               </article>

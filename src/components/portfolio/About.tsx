@@ -18,6 +18,7 @@ const BRIDGE_PHRASES = [
   "Builder",
   "Design + tech",
   "Learning AI",
+  "Slightly goofy",
   "Open to work",
   "Let's build",
 ];
@@ -73,7 +74,7 @@ function AboutMasthead() {
         className="border-l border-gold/50 pl-5"
       >
         <p className="text-[10px] uppercase tracking-[0.24em] text-gold">
-          Field notes / 2026
+          Toronto / 2026
         </p>
         <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
           A closer look at the places, interests, and working energy behind the

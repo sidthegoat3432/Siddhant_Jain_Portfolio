@@ -60,6 +60,11 @@ export const profile = {
 
   // 👈 REPLACE: availability — shows as a status badge in the hero
   availability: "Open to freelance & internships" as string,
+
+  // 👈 REPLACE: a short "right now" line under the hero status — keeps the
+  // site feeling alive and current. Swap it whenever your focus changes.
+  currently:
+    "Right now: learning AI, training for volleyball season, and plotting the next poster.",
 } as const;
 
 // Opens Gmail's compose window in the browser with this email pre-filled.

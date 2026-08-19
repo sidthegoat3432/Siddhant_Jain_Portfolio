@@ -7,11 +7,11 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { label: "About", href: "/#/about" },
-  { label: "Projects", href: "/#/projects" },
-  { label: "Track record", href: "/#/track-record" },
-  { label: "Skills", href: "/#/skills" },
-  { label: "Contact", href: "/#/contact" },
+  { label: "About", href: "#about" },
+  { label: "Projects", href: "#projects" },
+  { label: "Track record", href: "#track-record" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {

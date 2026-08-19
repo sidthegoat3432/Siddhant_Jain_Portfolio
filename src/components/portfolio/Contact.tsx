@@ -12,7 +12,7 @@ export function Contact() {
     >
       {/* soft glow */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(15,118,110,0.14),transparent_70%)] blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-0 h-72 w-[40rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(185,28,28,0.14),transparent_70%)] blur-3xl"
         aria-hidden
       />
 

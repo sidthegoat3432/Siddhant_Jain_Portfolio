@@ -82,7 +82,7 @@ function KineticMark() {
       onMouseLeave={handleMouseLeave}
       whileHover={{
         boxShadow:
-          "0 30px 80px rgba(11,18,32,0.16), 0 0 44px rgba(15,118,110,0.14)",
+          "0 30px 80px rgba(11,18,32,0.16), 0 0 44px rgba(185,28,28,0.14)",
       }}
       whileTap={{ scale: 0.985 }}
       style={{ rotateX, rotateY, transformPerspective: 900 }}
@@ -90,7 +90,7 @@ function KineticMark() {
     >
       {/* Breathing aurora — always drifting behind the layers */}
       <motion.div style={{ x: orbitX, y: orbitY }} className="absolute inset-0">
-        <div className="kinetic-aurora absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(15,118,110,0.2),transparent_34%,transparent_60%,rgba(180,83,9,0.1))]" />
+        <div className="kinetic-aurora absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(185,28,28,0.2),transparent_34%,transparent_60%,rgba(180,83,9,0.1))]" />
       </motion.div>
 
       {/* Grid — slowly drifts + mouse parallax */}
@@ -109,7 +109,7 @@ function KineticMark() {
           <span className="absolute -right-1 top-1/2 flex size-3.5 -translate-y-1/2 items-center justify-center rounded-full bg-gold shadow-[0_0_18px_rgba(180,83,9,0.75)]">
             <span className="size-1.5 rounded-full bg-ink" />
           </span>
-          <span className="absolute -bottom-1 left-[18%] flex size-3 rounded-full bg-brand shadow-[0_0_18px_rgba(15,118,110,0.75)]" />
+          <span className="absolute -bottom-1 left-[18%] flex size-3 rounded-full bg-brand shadow-[0_0_18px_rgba(185,28,28,0.75)]" />
 
           {/* Counter-rotating dashed ring with its own traveling dot */}
           <div className="kinetic-spin-reverse absolute inset-[16%] rounded-full border border-dashed border-gold/50">
@@ -182,7 +182,7 @@ export function Hero() {
       ref={ref}
       className="relative min-h-[100svh] overflow-hidden bg-background"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(15,118,110,0.12),transparent_42%),radial-gradient(ellipse_at_90%_60%,rgba(180,83,9,0.08),transparent_36%),radial-gradient(ellipse_at_70%_12%,rgba(37,99,235,0.08),transparent_48%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_0%,rgba(185,28,28,0.12),transparent_42%),radial-gradient(ellipse_at_90%_60%,rgba(180,83,9,0.08),transparent_36%),radial-gradient(ellipse_at_70%_12%,rgba(185,28,28,0.08),transparent_48%)]" />
       <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(11,18,32,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(11,18,32,0.1)_1px,transparent_1px)] [background-size:80px_80px] [mask-image:linear-gradient(to_bottom,black,transparent_90%)] dark:[background-image:linear-gradient(rgba(238,242,249,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(238,242,249,0.08)_1px,transparent_1px)]" />
       <div className="pointer-events-none absolute left-[7%] top-[18%] h-px w-[42%] bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
       <div className="pointer-events-none absolute right-[6%] top-[35%] h-[35%] w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
@@ -257,7 +257,7 @@ export function Hero() {
             <motion.div variants={introItem} className="mt-10 flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_38px_rgba(15,118,110,0.25)]"
+                className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[0_0_38px_rgba(185,28,28,0.25)]"
               >
                 Enter the work
                 <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

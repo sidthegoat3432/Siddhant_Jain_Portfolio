@@ -58,7 +58,7 @@
   --color-ink: #172033;
   --color-ink-2: #e5ebf3;
   --color-cream: #f7faff;
-  --color-brand: #2563eb;
+  --color-brand: #b91c1c;
   --color-gold: #c2410c;
   --color-blue: #2563eb;
   --color-green: #16a34a;
@@ -82,12 +82,12 @@
   --popover-foreground: #172033;
 
   /* Accents — cobalt blue + warm coral */
-  --primary: #2563eb;
+  --primary: #b91c1c;
   --primary-foreground: #ffffff;
-  --secondary: #e4ebf7;
-  --secondary-foreground: #25324a;
-  --accent: rgba(37, 99, 235, 0.08);
-  --accent-foreground: #1d4ed8;
+  --secondary: #f6e5e5;
+  --secondary-foreground: #3a2424;
+  --accent: rgba(185, 28, 28, 0.08);
+  --accent-foreground: #991b1b;
 
   --muted: #e2e9f1;
   --muted-foreground: #596579;
@@ -95,9 +95,9 @@
 
   --border: rgba(23, 32, 51, 0.13);
   --input: rgba(23, 32, 51, 0.16);
-  --ring: #2563eb;
+  --ring: #b91c1c;
 
-  --chart-1: #2563eb;
+  --chart-1: #b91c1c;
   --chart-2: #c2410c;
   --chart-3: #0891b2;
   --chart-4: #172033;
@@ -105,12 +105,12 @@
 
   --sidebar: #ffffff;
   --sidebar-foreground: #172033;
-  --sidebar-primary: #2563eb;
+  --sidebar-primary: #b91c1c;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: rgba(37, 99, 235, 0.08);
-  --sidebar-accent-foreground: #1d4ed8;
+  --sidebar-accent: rgba(185, 28, 28, 0.08);
+  --sidebar-accent-foreground: #991b1b;
   --sidebar-border: rgba(23, 32, 51, 0.13);
-  --sidebar-ring: #2563eb;
+  --sidebar-ring: #b91c1c;
 }
 
 /* Dark mode is still available on request via the `.dark` class */
@@ -121,37 +121,37 @@
   --card-foreground: #f5f1e8;
   --popover: #111d2f;
   --popover-foreground: #f5f1e8;
-  --primary: #2dd4bf;
-  --primary-foreground: #04211c;
+  --primary: #e5484d;
+  --primary-foreground: #2a0a0d;
   --secondary: #f5b64c;
   --secondary-foreground: #241503;
   --muted: #121e30;
   --muted-foreground: #8f9db1;
-  --accent: rgba(45, 212, 191, 0.1);
-  --accent-foreground: #2dd4bf;
+  --accent: rgba(229, 72, 77, 0.1);
+  --accent-foreground: #e5484d;
   --destructive: #f87171;
   --border: rgba(245, 241, 232, 0.08);
   --input: rgba(245, 241, 232, 0.12);
-  --ring: #2dd4bf;
-  --chart-1: #2dd4bf;
+  --ring: #e5484d;
+  --chart-1: #e5484d;
   --chart-2: #f5b64c;
   --chart-3: #7dd3fc;
   --chart-4: #f5f1e8;
   --chart-5: #94a3b8;
   --sidebar: #0f1929;
   --sidebar-foreground: #f5f1e8;
-  --sidebar-primary: #2dd4bf;
-  --sidebar-primary-foreground: #04211c;
-  --sidebar-accent: rgba(45, 212, 191, 0.1);
-  --sidebar-accent-foreground: #2dd4bf;
+  --sidebar-primary: #e5484d;
+  --sidebar-primary-foreground: #2a0a0d;
+  --sidebar-accent: rgba(229, 72, 77, 0.1);
+  --sidebar-accent-foreground: #e5484d;
   --sidebar-border: rgba(245, 241, 232, 0.08);
-  --sidebar-ring: #2dd4bf;
+  --sidebar-ring: #e5484d;
 
   /* Custom brand palette — flipped for dark (text becomes light, accents brighten) */
   --color-ink: #eef2f9;
   --color-ink-2: #131d2e;
   --color-cream: #0f1929;
-  --color-brand: #2dd4bf;
+  --color-brand: #e5484d;
   --color-gold: #f5b64c;
   --color-blue: #7dd3fc;
   --color-green: #34d399;
@@ -162,7 +162,7 @@
    for the deep navy background so nothing stays light-paper in dark mode.
 --------------------------------------------------------------------------- */
 .dark .toolkit-surface {
-  border-color: rgba(45, 212, 191, 0.16);
+  border-color: rgba(229, 72, 77, 0.16);
   background: linear-gradient(
     135deg,
     rgba(19, 30, 48, 0.85),
@@ -177,14 +177,14 @@
 }
 
 .dark .toolkit-card:hover {
-  border-color: rgba(45, 212, 191, 0.45);
+  border-color: rgba(229, 72, 77, 0.45);
   background: rgba(18, 30, 48, 0.98);
-  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.4), 0 0 28px rgba(45, 212, 191, 0.1);
+  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.4), 0 0 28px rgba(229, 72, 77, 0.1);
 }
 
 .dark .toolkit-number {
-  background: #2dd4bf;
-  color: #04211c;
+  background: #e5484d;
+  color: #2a0a0d;
 }
 
 .dark .toolkit-card:hover .toolkit-number {
@@ -192,14 +192,14 @@
 }
 
 .dark .toolkit-detail {
-  border-color: rgba(45, 212, 191, 0.5);
-  color: #2dd4bf;
+  border-color: rgba(229, 72, 77, 0.5);
+  color: #e5484d;
 }
 
 .dark .toolkit-card:hover .toolkit-detail {
-  border-color: #2dd4bf;
-  background: #2dd4bf;
-  color: #04211c;
+  border-color: #e5484d;
+  background: #e5484d;
+  color: #2a0a0d;
 }
 
 .dark .project-scene,
@@ -210,8 +210,8 @@
 }
 
 .dark .scene-teal {
-  background: radial-gradient(circle at 50% 50%, rgba(45, 212, 191, 0.22), transparent 34%),
-    linear-gradient(135deg, #0e2b33, #0d1626 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(229, 72, 77, 0.22), transparent 34%),
+    linear-gradient(135deg, #2b1216, #0d1626 65%);
 }
 
 .dark .scene-gold {
@@ -251,7 +251,7 @@
   border-color: rgba(245, 241, 232, 0.3);
   background: rgba(14, 23, 40, 0.9);
   color: rgba(238, 242, 249, 0.9);
-  box-shadow: 0 0 0 9px rgba(245, 241, 232, 0.04), 0 0 30px rgba(45, 212, 191, 0.16);
+  box-shadow: 0 0 0 9px rgba(245, 241, 232, 0.04), 0 0 30px rgba(229, 72, 77, 0.16);
 }
 
 .dark .scene-label {
@@ -271,7 +271,7 @@
 }
 
 .dark .track-record-row:hover {
-  border-color: rgba(45, 212, 191, 0.3);
+  border-color: rgba(229, 72, 77, 0.3);
   background: rgba(255, 255, 255, 0.045);
 }
 
@@ -292,7 +292,7 @@
   }
 
   ::selection {
-    background: rgba(37, 99, 235, 0.85);
+    background: rgba(185, 28, 28, 0.85);
     color: #f7faff;
   }
 
@@ -329,8 +329,8 @@
 }
 
 .profile-image:hover {
-  border-color: rgba(37, 99, 235, 0.45);
-  box-shadow: 0 30px 80px rgba(11, 18, 32, 0.14), 0 0 34px rgba(37, 99, 235, 0.12);
+  border-color: rgba(185, 28, 28, 0.45);
+  box-shadow: 0 30px 80px rgba(11, 18, 32, 0.14), 0 0 34px rgba(185, 28, 28, 0.12);
 }
 
 .profile-image:hover::before {
@@ -356,7 +356,7 @@
 
 /* Editorial toolkit grid — light cards with an index-card feel */
 .toolkit-surface {
-  background: linear-gradient(135deg, rgba(219, 230, 244, 0.92), rgba(239, 244, 249, 0.96));
+  background: linear-gradient(135deg, rgba(244, 233, 232, 0.92), rgba(250, 246, 243, 0.96));
 }
 
 .toolkit-card {
@@ -367,9 +367,9 @@
 }
 
 .toolkit-card:hover {
-  border-color: rgba(37, 99, 235, 0.42);
+  border-color: rgba(185, 28, 28, 0.42);
   background: #ffffff;
-  box-shadow: 0 20px 38px rgba(23, 32, 51, 0.12), 0 0 28px rgba(37, 99, 235, 0.08);
+  box-shadow: 0 20px 38px rgba(23, 32, 51, 0.12), 0 0 28px rgba(185, 28, 28, 0.08);
 }
 
 .toolkit-number {
@@ -379,7 +379,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 0.65rem;
-  background: #2563eb;
+  background: #b91c1c;
   color: #ffffff;
   font-family: var(--font-display);
   font-size: 0.8rem;
@@ -403,10 +403,10 @@
 }
 
 .toolkit-detail {
-  border: 1px solid rgba(37, 99, 235, 0.42);
+  border: 1px solid rgba(185, 28, 28, 0.42);
   border-radius: 9999px;
   padding: 0.35rem 0.6rem;
-  color: #2563eb;
+  color: #b91c1c;
   font-size: 0.62rem;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -415,8 +415,8 @@
 }
 
 .toolkit-card:hover .toolkit-detail {
-  border-color: #2563eb;
-  background: #2563eb;
+  border-color: #b91c1c;
+  background: #b91c1c;
   color: #ffffff;
 }
 
@@ -435,8 +435,8 @@
 }
 
 .group:hover .project-scene {
-  border-color: rgba(37, 99, 235, 0.45);
-  box-shadow: 0 30px 70px rgba(11, 18, 32, 0.14), 0 0 32px rgba(37, 99, 235, 0.1);
+  border-color: rgba(185, 28, 28, 0.45);
+  box-shadow: 0 30px 70px rgba(11, 18, 32, 0.14), 0 0 32px rgba(185, 28, 28, 0.1);
 }
 
 .project-scene::before,
@@ -481,7 +481,7 @@
 }
 
 .scene-teal {
-  background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.22), transparent 34%), linear-gradient(135deg, #dceee9, #eae6da 65%);
+  background: radial-gradient(circle at 50% 50%, rgba(185, 28, 28, 0.22), transparent 34%), linear-gradient(135deg, #f2dedd, #eae6da 65%);
 }
 
 .scene-gold {
@@ -513,8 +513,8 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #2563eb;
-  box-shadow: 0 0 16px rgba(37, 99, 235, 0.5);
+  background: #b91c1c;
+  box-shadow: 0 0 16px rgba(185, 28, 28, 0.5);
   content: "";
 }
 
@@ -577,7 +577,7 @@
   font-family: var(--font-display);
   font-size: 1.25rem;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 9px rgba(11, 18, 32, 0.05), 0 0 30px rgba(37, 99, 235, 0.16);
+  box-shadow: 0 0 0 9px rgba(11, 18, 32, 0.05), 0 0 30px rgba(185, 28, 28, 0.16);
 }
 
 .scene-label {
@@ -598,7 +598,7 @@
   z-index: 4;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(185, 28, 28, 0.8), transparent);
   opacity: 0.55;
   animation: scanline 6s ease-in-out infinite;
 }
@@ -617,8 +617,8 @@
 }
 
 .group:hover .poster-frame {
-  border-color: rgba(37, 99, 235, 0.45);
-  box-shadow: 0 26px 60px rgba(11, 18, 32, 0.14), 0 0 32px rgba(37, 99, 235, 0.1);
+  border-color: rgba(185, 28, 28, 0.45);
+  box-shadow: 0 26px 60px rgba(11, 18, 32, 0.14), 0 0 32px rgba(185, 28, 28, 0.1);
 }
 
 /* Editorial track record section */
@@ -640,7 +640,7 @@
 .track-record-row:hover {
   padding-left: 1rem;
   padding-right: 1rem;
-  border-color: rgba(37, 99, 235, 0.35);
+  border-color: rgba(185, 28, 28, 0.35);
   background: rgba(255, 255, 255, 0.52);
 }
 
@@ -744,9 +744,9 @@
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 9999px;
-  background: #0f766e;
+  background: #c2263a;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14);
+  box-shadow: 0 0 0 3px rgba(194, 38, 58, 0.14);
 }
 
 .custom-cursor-halo {
@@ -755,9 +755,9 @@
   top: 0;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid rgba(15, 118, 110, 0.4);
+  border: 1px solid rgba(194, 38, 58, 0.4);
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(15, 118, 110, 0.07), transparent 65%);
+  background: radial-gradient(circle, rgba(194, 38, 58, 0.07), transparent 65%);
   transform: translate(-50%, -50%) scale(1);
   opacity: 0.9;
   will-change: transform, opacity, border-color;
@@ -765,8 +765,8 @@
 }
 
 .custom-cursor.is-interactive .custom-cursor-halo {
-  border-color: rgba(15, 118, 110, 0.75);
-  background: radial-gradient(circle, rgba(15, 118, 110, 0.12), transparent 70%);
+  border-color: rgba(194, 38, 58, 0.75);
+  background: radial-gradient(circle, rgba(194, 38, 58, 0.12), transparent 70%);
   transform: translate(-50%, -50%) scale(1.65);
 }
 

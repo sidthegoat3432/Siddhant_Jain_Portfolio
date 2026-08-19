@@ -114,7 +114,7 @@ function ProfileImage() {
         />
       ) : (
         <>
-          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)] dark:bg-[radial-gradient(circle_at_55%_35%,rgba(45,212,191,0.16),transparent_32%),linear-gradient(145deg,#10202b,#0d1626_72%)]" />
+          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(185,28,28,0.2),transparent_32%),linear-gradient(145deg,#f2e2e0,#eae6da_72%)] dark:bg-[radial-gradient(circle_at_55%_35%,rgba(229,72,77,0.16),transparent_32%),linear-gradient(145deg,#2b1216,#0d1626_72%)]" />
           <div className="absolute inset-5 rounded-[1.5rem] border border-dashed border-ink/20" />
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
             <span className="flex size-14 items-center justify-center rounded-2xl border border-brand/25 bg-card/70 text-brand">
@@ -169,7 +169,7 @@ function BackgroundMedia() {
         />
       ) : (
         <>
-          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(15,118,110,0.2),transparent_32%),linear-gradient(145deg,#e8efeb,#eae6da_72%)] dark:bg-[radial-gradient(circle_at_55%_35%,rgba(45,212,191,0.16),transparent_32%),linear-gradient(145deg,#10202b,#0d1626_72%)]" />
+          <div className="animate-media-aurora absolute inset-0 bg-[radial-gradient(circle_at_55%_35%,rgba(185,28,28,0.2),transparent_32%),linear-gradient(145deg,#f2e2e0,#eae6da_72%)] dark:bg-[radial-gradient(circle_at_55%_35%,rgba(229,72,77,0.16),transparent_32%),linear-gradient(145deg,#2b1216,#0d1626_72%)]" />
           <div className="absolute inset-5 rounded-[1.5rem] border border-dashed border-ink/20" />
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-8 text-center">
             <span className="flex size-14 items-center justify-center rounded-2xl border border-brand/25 bg-card/70 text-brand">
@@ -249,7 +249,7 @@ export function About() {
               href={profile.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-8 inline-flex items-center gap-4 rounded-xl border border-brand/30 bg-brand/5 px-5 py-4 text-sm font-medium text-brand transition-all hover:border-brand hover:bg-brand hover:text-primary-foreground hover:shadow-[0_12px_30px_rgba(15,118,110,0.18)]"
+              className="group mt-8 inline-flex items-center gap-4 rounded-xl border border-brand/30 bg-brand/5 px-5 py-4 text-sm font-medium text-brand transition-all hover:border-brand hover:bg-brand hover:text-primary-foreground hover:shadow-[0_12px_30px_rgba(185,28,28,0.18)]"
             >
               <span className="flex size-9 items-center justify-center rounded-lg bg-brand text-primary-foreground transition-colors group-hover:bg-primary-foreground group-hover:text-brand">
                 <ArrowUpRight className="size-4" />

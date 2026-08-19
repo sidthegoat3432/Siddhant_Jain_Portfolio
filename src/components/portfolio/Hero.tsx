@@ -13,7 +13,7 @@ import {
   Crosshair,
   MapPin,
 } from "lucide-react";
-import { useRef, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import {
   HERO_BACKGROUND_POSTER,
   HERO_BACKGROUND_VIDEO,
@@ -42,6 +42,53 @@ const introItem = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.85, ease: EASE } },
 };
+
+// Live Toronto clock — a prominent editorial time readout that keeps the
+// hero feeling alive. Ticks every second in Toronto's timezone.
+function TorontoClock() {
+  const [now, setNow] = useState(() => new Date());
+
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const time = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Toronto",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+    timeZoneName: "short",
+  }).format(now);
+
+  const date = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Toronto",
+    weekday: "long",
+    month: "short",
+    day: "numeric",
+  }).format(now);
+
+  return (
+    <div className="flex items-center gap-4">
+      <span className="relative flex size-2 shrink-0">
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-70" />
+        <span className="relative inline-flex size-2 rounded-full bg-brand" />
+      </span>
+      <div>
+        <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+          Toronto / live
+        </p>
+        <p className="mt-1 font-display text-2xl font-semibold tabular-nums leading-none tracking-tight text-ink sm:text-3xl">
+          {time}
+        </p>
+        <p className="mt-1.5 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+          {date}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 function KineticMark() {
   const mx = useMotionValue(0);
@@ -317,13 +364,16 @@ export function Hero() {
               </a>
             ))}
           </div>
-          <a
-            href="#about"
-            className="flex items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-ink"
-          >
-            Continue downward
-            <ArrowDown className="size-4 animate-bounce text-brand" />
-          </a>
+          <div className="flex flex-wrap items-end gap-8 sm:gap-12">
+            <TorontoClock />
+            <a
+              href="#about"
+              className="flex items-center gap-3 pb-1 text-[10px] uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-ink"
+            >
+              Continue downward
+              <ArrowDown className="size-4 animate-bounce text-brand" />
+            </a>
+          </div>
         </div>
       </motion.div>
     </section>

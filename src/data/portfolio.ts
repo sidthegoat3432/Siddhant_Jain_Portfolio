@@ -106,6 +106,12 @@ export const socialLinks: SocialLink[] = [
     url: "https://www.instagram.com/siddhant34323/",
     icon: "instagram",
   },
+  {
+    label: "Résumé",
+    handle: "PDF",
+    url: profile.resumeUrl,
+    icon: "globe",
+  },
 ];
 
 // ----------------------------------------------------------------------------

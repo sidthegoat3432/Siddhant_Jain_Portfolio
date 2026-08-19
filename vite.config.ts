@@ -6,6 +6,9 @@ import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Relative base so the built site works from any subpath (e.g. GitHub Pages
+  // project pages at https://user.github.io/repo/).
+  base: "./",
   plugins: [vlyPlugin(), react(), tailwindcss()],
   resolve: {
     alias: {

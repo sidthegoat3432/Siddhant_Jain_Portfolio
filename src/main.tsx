@@ -5,7 +5,7 @@ import { VlyToolbar } from "../vly-toolbar-readonly.tsx";
 import { InstrumentationProvider } from "@/instrumentation.tsx";
 import { ConvexAuthProvider } from "@convex-dev/auth/react";
 import { ConvexReactClient } from "convex/react";
-import { StrictMode, useEffect, lazy, Suspense } from "react";
+import { StrictMode, useEffect, lazy, Suspense, type ReactNode } from "react";
 import Landing from "./pages/Landing.tsx";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router";
@@ -26,7 +26,15 @@ function RouteLoading() {
   );
 }
 
-const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
+// Convex is optional: on static hosts like GitHub Pages there is no deployment
+// URL, so the app renders without the auth provider rather than crashing.
+const convexUrl = import.meta.env.VITE_CONVEX_URL as string | undefined;
+const convex = convexUrl ? new ConvexReactClient(convexUrl) : null;
+
+function AppProviders({ children }: { children: ReactNode }) {
+  if (!convex) return <>{children}</>;
+  return <ConvexAuthProvider client={convex}>{children}</ConvexAuthProvider>;
+}
 
 
 
@@ -58,7 +66,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <VlyToolbar />
     <InstrumentationProvider>
-      <ConvexAuthProvider client={convex}>
+      <AppProviders>
         <BrowserRouter>
           <RouteSyncer />
           <Suspense fallback={<RouteLoading />}>
@@ -81,7 +89,7 @@ createRoot(document.getElementById("root")!).render(
           </Suspense>
         </BrowserRouter>
         <Toaster />
-      </ConvexAuthProvider>
+      </AppProviders>
     </InstrumentationProvider>
   </StrictMode>,
 );

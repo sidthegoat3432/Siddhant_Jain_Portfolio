@@ -47,20 +47,19 @@ export const profile = {
   // 👈 REPLACE: your email address (drives the contact buttons)
   email: "siddhant0516@gmail.com",
 
-  // 👈 REPLACE: your resume / CV link
-  resumeUrl:
-    "https://drive.google.com/file/d/1fHsBjT29sho26HJW2Mrm2JC6ayTm6RWY/view?usp=sharing",
+  // 👈 REPLACE: your resume / CV link (local file in public/, or any URL)
+  resumeUrl: "resume.pdf",
 
-  // 👈 PROFILE IMAGE: your portrait URL.
-  profileImage:
-    "https://lh3.googleusercontent.com/d/1PoHLLd7rhHohDGcX85Rnx3BAuqE7lrTk",
+  // 👈 PROFILE IMAGE: your portrait URL (local file in public/images/).
+  // Keep paths relative (no leading "/") so they work on GitHub Pages subpaths.
+  profileImage: "images/portrait.webp",
 
   // 👈 REPLACE: a short, honest introduction — your interests, current focus,
   // and the kind of work you want to grow into.
   bio: "I’m Siddhant Jain, a student and creative builder learning across design, storytelling, and technology. I’m interested in thoughtful interfaces, clear communication, and turning ideas into finished experiences.",
 
   // 👈 REPLACE: availability — shows as a status badge in the hero
-  availability: "Open to freelance & full-time roles" as string,
+  availability: "Open to freelance & internships" as string,
 } as const;
 
 // Opens Gmail's compose window in the browser with this email pre-filled.
@@ -135,8 +134,7 @@ export const projects: Project[] = [
     title: "Discoverly",
     description:
       "A curated directory of AI tools, creative resources, productivity apps, and learning platforms — my first website, built and shipped to the web.",
-    image:
-      "https://s0.wp.com/mshots/v1/https%3A%2F%2Fsidthegoat3432.github.io%2Fdiscoverly%2F?w=1280&h=720",
+    image: "projects/discoverly.png",
     video: "",
     link: "https://sidthegoat3432.github.io/discoverly/#/",
     tags: ["Web Design", "Curated Directory"],
@@ -196,11 +194,12 @@ export interface Poster {
   image?: string;
 }
 
-// 👈 REPLACE: your 3 best posters. Drop an image URL into each `image` field.
+// 👈 REPLACE: your 3 best posters. Drop an image into public/posters/ and set
+// the relative path here (no leading "/" so GitHub Pages subpaths work).
 export const posters: Poster[] = [
-  { id: "poster-01", title: "Porsche 911 GT3 RS", image: "https://lh3.googleusercontent.com/d/1OvVhC79nUF06RrBY0vLnVLKN20v5HrwH" },
-  { id: "poster-02", title: "Uma Ice's Kakigori", image: "https://lh3.googleusercontent.com/d/19HSZuOiuD9xjlBV8JhsUBfLyt9eCJLV8" },
-  { id: "poster-03", title: "Sony WH-1000XM6", image: "https://lh3.googleusercontent.com/d/1kcTO3CijkCTqWSa9DBQPxtmVuZ06kmqO" },
+  { id: "poster-01", title: "Porsche 911 GT3 RS", image: "posters/porsche-911-gt3-rs.webp" },
+  { id: "poster-02", title: "Uma Ice's Kakigori", image: "posters/uma-ice-kakigori.webp" },
+  { id: "poster-03", title: "Sony WH-1000XM6", image: "posters/sony-wh-1000xm6.webp" },
 ];
 
 // ----------------------------------------------------------------------------

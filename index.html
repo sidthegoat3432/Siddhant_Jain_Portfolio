@@ -10,7 +10,7 @@
     name="description"
     content="Siddhant Portfolio — the work, skills, and services of Siddhant Jain, a builder and creative problem-solver."
   />
-  <meta name="theme-color" content="#eef3f8" />
+  <meta name="theme-color" content="#0b1220" />
   <meta property="og:title" content="Siddhant Portfolio" />
   <meta
     property="og:description"
@@ -23,7 +23,8 @@
     (function () {
       try {
         var t = localStorage.getItem("siddhant-theme");
-        if (t === "dark") document.documentElement.classList.add("dark");
+        // Dark is the default; only skip it when the user explicitly chose light.
+        if (t !== "light") document.documentElement.classList.add("dark");
       } catch (e) {}
     })();
   </script>

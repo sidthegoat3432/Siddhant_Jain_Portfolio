@@ -4,14 +4,15 @@ import { useEffect, useState } from "react";
 const THEME_KEY = "siddhant-theme";
 
 function getInitialDark(): boolean {
-  if (typeof window === "undefined") return false;
+  if (typeof window === "undefined") return true;
   try {
     const stored = window.localStorage.getItem(THEME_KEY);
     if (stored) return stored === "dark";
   } catch {
-    /* localStorage unavailable — fall through to light */
+    /* localStorage unavailable — fall through to dark */
   }
-  return false;
+  // Dark is the default; only an explicit "light" choice opts out.
+  return true;
 }
 
 export function ThemeToggle() {

@@ -145,8 +145,8 @@ export function Projects() {
           />
           <Reveal delay={0.1} className="shrink-0 sm:pb-1">
             <p className="max-w-[13rem] border-l border-gold/50 pl-4 text-xs leading-relaxed text-muted-foreground">
-              Four studies in turning complex requirements into clear digital
-              experiences.
+              Two shipped projects, live on the web — with more work in
+              motion.
             </p>
           </Reveal>
         </div>

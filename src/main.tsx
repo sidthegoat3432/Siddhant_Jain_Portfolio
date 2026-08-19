@@ -67,7 +67,7 @@ createRoot(document.getElementById("root")!).render(
     <VlyToolbar />
     <InstrumentationProvider>
       <AppProviders>
-        <<HashRouter>>
+        <HashRouter>
           <RouteSyncer />
           <Suspense fallback={<RouteLoading />}>
             <Routes>
@@ -87,7 +87,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
-        </</HashRouter>>
+        </HashRouter>
         <Toaster />
       </AppProviders>
     </InstrumentationProvider>

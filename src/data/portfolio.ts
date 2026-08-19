@@ -145,7 +145,7 @@ export const projects: Project[] = [
     title: "This Portfolio",
     description:
       "The site you're looking at — designed and built from scratch: scroll-driven motion, a custom cursor, light/dark themes, and a fully self-contained GitHub Pages deployment.",
-    image: "projects/portfolio.png",
+    image: "projects/portfolio.webp",
     video: "",
     link: "https://sidthegoat3432.github.io/Siddhant_Jain_Portfolio/",
     tags: ["Web Design", "Motion", "Personal Brand"],

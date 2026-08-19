@@ -3,36 +3,41 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="manifest" href="./manifest.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
     content="Siddhant Portfolio — the work, skills, and services of Siddhant Jain, a builder and creative problem-solver."
   />
-  <meta name="theme-color" content="#eef3f8" />
+  <meta name="theme-color" content="#0b1220" />
   <meta property="og:title" content="Siddhant Portfolio" />
   <meta
     property="og:description"
     content="The work, skills, and services of Siddhant Jain, a builder and creative problem-solver."
   />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="./og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <title>Siddhant Portfolio</title>
   <script>
     // Apply the saved theme before first paint so there's no flash.
     (function () {
       try {
         var t = localStorage.getItem("siddhant-theme");
-        if (t === "dark") document.documentElement.classList.add("dark");
+        // Dark is the default; only skip it when the user explicitly chose light.
+        if (t !== "light") document.documentElement.classList.add("dark");
       } catch (e) {}
     })();
   </script>
-  <script type="module" crossorigin src="/assets/index-CP6BqBRo.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/react-vendor-BitxxfOL.js">
-  <link rel="modulepreload" crossorigin href="/assets/framer-motion-Cpm9svcm.js">
-  <link rel="modulepreload" crossorigin href="/assets/radix-ui-CxdKHbyC.js">
-  <link rel="modulepreload" crossorigin href="/assets/charts-D4JZu9C5.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-B35FURJ4.css">
+  <script type="module" crossorigin src="./assets/index-DCEHllZY.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/react-vendor-BitxxfOL.js">
+  <link rel="modulepreload" crossorigin href="./assets/framer-motion-Cpm9svcm.js">
+  <link rel="modulepreload" crossorigin href="./assets/radix-ui-CxdKHbyC.js">
+  <link rel="modulepreload" crossorigin href="./assets/charts-D4JZu9C5.js">
+  <link rel="stylesheet" crossorigin href="./assets/index-B35FURJ4.css">
 </head>
 
 

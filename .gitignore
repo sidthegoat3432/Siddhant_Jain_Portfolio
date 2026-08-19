@@ -12,6 +12,15 @@ dist
 dist-ssr
 *.local
 
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+.env.*
+
+# Platform build snapshot (generated — not part of the site source)
+isolate/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

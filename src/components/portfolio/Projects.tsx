@@ -96,7 +96,7 @@ function PosterTile({ poster, index }: { poster: Poster; index: number }) {
           />
         ) : (
           <>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(185,28,28,0.16),transparent_42%),linear-gradient(165deg,#f2e4e2,#eae6da_74%)] dark:bg-[radial-gradient(circle_at_50%_38%,rgba(229,72,77,0.14),transparent_42%),linear-gradient(165deg,#2b1216,#0d1626_74%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(185,28,28,0.16),transparent_42%),linear-gradient(165deg,#f2e4e2,#eae6da_74%)] dark:bg-[radial-gradient(circle_at_50%_38%,rgba(45,212,191,0.14),transparent_42%),linear-gradient(165deg,#10202b,#0d1626_74%)]" />
             <div className="kinetic-aurora pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,rgba(185,28,28,0.22),transparent_55%)]" />
             <span className="kinetic-rise absolute bottom-[18%] left-[16%] size-1.5 rounded-full bg-brand/70" />
             <span

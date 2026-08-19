@@ -18,12 +18,21 @@
   />
   <meta property="og:type" content="website" />
   <title>Siddhant Portfolio</title>
-  <script type="module" crossorigin src="/assets/index-Dv7Y0dM6.js"></script>
+  <script>
+    // Apply the saved theme before first paint so there's no flash.
+    (function () {
+      try {
+        var t = localStorage.getItem("siddhant-theme");
+        if (t === "dark") document.documentElement.classList.add("dark");
+      } catch (e) {}
+    })();
+  </script>
+  <script type="module" crossorigin src="/assets/index-CP6BqBRo.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/react-vendor-BitxxfOL.js">
   <link rel="modulepreload" crossorigin href="/assets/framer-motion-Cpm9svcm.js">
   <link rel="modulepreload" crossorigin href="/assets/radix-ui-CxdKHbyC.js">
   <link rel="modulepreload" crossorigin href="/assets/charts-D4JZu9C5.js">
-  <link rel="stylesheet" crossorigin href="/assets/index-zalq5Frf.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-B35FURJ4.css">
 </head>
 
 

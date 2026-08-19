@@ -23,7 +23,7 @@ export const HERO_BACKGROUND_POSTER = "";
 // (Lucastphotography, CC BY 4.0). Swap for any hosted mp4/webm URL when ready.
 export const ABOUT_BACKGROUND_VIDEO: string =
   "https://upload.wikimedia.org/wikipedia/commons/9/94/Toronto_Skyline.webm";
-export const ABOUT_BACKGROUND_POSTER = "BACKGROUND_POSTER";
+export const ABOUT_BACKGROUND_POSTER = "";
 
 // ----------------------------------------------------------------------------
 //  PROFILE
@@ -42,7 +42,7 @@ export const profile = {
   role: "Builder & creative problem-solver",
 
   // 👈 REPLACE: your city / location
-  city: "Your City",
+  city: "Toronto, Canada",
 
   // 👈 REPLACE: your email address (drives the contact buttons)
   email: "siddhant0516@gmail.com",

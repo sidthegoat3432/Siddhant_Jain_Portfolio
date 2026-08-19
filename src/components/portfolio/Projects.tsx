@@ -227,8 +227,8 @@ export function Projects() {
               </h3>
             </div>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-              A rotating selection of my strongest poster pieces — placeholders
-              for now, artwork drops in here.
+              Three posters I actually made — one car, one dessert, and one
+              pair of headphones.
             </p>
           </div>
         </Reveal>

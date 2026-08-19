@@ -47,7 +47,7 @@ export function Skills() {
         index="05"
         eyebrow="Capabilities"
         title="The stack behind the work."
-        description="The tools and technologies I reach for to ship dependable software — from interface to infrastructure. Click any capability to see how I use it."
+        description="The tools I reach for when an idea needs to become something real — posters, decks, videos, and websites. Click any capability to see how I use it."
       />
 
       <div className="toolkit-surface mt-14 grid min-w-0 grid-cols-2 gap-3 rounded-[2rem] border border-brand/10 p-3 sm:grid-cols-3 sm:gap-4 sm:p-5 lg:grid-cols-4">

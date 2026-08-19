@@ -23,7 +23,7 @@ export function Contact() {
               index="06"
               eyebrow="Contact"
               title="Let's build something serious."
-              description="Whether it's a full-time role, a contract, or a project that needs shipping — I'm open to the conversation."
+              description="Whether it's a full-time role, a contract, or a project that needs shipping — I'm open to the conversation. Mostly serious, occasionally goofy."
             />
 
             <Reveal delay={0.16}>

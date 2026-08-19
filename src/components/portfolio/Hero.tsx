@@ -158,7 +158,7 @@ function KineticMark() {
           <Circle className="size-2 fill-brand text-brand" />
           Signal online
         </span>
-        <span>28° 36′ N / 77° 13′ E</span>
+        <span>43° 39′ N / 79° 23′ W</span>
       </div>
     </motion.div>
   );
@@ -287,8 +287,8 @@ export function Hero() {
             <KineticMark />
             <div className="mt-4 flex items-start justify-between gap-4 text-xs text-muted-foreground">
               <span className="max-w-[15rem] leading-relaxed">
-                A city skyline at dusk behind the mark — swap it for your own
-                Toronto footage in the content config.
+                The Toronto skyline at dusk, shot from the air — the city this
+                whole site is built around.
               </span>
               <span className="flex shrink-0 items-center gap-2 text-ink/75">
                 <MapPin className="size-3.5 text-gold" />

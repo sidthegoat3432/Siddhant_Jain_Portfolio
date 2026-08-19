@@ -176,7 +176,7 @@ export const trackRecord: TrackRecordItem[] = [
     year: "FALL 2026",
     title: "Starting the IB Diploma Programme",
     description:
-      "Heading into high school on the International Baccalaureate track.",
+      "Heading into the IB Diploma Programme — wish me luck.",
   },
   {
     year: "2026",
@@ -395,7 +395,7 @@ export const services: Service[] = [
   },
   {
     title: "Tutoring",
-    copy: "Patient, clear help with school subjects, tech basics, and personal projects so concepts click and stick.",
+    copy: "Patient, clear help with school subjects, tech basics, and personal projects so concepts click and stick. (Trust me — I've been the confused student.)"
   },
   {
     title: "Making presentations",

@@ -90,6 +90,12 @@ export interface SocialLink {
 // The live contact profiles currently used across the site.
 export const socialLinks: SocialLink[] = [
   {
+    label: "LinkedIn",
+    handle: "Siddhant Jain",
+    url: "https://www.linkedin.com/in/siddhant-jain-6abaab420/",
+    icon: "linkedin",
+  },
+  {
     label: "GitHub",
     handle: "@sidthegoat3432",
     url: "https://github.com/sidthegoat3432",
@@ -135,39 +141,6 @@ export const projects: Project[] = [
     link: "https://sidthegoat3432.github.io/discoverly/#/",
     tags: ["Web Design", "Curated Directory"],
     year: "2026",
-  },
-  {
-    id: "project-02",
-    title: "Pulse — Product Platform",
-    description:
-      "Replace with a 1–2 sentence description of this project and the role you played in it.",
-    image: "",
-    video: "",
-    link: "#",
-    tags: ["Product Design", "React"],
-    year: "2025",
-  },
-  {
-    id: "project-03",
-    title: "Drift — Motion Study",
-    description:
-      "Replace with a 1–2 sentence description of this project and the role you played in it.",
-    image: "",
-    video: "",
-    link: "#",
-    tags: ["Motion", "Creative Dev"],
-    year: "2025",
-  },
-  {
-    id: "project-04",
-    title: "Atlas — Design System",
-    description:
-      "Replace with a 1–2 sentence description of this project and the role you played in it.",
-    image: "",
-    video: "",
-    link: "#",
-    tags: ["Design Systems", "UI Engineering"],
-    year: "2024",
   },
 ];
 
@@ -414,13 +387,4 @@ export const services: Service[] = [
   },
 ];
 
-// ----------------------------------------------------------------------------
-//  ABOUT — STATS
-// ----------------------------------------------------------------------------
-// 👈 REPLACE: quick numbers for the About section.
-export const stats = [
-  { value: "5+", label: "Years building" },
-  { value: "30+", label: "Projects shipped" },
-  { value: "14", label: "Happy clients" },
-  { value: "9", label: "Awards & features" },
-] as const;
+
